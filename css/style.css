@@ -5735,3 +5735,337 @@ Responsive For Mobile & Tablet Devices
 ================================================== */
 
 /*# sourceMappingURL=style.css.map */
+/* Afribiz Connect Brand Colors - Updated with actual logo colors
+================================================== */
+:root {
+  --afribiz-navy: #0A1A3A;        /* Deep Navy / Midnight Blue - for text "AFRIBIZ CONNECT" */
+  --afribiz-pink: #E53E7E;        /* Vibrant Pinkish-Red - top of outer ring */
+  --afribiz-orange: #F58A42;       /* Warm Orange / Gold - bottom of outer ring */
+  --afribiz-silver: #A0A9B5;       /* Metallic Silver / Gray - for the "C" and inner ring */
+  --afribiz-primary: var(--afribiz-pink); /* Set primary to pinkish-red as main brand color */
+}
+
+/* Update primary color throughout the site to use pinkish-red */
+.btn-primary,
+.backtotop .scroll:hover,
+.pagination_nav > li.active > a,
+.pagination_nav > li:hover:not(.active) > a,
+.category_btns_group a:hover,
+.filter_elements_nav > ul > li.active,
+.swiper-pagination-bullets .swiper-pagination-bullet.swiper-pagination-bullet-active,
+.social_icons_block a:hover,
+.footer_newslatter_2 button,
+.service_pill_block i,
+.step_number,
+.serial_number,
+.creative_btn .btn_icon i:first-child,
+.video_btn.ripple_effect .btn_icon i,
+.about_funfact_info .customer_count > ul > li:last-child {
+  background-color: var(--afribiz-pink) !important;
+}
+
+/* Primary text color - using pinkish-red for highlights */
+a:hover,
+.main_menu_list > li.active > a,
+.main_menu_list > li:hover > a,
+.dropdown-menu > li:hover > a,
+.dropdown-menu > li.active > a,
+.icon_list a:hover,
+.category_list a:hover,
+.post_meta > li a:hover,
+.blog_post_block .blog_post_title a:hover,
+.service_block_2 .service_title a:hover,
+.service_block .service_title a:hover,
+.case_study_block .case_title a:hover,
+.team_block .team_member_name a:hover,
+.footer_widget a:hover,
+.footer_layout_2 .footer_bottom .icon_list a:hover,
+mark,
+.heading_focus_text,
+.service_block_2 .icon_list .icon_list_icon,
+.step_list > li:before,
+.hotline_block .hotline_icon,
+.contact_method_list a:hover .text,
+.blog_category {
+  color: var(--afribiz-pink) !important;
+}
+
+/* Gradient backgrounds using logo colors */
+.featured_post,
+.cta_section.bg-primary,
+.page_banner_section.bg-dark,
+.about_and_case_section.bg-dark {
+  background: linear-gradient(135deg, var(--afribiz-navy) 0%, var(--afribiz-pink) 100%) !important;
+}
+
+/* Navy blue for dark sections */
+.bg-dark,
+.site_header_2:not(.sticky) .main_menu_list > li > a,
+.site_footer.footer_layout_2 {
+  background-color: var(--afribiz-navy) !important;
+}
+
+/* Orange accents for secondary highlights */
+.text-warning,
+.fa-trophy.text-warning,
+.rating_block li i {
+  color: var(--afribiz-orange) !important;
+}
+
+.btn-warning {
+  background-color: var(--afribiz-orange) !important;
+  border-color: var(--afribiz-orange) !important;
+}
+
+/* Silver/gray for subtle accents */
+.service_icon_large,
+.service_icon,
+.iconbox_block .iconbox_icon {
+  background: linear-gradient(135deg, var(--afribiz-silver) 0%, rgba(160, 169, 181, 0.1) 100%) !important;
+}
+
+/* Primary border color */
+.btn-outline-primary {
+  border-color: var(--afribiz-pink) !important;
+  color: var(--afribiz-pink) !important;
+}
+.btn-outline-primary:hover {
+  background-color: var(--afribiz-pink) !important;
+  color: white !important;
+}
+
+.form-group .form-control:focus,
+.form-group .form-select:focus {
+  border-color: var(--afribiz-pink) !important;
+}
+
+/* Card hover effects with pinkish-red */
+.service_feature_card:hover,
+.team_card:hover,
+.sector_card:hover,
+.country_card:hover,
+.trade_route_card:hover,
+.blog_card:hover,
+.service_block_2:hover,
+.iconbox_block:hover {
+  border-color: var(--afribiz-pink) !important;
+  box-shadow: 0 20px 40px rgba(229, 62, 126, 0.15) !important;
+}
+
+/* Section title underline - updated to pink */
+.heading_focus_text.has_underline {
+  filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(1684%) hue-rotate(315deg) brightness(94%) contrast(97%);
+}
+
+/* Stats numbers with navy */
+.stat_number,
+.counter_value,
+.funfact_block .counter_value,
+.deals_winner_customers .title_text mark {
+  color: var(--afribiz-navy) !important;
+}
+
+/* Team section with pink */
+.team_role,
+.section_subtitle:after {
+  color: var(--afribiz-pink) !important;
+  background: linear-gradient(90deg, var(--afribiz-pink), var(--afribiz-orange)) !important;
+}
+
+/* Blog meta icons */
+.blog_meta i {
+  color: var(--afribiz-pink) !important;
+}
+
+/* Filter buttons with pink */
+.filter_btn:hover,
+.filter_btn.active,
+.category_filter .filter_btn:hover,
+.category_filter .filter_btn.active {
+  background: var(--afribiz-pink) !important;
+  color: white !important;
+  border-color: var(--afribiz-pink) !important;
+}
+
+/* Pagination with pink */
+.page_link:hover,
+.page_link.active {
+  background: var(--afribiz-pink) !important;
+  color: white !important;
+  border-color: var(--afribiz-pink) !important;
+}
+
+/* Newsletter button with pink */
+.newsletter_form button {
+  background: var(--afribiz-pink) !important;
+}
+.newsletter_form button:hover {
+  background: #c02e66 !important; /* Darker shade of pink */
+}
+
+/* Service pill block hover with pink */
+.service_pill_block:hover {
+  background: var(--afribiz-pink) !important;
+  color: white !important;
+  border-color: var(--afribiz-pink) !important;
+}
+.service_pill_block:hover i {
+  color: white !important;
+  background: rgba(255,255,255,0.2) !important;
+}
+
+/* Mobile menu button with pink */
+.mobile_menu_btn:hover {
+  color: var(--afribiz-pink) !important;
+  border-color: var(--afribiz-pink) !important;
+}
+
+/* Social icons with pink */
+.social_icons_block li a:hover {
+  background: var(--afribiz-pink) !important;
+  color: white !important;
+  border-color: var(--afribiz-pink) !important;
+}
+
+/* Back to top button with pink */
+.backtotop a {
+  background: var(--afribiz-pink) !important;
+}
+.backtotop a:hover {
+  background: #c02e66 !important; /* Darker shade of pink */
+}
+
+/* Client logo hover effect with pink */
+.client_logo_item:hover {
+  filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(1684%) hue-rotate(315deg) brightness(94%) contrast(97%);
+  opacity: 0.8;
+  transition: all 0.3s ease;
+}
+
+/* Preloader with pink */
+.preloader .loader-line {
+  background-color: var(--afribiz-pink) !important;
+}
+
+/* Award icons with orange */
+.fa-trophy.text-warning {
+  color: var(--afribiz-orange) !important;
+}
+
+/* Dropdown menu active state with pink */
+.dropdown-menu li a:hover,
+.dropdown-menu li.active a {
+  background: rgba(229, 62, 126, 0.05) !important;
+  color: var(--afribiz-pink) !important;
+}
+
+/* Footer newsletter input focus with pink */
+.footer_newslatter_2 input:focus {
+  border-color: var(--afribiz-pink) !important;
+}
+
+/* Logo styling - if you want to style the text logo */
+.site_logo .site_link {
+  font-family: 'Axiforma Bold', sans-serif;
+}
+.site_logo .site_link span:first-child {
+  color: var(--afribiz-navy);
+  font-size: 24px;
+  font-weight: 800;
+  display: block;
+  line-height: 1.2;
+}
+.site_logo .site_link span:last-child {
+  color: var(--afribiz-pink);
+  font-size: 18px;
+  font-weight: 500;
+  display: block;
+  letter-spacing: 1px;
+}
+
+/* Add gradient borders to highlight sections */
+.gradient-border {
+  position: relative;
+  border: none !important;
+}
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--afribiz-pink), var(--afribiz-orange));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+/* Fix Sticky Header Text Color
+================================================== */
+.site_header_2.sticky .main_menu_list > li > a {
+  color: var(--bs-dark) !important; /* Dark text for light background */
+}
+
+.site_header_2.sticky .main_menu_list > li.active > a,
+.site_header_2.sticky .main_menu_list > li:hover > a {
+  color: var(--afribiz-pink) !important; /* Your brand pink for active/hover states */
+}
+
+.site_header_2.sticky .dropdown-toggle::after {
+  color: var(--bs-dark) !important; /* Dark dropdown arrows */
+}
+
+/* Ensure mobile menu button is visible on sticky header */
+.site_header_2.sticky .mobile_menu_btn {
+  color: var(--bs-dark) !important;
+  border-color: var(--bs-border-color) !important;
+}
+
+.site_header_2.sticky .mobile_menu_btn:hover {
+  color: var(--afribiz-pink) !important;
+  border-color: var(--afribiz-pink) !important;
+}
+
+/* Fix logo visibility on sticky header */
+.site_header_2.sticky .site_logo .site_link img:first-child {
+  display: none !important; /* Hide light logo */
+}
+
+.site_header_2.sticky .site_logo .site_link img:last-child {
+  display: block !important; /* Show dark logo */
+}
+
+/* If you don't have a dark logo version, use this instead */
+.site_header_2.sticky .site_logo .site_link {
+  color: var(--bs-dark) !important;
+}
+
+/* Fix dropdown menu positioning and colors on sticky header */
+.site_header_2.sticky .dropdown-menu {
+  margin-top: 10px !important;
+}
+
+.site_header_2.sticky .dropdown-menu > li > a {
+  color: var(--bs-dark) !important;
+}
+
+.site_header_2.sticky .dropdown-menu > li:hover > a,
+.site_header_2.sticky .dropdown-menu > li.active > a {
+  color: var(--afribiz-pink) !important;
+  background-color: rgba(229, 62, 126, 0.05) !important;
+}
+
+/* Fix mega menu if you have one */
+.site_header_2.sticky .mega_menu_wrapper {
+  top: 80px !important;
+}
+
+/* Fix the header background when sticky */
+.site_header_2.sticky .header_bottom {
+  background-color: var(--bs-white) !important;
+  box-shadow: 0 4px 23px 0 rgba(174, 191, 210, 0.3) !important;
+}
