@@ -1,0 +1,16 @@
+# Create .gitignore file
+echo "# OS files
+.DS_Store
+Thumbs.db
+
+# Editor files
+.vscode/
+.idea/
+*.swo
+*.swp
+
+# Temporary files
+*.log
+*.cache
+*.tmp
+temp/" > .gitignore
