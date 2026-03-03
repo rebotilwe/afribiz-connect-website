@@ -1548,7 +1548,7 @@ input[type=search]::-webkit-search-results-decoration {
   position: absolute;
   transition: transform .5s; }
   .site_header .site_logo .site_link {
-    max-width: 124px; }
+    max-width: 130px; }
   .site_header .site_logo .badge {
     margin-left: 5px; }
   .site_header .header_btns_group {
@@ -5739,7 +5739,7 @@ Responsive For Mobile & Tablet Devices
 ================================================== */
 :root {
   --afribiz-navy: #0A1A3A;        /* Deep Navy / Midnight Blue - for text "AFRIBIZ CONNECT" */
-  --afribiz-pink: #E53E7E;        /* Vibrant Pinkish-Red - top of outer ring */
+  --afribiz-pink: #F58A42;        /* Vibrant Pinkish-Red - top of outer ring */
   --afribiz-orange: #F58A42;       /* Warm Orange / Gold - bottom of outer ring */
   --afribiz-silver: #A0A9B5;       /* Metallic Silver / Gray - for the "C" and inner ring */
   --afribiz-primary: var(--afribiz-pink); /* Set primary to pinkish-red as main brand color */
@@ -6501,4 +6501,233 @@ mark,
 .map_section_vh iframe {
   width: 100%;
   height: 100%;
+}
+/* Client Logo Section - Fixed Alignment & Shape
+================================================== */
+.feature_partners_section {
+  padding: 60px 0;
+  background-color: #0132B8;
+  overflow: hidden;
+  position: relative;
+}
+
+.feature_partners_section::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 22%;
+  height: 100%;
+  content: "";
+  background-color: #0132B8;
+  z-index: 2;
+}
+
+@media screen and (max-width: 991px) {
+  .feature_partners_section::before {
+    width: 15%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .feature_partners_section::before {
+    display: none;
+  }
+}
+
+.feature_partners_section .title_text {
+  top: 50%;
+  left: 5px;
+  z-index: 3;
+  padding: 0 30px;
+  font-size: 20px;
+  font-weight: 600;
+  max-width: 240px;
+  position: absolute;
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  background-color: #0132B8;
+  font-family: 'Axiforma SemiBold';
+  transform: translateY(-50%);
+  height: auto;
+  min-height: 100px;
+  border-radius: 0 50px 50px 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 767px) {
+  .feature_partners_section .title_text {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    max-width: 100%;
+    margin-bottom: 30px;
+    border-radius: 0;
+    padding: 15px 20px;
+    background-color: transparent;
+    box-shadow: none;
+    text-align: center;
+    display: block;
+  }
+}
+
+.client_logo_carousel .swiper-wrapper {
+  margin: -15px -8px;
+  pointer-events: none;
+  transition-timing-function: linear !important;
+}
+
+.client_logo_carousel .swiper-wrapper .swiper-slide {
+  padding: 15px 8px;
+  height: auto;
+  display: flex;
+}
+
+.client_logo_item {
+  height: 140px;
+   width: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  background-color: var(--bs-white);
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+  padding: 20px;
+  overflow: hidden;
+  position: relative;
+}
+
+/* New card shape - rounded with subtle clip path */
+.client_logo_item.logo-card {
+  border-radius: 20px;
+  clip-path: polygon(92% 0, 100% 8%, 100% 100%, 0 100%, 0 0);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.client_logo_item.logo-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  border-color: var(--afribiz-pink);
+}
+
+.client_logo_item img {
+  max-width: 100%;
+  max-height: 80px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(0%);
+  transition: all 0.3s ease;
+}
+
+.client_logo_item:hover img {
+  transform: scale(1.05);
+  filter: grayscale(0%);
+}
+
+/* Alternative shape option - hexagon */
+.client_logo_item.logo-hexagon {
+  clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%);
+}
+
+/* Alternative shape option - parallelogram */
+.client_logo_item.logo-parallelogram {
+  clip-path: polygon(15% 0, 100% 0, 85% 100%, 0% 100%);
+}
+
+/* Make sure all images are properly contained */
+.client_logo_item img {
+  max-width: 90%;
+  max-height: 70%;
+  object-fit: contain;
+}
+
+/* Adjust for different logo dimensions */
+.client_logo_item img[alt*="SPAR"],
+.client_logo_item img[alt*="ENGEN"],
+.client_logo_item img[alt*="SHELL"] {
+  max-width: 80%;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+  .client_logo_item {
+    height: 100px;
+  }
+  .client_logo_item img {
+    max-height: 50px;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .client_logo_item {
+    height: 90px;
+  }
+  .client_logo_item img {
+    max-height: 45px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .client_logo_item {
+    height: 80px;
+    padding: 10px;
+  }
+  .client_logo_item img {
+    max-height: 40px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .feature_partners_section .title_text {
+    position: relative;
+    top: 0;
+    left: 0;
+    transform: none;
+    max-width: 100%;
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 18px;
+    background-color: transparent;
+  }
+  
+  .client_logo_item {
+    height: 70px;
+  }
+  .client_logo_item img {
+    max-height: 35px;
+  }
+}
+/* Increase header logo size */
+.site_header .site_logo .site_link img {
+  max-height: 80px;  /* Increased from default (probably 40px) */
+  width: auto;
+  transition: all 0.3s ease;
+}
+
+/* For sticky header */
+.site_header.sticky .site_logo .site_link img {
+  max-height: 50px;  /* Slightly smaller when sticky */
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 991px) {
+  .site_header .site_logo .site_link img {
+    max-height: 50px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .site_header .site_logo .site_link img {
+    max-height: 45px;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .site_header .site_logo .site_link img {
+    max-height: 40px;
+  }
 }
