@@ -6069,3 +6069,436 @@ mark,
   background-color: var(--bs-white) !important;
   box-shadow: 0 4px 23px 0 rgba(174, 191, 210, 0.3) !important;
 }
+/* Nest Hub & Landscape Tablet Responsive (1024px x 600px)
+================================================== */
+@media screen and (min-width: 1024px) and (max-height: 600px) {
+  
+  /* Header adjustments */
+  .site_header_2 {
+    padding: 10px 0;
+  }
+  
+  .site_header_2 .main_menu_list > li > a {
+    min-height: 60px;
+    padding: 8px 15px;
+    font-size: 14px;
+  }
+  
+  .site_header_2 .header_btns_group .btn {
+    padding: 0 20px;
+  }
+  
+  .site_header_2 .header_btns_group .btn .btn_label {
+    padding: 12px 0px 10px;
+  }
+  
+  /* Hero section adjustments */
+  .software_company_hero_section {
+    padding: 80px 0 60px;
+  }
+  
+  .software_company_hero_section h1 {
+    font-size: 42px;
+    line-height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .software_company_hero_section p {
+    font-size: 15px;
+    max-width: 500px;
+    margin-bottom: 25px;
+  }
+  
+  .step_list > li {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  .step_list {
+    margin-bottom: 30px;
+  }
+  
+  .engine_image {
+    width: 450px;
+    height: 450px;
+    margin: 0 auto;
+  }
+  
+  .engine_image .image_wrap_3 {
+    max-width: 360px;
+  }
+  
+  .engine_image .image_wrap_2 {
+    max-width: 300px;
+  }
+  
+  .engine_image .image_wrap_1 {
+    max-width: 80px;
+  }
+  
+  /* Feature partners section */
+  .feature_partners_section {
+    padding: 40px 0 20px;
+  }
+  
+  .feature_partners_section .title_text {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+  
+  .feature_partners_section .client_logo_item {
+    height: 60px;
+  }
+  
+  .feature_partners_section .client_logo_item img {
+    max-width: 80px;
+  }
+  
+  /* About section */
+  .about_and_case_section {
+    padding: 100px 0 50px;
+  }
+  
+  .about_funfact_info {
+    width: 400px;
+    padding: 15px 20px;
+  }
+  
+  .about_funfact_info .about_funfact_counter .counter_value {
+    font-size: 35px;
+  }
+  
+  .about_funfact_info .about_funfact_counter .funfact_title {
+    font-size: 14px;
+  }
+  
+  .about_funfact_info .btn {
+    padding: 0 15px;
+    font-size: 12px;
+  }
+  
+  /* Service section */
+  .service_section {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  
+  .service_block_2 {
+    padding: 25px;
+  }
+  
+  .service_block_2 .service_icon {
+    margin-bottom: 20px;
+  }
+  
+  .service_block_2 .service_icon img {
+    max-width: 50px;
+  }
+  
+  .service_block_2 .service_title {
+    font-size: 20px;
+    line-height: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .service_block_2 .icon_list > li {
+    font-size: 14px;
+    padding: 8px 10px 8px 0;
+  }
+  
+  /* Process section */
+  .process_technology_review_section {
+    padding: 100px 0 40px;
+  }
+  
+  .accordion .accordion-button {
+    font-size: 18px;
+    padding: 12px 0 8px;
+  }
+  
+  .content_layer_group span {
+    height: 80px;
+    font-size: 18px;
+    max-width: 280px;
+    line-height: 24px;
+  }
+  
+  .content_layer_group > li:not(:first-child) {
+    margin-top: -15px;
+  }
+  
+  /* FAQ section */
+  .faq_section {
+    padding-top: 80px;
+  }
+  
+  .faq_accordion .accordion-button {
+    font-size: 20px;
+    padding: 20px 0 15px;
+  }
+  
+  .faq_accordion .text_a {
+    top: 30px;
+    left: 30px;
+    font-size: 35px;
+  }
+  
+  .faq_accordion .accordion-body {
+    padding: 25px 30px 25px 120px;
+  }
+  
+  /* Blog section */
+  .blog_section_space {
+    padding-top: 80px;
+    padding-bottom: 40px;
+  }
+  
+  .blog_post_block .blog_post_content {
+    padding: 25px 20px;
+  }
+  
+  .blog_post_block .blog_post_title {
+    font-size: 18px;
+    line-height: 26px;
+    margin: 15px 0 15px;
+  }
+  
+  .post_meta > li {
+    font-size: 14px;
+  }
+  
+  /* Contact section */
+  .contact_section:has(.decoration_item) {
+    padding-top: 100px;
+  }
+  
+  .contact_method_box,
+  .instant_contact_form {
+    padding: 30px;
+  }
+  
+  .form_title {
+    font-size: 22px;
+    line-height: 30px;
+    margin-bottom: 15px;
+  }
+  
+  .form-group input.form-control,
+  .form-group select.form-select {
+    height: 50px;
+  }
+  
+  .form-group .form-control,
+  .form-group .form-select {
+    font-size: 14px;
+    padding: 0 15px;
+  }
+  
+  .form-group textarea.form-control {
+    min-height: 100px;
+    padding: 12px 15px;
+  }
+  
+  .btn .btn_label {
+    padding: 15px 0px 13px;
+  }
+  
+  /* Footer */
+  .footer_layout_2 {
+    padding: 80px 0 0;
+  }
+  
+  .footer_layout_2 .service_pill_carousel {
+    margin-bottom: 50px;
+  }
+  
+  .service_pill_block {
+    font-size: 14px;
+    padding: 4px 15px 4px 4px;
+  }
+  
+  .service_pill_block i {
+    width: 30px;
+    height: 30px;
+    font-size: 12px;
+  }
+  
+  .footer_widget .icon_list > li {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  
+  .footer_info_title {
+    margin-bottom: 20px;
+    font-size: 15px;
+  }
+  
+  .footer_newslatter_2 input {
+    height: 50px;
+    font-size: 14px;
+  }
+  
+  .footer_newslatter_2 button {
+    padding: 10px 20px 8px;
+    font-size: 12px;
+  }
+  
+  /* Back to top button */
+  .backtotop {
+    bottom: 30px;
+  }
+  
+  .backtotop .scroll {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
+/* Additional fixes for Nest Hub landscape orientation */
+@media screen and (min-width: 1024px) and (max-height: 600px) and (orientation: landscape) {
+  
+  /* Ensure content doesn't overflow */
+  .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  
+  /* Reduce vertical padding */
+  .section_space {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  
+  /* Make headings smaller */
+  .heading_block .heading_text {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  
+  .heading_block .heading_description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  
+  /* Fix grid gaps */
+  .row {
+    margin: -10px;
+  }
+  
+  [class*="col-"] {
+    padding: 10px;
+  }
+  
+  /* Make cards more compact */
+  .service_feature_card,
+  .team_card,
+  .sector_card {
+    padding: 20px;
+  }
+  
+  .service_icon_large {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+  }
+  
+  .service_icon_large i {
+    font-size: 30px;
+  }
+  
+  .service_feature_card h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .service_feature_card p {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  /* Fix contact form on Nest Hub */
+  .contact_method_list .text {
+    font-size: 15px;
+  }
+  
+  /* Ensure email doesn't overflow */
+  .contact_method_list li a {
+    gap: 10px;
+  }
+}
+/* Responsive Map Fix
+================================================== */
+.map_section {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.google_map {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 35%; /* 16:9 Aspect Ratio - adjust as needed */
+  overflow: hidden;
+}
+
+.google_map iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  border: 0;
+}
+
+/* Different aspect ratios for different screen sizes */
+@media screen and (max-width: 1200px) {
+  .google_map {
+    padding-bottom: 40%;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .google_map {
+    padding-bottom: 45%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .google_map {
+    padding-bottom: 50%;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .google_map {
+    padding-bottom: 60%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .google_map {
+    padding-bottom: 75%;
+  }
+}
+
+/* Nest Hub (1024x600) specific fix */
+@media screen and (min-width: 1024px) and (max-height: 600px) {
+  .google_map {
+    padding-bottom: 30%;
+  }
+}
+
+/* Alternative method using viewport height */
+.map_section_vh {
+  height: 450px;
+  max-height: 50vh;
+  overflow: hidden;
+}
+
+.map_section_vh iframe {
+  width: 100%;
+  height: 100%;
+}
