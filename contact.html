@@ -22,11 +22,356 @@
 
     <!-- Custom - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/style.css">
+    
+    <!-- Tech Font - Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Responsive Map Fix */
+        .map_section {
+            overflow: hidden;
+            position: relative;
+            width: 100%;
+        }
+
+        .google_map {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 35%;
+            overflow: hidden;
+            border-radius: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .google_map iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100% !important;
+            height: 100% !important;
+            border: 0;
+            transition: all 0.3s ease;
+        }
+
+        .google_map iframe:hover {
+            filter: brightness(0.95);
+        }
+
+        /* Add a subtle overlay to the map */
+        .google_map::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+            background: linear-gradient(135deg, rgba(229,62,126,0.05) 0%, rgba(245,138,66,0.05) 100%);
+            z-index: 1;
+        }
+
+        /* Different aspect ratios for different screen sizes */
+        @media screen and (max-width: 1200px) {
+            .google_map {
+                padding-bottom: 40%;
+            }
+        }
+
+        @media screen and (max-width: 991px) {
+            .google_map {
+                padding-bottom: 45%;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .google_map {
+                padding-bottom: 50%;
+            }
+        }
+
+        @media screen and (max-width: 575px) {
+            .google_map {
+                padding-bottom: 60%;
+            }
+        }
+
+        @media screen and (max-width: 425px) {
+            .google_map {
+                padding-bottom: 75%;
+            }
+        }
+
+        /* Fix contact method list overlapping */
+        .contact_method_list li {
+            width: 100%;
+            overflow: hidden;
+        }
+
+        .contact_method_list li a {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            word-break: break-word;
+            transition: all 0.3s ease;
+        }
+
+        .contact_method_list li a:hover {
+            transform: translateX(5px);
+        }
+
+        .contact_method_list .icon {
+            flex-shrink: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
+            color: #E53E7E;
+            transition: all 0.3s ease;
+        }
+
+        .contact_method_list li a:hover .icon {
+            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .contact_method_list .text {
+            font-size: 16px;
+            line-height: 1.4;
+            word-break: break-word;
+            overflow-wrap: break-word;
+            -ms-word-break: break-all;
+            hyphens: auto;
+            transition: all 0.3s ease;
+        }
+
+        .contact_method_list li a:hover .text {
+            color: #E53E7E;
+        }
+
+        @media screen and (max-width: 575px) {
+            .contact_method_list li a {
+                gap: 10px;
+            }
+            
+            .contact_method_list .text {
+                font-size: 14px;
+            }
+        }
+
+        /* Contact method box enhancements */
+        .contact_method_box {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(229,62,126,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact_method_box:hover {
+            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
+            border-color: rgba(229,62,126,0.3);
+        }
+
+        .contact_method_box::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(229,62,126,0.03) 0%, transparent 70%);
+            animation: rotate 30s linear infinite;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        /* Instant contact form enhancements */
+        .instant_contact_form {
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(229,62,126,0.1);
+        }
+
+        .instant_contact_form::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(229,62,126,0.03) 0%, transparent 70%);
+            animation: rotate-reverse 30s linear infinite;
+        }
+
+        @keyframes rotate-reverse {
+            from { transform: rotate(360deg); }
+            to { transform: rotate(0deg); }
+        }
+
+        /* Form input enhancements */
+        .form-group {
+            position: relative;
+        }
+
+        .form-group .input_title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 2;
+            transition: all 0.3s ease;
+        }
+
+        .form-group .input_title i {
+            color: #E53E7E;
+            transition: all 0.3s ease;
+        }
+
+        .form-group:hover .input_title i {
+            transform: scale(1.1);
+            color: #F58A42;
+        }
+
+        .form-group .form-control {
+            padding-left: 50px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(229,62,126,0.1);
+        }
+
+        .form-group .form-control:focus {
+            border-color: #E53E7E;
+            box-shadow: 0 0 0 3px rgba(229,62,126,0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Support step enhancements */
+        .support_step {
+            position: relative;
+            z-index: 2;
+        }
+
+        .support_step .serial_number {
+            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
+            color: #E53E7E;
+            border: 1px solid rgba(229,62,126,0.3);
+            transition: all 0.3s ease;
+        }
+
+        .support_step li:hover .serial_number {
+            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            color: white;
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(229,62,126,0.5);
+        }
+
+        .support_step li:hover .text {
+            color: #E53E7E;
+            transform: translateX(5px);
+        }
+
+        .support_step .text {
+            transition: all 0.3s ease;
+        }
+
+        .support_step::before {
+            background: linear-gradient(180deg, #E53E7E, #F58A42);
+            opacity: 0.3;
+        }
+
+        /* Small title enhancement */
+        .small_title i {
+            color: #E53E7E;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Form title */
+        .form_title {
+            position: relative;
+            display: inline-block;
+        }
+
+        .form_title::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: linear-gradient(90deg, #E53E7E, #F58A42);
+            animation: width-pulse 3s ease-in-out infinite;
+        }
+
+        @keyframes width-pulse {
+            0%, 100% { width: 50px; }
+            50% { width: 100px; }
+        }
+
+        /* Brand colors */
+        mark {
+            color: #E53E7E;
+            background: transparent;
+        }
+
+        .heading_focus_text.has_underline {
+            filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(1684%) hue-rotate(315deg) brightness(94%) contrast(97%);
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #E53E7E, #F58A42) !important;
+            border: none !important;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-primary:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(229,62,126,0.4) !important;
+        }
+
+        .tech-badge-sm {
+            display: inline-block;
+            padding: 3px 10px;
+            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
+            border: 1px solid rgba(229,62,126,0.3);
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #E53E7E;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
 </head>
 <body>
     <div class="page_wrapper">
         <!-- Preloader - Start -->
-        <!-- <div id="preloader" class="preloader">
+        <div id="preloader" class="preloader">
             <div class="loader-circle">
                 <div class="loader-line-mask">
                     <div class="loader-line"></div>
@@ -35,7 +380,7 @@
                     <img src="images/logo1.png" alt="Afribiz Connect Logo">
                 </div>
             </div>
-        </div> -->
+        </div>
         <!-- Preloader - End -->
 
         <!-- Back To Top - Start -->
@@ -102,7 +447,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary" href="contact.html">
+                                    <a class="btn btn-primary ripple-effect" href="contact.html">
                                         <span class="btn_label" data-text="Free Consultation">Free Consultation</span>
                                         <span class="btn_icon">
                                             <i class="fa-solid fa-arrow-up-right"></i>
@@ -118,15 +463,15 @@
         <!-- Site Header - End -->
 
         <!-- Page Banner - Start -->
-        <section class="page_banner_section bg-dark section_decoration" style="background-image: url('images/bg_image_2.webp');">
+        <section class="page_banner_section bg-dark section_decoration scanline" style="background-image: url('images/bg_image_2.webp');">
             <div class="container">
                 <div class="row">
-                    <div class="col-12 text-center">
+                    <div class="col-12 text-center fade-up">
                         <div class="heading_block text-white">
                             <div class="heading_focus_text has_underline text-white d-inline-flex" style="background-image: url('images/shape_title_under_line.svg');">
                                 Get In Touch
                             </div>
-                            <h1 class="heading_text text-white mb-0">
+                            <h1 class="heading_text text-white mb-0 glitch">
                                 Contact <mark>Us</mark>
                             </h1>
                             <p class="heading_description text-white-50">
@@ -143,12 +488,13 @@
         <!-- Page Banner - End -->
 
         <!-- Contact Section - Start -->
-        <section class="contact_section pb-80 bg-light section_decoration">
+        <section class="contact_section pb-80 bg-light section_decoration matrix-bg">
             <div class="container">
                 <div class="row">
                     <!-- Contact Info Column -->
                     <div class="col-lg-4">
-                        <div class="contact_method_box">
+                        <div class="contact_method_box fade-up">
+                            <span class="tech-badge-sm"><i class="fa-regular fa-message"></i> LET'S CHAT</span>
                             <div class="heading_block">
                                 <div class="heading_focus_text has_underline d-inline-flex mb-3" style="background-image: url('images/shape_title_under_line.svg');">
                                     Connect With Us
@@ -177,11 +523,11 @@
   </a>
 </li>
                                 <li>
-                                    <a href="#!">
+                                    <a href="https://maps.google.com/?q=106+Aldrovande+Palace+6+Jubilee+Grove+Umhlanga+Ridge+Durban+North" target="_blank">
                                         <span class="icon">
                                             <i class="fa-solid fa-location-dot"></i>
                                         </span>
-                                        <span class="text">South Africa</span>
+                                        <span class="text">106 Aldrovande Palace, 6 Jubilee Grove, Umhlanga Ridge, Durban North</span>
                                     </a>
                                 </li>
                             </ul>
@@ -209,7 +555,8 @@
                     
                     <!-- Contact Form Column -->
                     <div class="col-lg-8">
-                        <div class="instant_contact_form">
+                        <div class="instant_contact_form fade-up">
+                            <span class="tech-badge-sm"><i class="fa-regular fa-envelope"></i> GET IN TOUCH</span>
                             <div class="small_title">
                                 <i class="fa-solid fa-envelope-open-text"></i>
                                 Send Us a Message
@@ -259,7 +606,7 @@
                                             </label>
                                             <textarea id="input_message" class="form-control" name="message" rows="5" placeholder="How can we help revolutionize your business?"></textarea>
                                         </div>
-                                        <button type="submit" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary ripple-effect">
                                             <span class="btn_label" data-text="Send Message">Send Message</span>
                                             <span class="btn_icon">
                                                 <i class="fa-solid fa-arrow-up-right"></i>
@@ -286,25 +633,24 @@
         </section>
         <!-- Contact Section - End -->
 
-<!-- Map Section - Start -->
-<section class="map_section">
-  <div class="container-fluid p-0">
-    <div class="google_map">
-      <iframe 
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.3512!2d31.0645!3d-29.8587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef7a9c8b2c3d4e5%3A0x8e7a1b2c3d4e5f6!2s106%20Aldrovande%20Palace%2C%206%20Jubilee%20Grove%2C%20Umhlanga%20Ridge%2C%20Durban%20North!5e0!3m2!1sen!2sza!4v1234567890!5m2!1sen!2sza" 
-        style="border:0;" 
-        allowfullscreen="" 
-        loading="lazy">
-      </iframe>
-    </div>
-  </div>
-</section>
-<!-- Map Section - End -->
+        <!-- Map Section - Start -->
+        <section class="map_section">
+            <div class="container-fluid p-0">
+                <div class="google_map fade-up">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3460.5063!2d31.0645!3d-29.8587!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef7a9c8b2c3d4e5%3A0x8e7a1b2c3d4e5f6!2s106%20Aldrovande%20Palace%2C%206%20Jubilee%20Grove%2C%20Umhlanga%20Ridge%2C%20Durban%20North%2C%204051!5e0!3m2!1sen!2sza!4v1700000000000!5m2!1sen!2sza" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
         </section>
         <!-- Map Section - End -->
 
         <!-- Site Footer - Start -->
-        <footer class="site_footer footer_layout_2 section_decoration" style="background-image: url('images/bg_pattern_3.svg');">
+        <footer class="site_footer footer_layout_2 section_decoration data-stream" style="background-image: url('images/bg_pattern_3.svg');">
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
@@ -313,45 +659,45 @@
                 <div class="service_pill_carousel swiper">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                            <a class="service_pill_block" href="software-development.html">
+                            <a class="service_pill_block" href="business-advisory.html">
                                 <i class="fa-solid fa-check"></i>
-                                <span>Software Development</span>
+                                <span>Business Advisory</span>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a class="service_pill_block" href="information-architecture.html">
+                            <a class="service_pill_block" href="market-entry.html">
                                 <i class="fa-solid fa-check"></i>
-                                <span>Information Architecture</span>
+                                <span>Market Entry</span>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a class="service_pill_block" href="data-engineering.html">
+                            <a class="service_pill_block" href="investment.html">
                                 <i class="fa-solid fa-check"></i>
-                                <span>Data Engineering</span>
+                                <span>Investment</span>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a class="service_pill_block" href="ai-solutions.html">
+                            <a class="service_pill_block" href="trade-services.html">
                                 <i class="fa-solid fa-check"></i>
-                                <span>AI Solutions</span>
+                                <span>Trade Services</span>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a class="service_pill_block" href="digital-marketing.html">
+                            <a class="service_pill_block" href="research.html">
                                 <i class="fa-solid fa-check"></i>
-                                <span>Digital Marketing</span>
+                                <span>Market Research</span>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a class="service_pill_block" href="smmesupport.html">
+                            <a class="service_pill_block" href="sectors.html">
                                 <i class="fa-solid fa-check"></i>
-                                <span>SMME Support</span>
+                                <span>Sectors</span>
                             </a>
                         </div>
                         <div class="swiper-slide">
-                            <a class="service_pill_block" href="township-business.html">
+                            <a class="service_pill_block" href="insights.html">
                                 <i class="fa-solid fa-check"></i>
-                                <span>Township Business</span>
+                                <span>Insights</span>
                             </a>
                         </div>
                     </div>
@@ -359,16 +705,15 @@
                 
                 <!-- Footer Main Content -->
                 <div class="footer_main_content">
-                    <div class="row">
+                    <div class="row stagger-fade">
                         <div class="col-lg-3 col-md-6">
                             <div class="footer_widget">
                                 <h3 class="footer_info_title">Company</h3>
                                 <ul class="icon_list unordered_list_block">
                                     <li><a href="about.html">About Us</a></li>
-                                    <li><a href="awards.html">Awards & Recognition</a></li>
-                                    <li><a href="team.html">Our Team</a></li>
-                                    <li><a href="clients.html">Our Clients</a></li>
-                                    <li><a href="careers.html">Careers</a></li>
+                                    <li><a href="about.html#awards">Awards & Recognition</a></li>
+                                    <li><a href="about.html#team">Our Team</a></li>
+                                    <li><a href="index.html#clients">Our Clients</a></li>
                                     <li><a href="contact.html">Contact</a></li>
                                 </ul>
                             </div>
@@ -389,13 +734,12 @@
                         
                         <div class="col-lg-3 col-md-6">
                             <div class="footer_widget">
-                                <h3 class="footer_info_title">Support</h3>
+                                <h3 class="footer_info_title">Explore</h3>
                                 <ul class="icon_list unordered_list_block">
-                                    <li><a href="faq.html">FAQ</a></li>
-                                    <li><a href="training.html">Training Programs</a></li>
-                                    <li><a href="township-support.html">Township Support</a></li>
-                                    <li><a href="privacy.html">Privacy Policy</a></li>
-                                    <li><a href="terms.html">Terms of Use</a></li>
+                                    <li><a href="sectors.html">Sectors We Serve</a></li>
+                                    <li><a href="insights.html">Insights & News</a></li>
+                                    <li><a href="sectors.html#featured">Featured Sector</a></li>
+                                    <li><a href="about.html#team">Meet the Team</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -409,10 +753,10 @@
                                     <button type="submit">Subscribe</button>
                                 </form>
                                 <ul class="social_icons_block unordered_list mt-3">
-                                    <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
-                                    <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="https://www.facebook.com/afribizconnect" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                    <li><a href="https://www.instagram.com/afribizconnect_/" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                                    <li><a href="https://www.linkedin.com/company/afribiz-connect1/" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                    <li><a href="https://www.tiktok.com/@afribiz.connect?lang=en-GB" target="_blank"><i class="fa-brands fa-tiktok"></i></a></li>
                                 </ul>
                             </div>
                         </div>
@@ -428,19 +772,19 @@
                     </p>
                     <ul class="icon_list unordered_list">
                         <li>
-                            <a href="terms.html">
-                                <span class="icon_list_icon">
-                                    <i class="fa-solid fa-circle"></i>
-                                </span>
-                                <span class="icon_list_text">Terms of Use</span>
-                            </a>
-                        </li>
-                        <li>
                             <a href="privacy.html">
                                 <span class="icon_list_icon">
                                     <i class="fa-solid fa-circle"></i>
                                 </span>
                                 <span class="icon_list_text">Privacy Policy</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="terms.html">
+                                <span class="icon_list_icon">
+                                    <i class="fa-solid fa-circle"></i>
+                                </span>
+                                <span class="icon_list_text">Terms of Use</span>
                             </a>
                         </li>
                     </ul>
