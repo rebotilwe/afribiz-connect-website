@@ -7384,7 +7384,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* For sticky header */
 .site_header.sticky .site_logo .site_link img {
-  max-height: 70px;  /* Increased from 50px to 70px */
+  max-height: 85px;  /* Increased from 50px to 70px */
 }
 
 /* Responsive adjustments */
@@ -7396,13 +7396,13 @@ h1, h2, h3, h4, h5, h6,
 
 @media screen and (max-width: 767px) {
   .site_header .site_logo .site_link img {
-    max-height: 60px;  /* Increased from 45px to 60px */
+    max-height: 70px;  /* Increased from 45px to 60px */
   }
 }
 
 @media screen and (max-width: 575px) {
   .site_header .site_logo .site_link img {
-    max-height: 50px;  /* Increased from 40px to 50px */
+    max-height: 60px;  /* Increased from 40px to 50px */
   }
 }
 
@@ -7474,4 +7474,245 @@ h1, h2, h3, h4, h5, h6,
   .client_logo_item img {
     max-height: 50px;  /* Increased from 35px to 50px */
   }
+}
+/* Awards Section with Logos
+================================================== */
+.award_logo_card {
+    background: white;
+    border-radius: 15px;
+    padding: 25px 15px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(229,62,126,0.1);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    position: relative;
+    overflow: hidden;
+}
+
+.award_logo_card::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(135deg, #E53E7E, #F58A42, #E53E7E);
+    border-radius: inherit;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.award_logo_card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(229,62,126,0.15);
+    border-color: transparent;
+}
+
+.award_logo_card:hover::before {
+    opacity: 1;
+    animation: border-rotate 3s linear infinite;
+}
+
+.award_logo_wrapper {
+    width: 120px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.award_logo {
+    max-width: 100%;
+    max-height: 100px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    transition: all 0.3s ease;
+    filter: grayscale(20%);
+    opacity: 0.9;
+}
+
+.award_logo_card:hover .award_logo {
+    transform: scale(1.05);
+    filter: grayscale(0%);
+    opacity: 1;
+}
+
+.award_logo_title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1e1e1e;
+    text-align: center;
+    line-height: 1.3;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 991px) {
+    .award_logo_card {
+        height: 160px;
+        padding: 20px 10px;
+    }
+    
+    .award_logo_wrapper {
+        width: 100px;
+        height: 80px;
+    }
+    
+    .award_logo {
+        max-height: 80px;
+    }
+    
+    .award_logo_title {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .award_logo_card {
+        height: 140px;
+        padding: 15px 8px;
+    }
+    
+    .award_logo_wrapper {
+        width: 80px;
+        height: 70px;
+    }
+    
+    .award_logo {
+        max-height: 70px;
+    }
+}
+
+@media screen and (max-width: 575px) {
+    .award_logo_card {
+        height: 130px;
+        padding: 12px 5px;
+    }
+    
+    .award_logo_wrapper {
+        width: 70px;
+        height: 60px;
+    }
+    
+    .award_logo {
+        max-height: 60px;
+    }
+    
+    .award_logo_title {
+        font-size: 11px;
+    }
+}
+/* Success Message Popup Styles */
+.success-message {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.3s ease;
+}
+
+.success-content {
+    background: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    box-shadow: 0 20px 40px rgba(229, 62, 126, 0.2);
+    border: 1px solid rgba(229, 62, 126, 0.2);
+    animation: slideUp 0.4s ease;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #E53E7E, #F58A42);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+}
+
+.success-icon i {
+    font-size: 40px;
+    color: white;
+}
+
+.success-content h4 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: #1e1e1e;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.success-content p {
+    color: #6c757d;
+    margin-bottom: 25px;
+    font-size: 16px;
+}
+
+.success-content .btn {
+    padding: 12px 30px;
+    font-size: 16px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Loading spinner for button */
+.btn-loading {
+    position: relative;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.btn-loading .btn_label {
+    visibility: hidden;
+}
+
+.btn-loading::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 50%;
+    left: 50%;
+    margin-left: -10px;
+    margin-top: -10px;
+    border: 2px solid rgba(255,255,255,0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+    to { transform: rotate(360deg); }
 }

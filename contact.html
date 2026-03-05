@@ -366,6 +366,47 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
+
+        /* Questionnaire Button Styles */
+        .questionnaire-section {
+            margin-top: 40px;
+            text-align: center;
+        }
+        
+        .questionnaire-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 40px;
+            font-size: 18px;
+            font-weight: 600;
+            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            color: white;
+            border-radius: 50px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(229,62,126,0.3);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .questionnaire-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(229,62,126,0.4);
+            color: white;
+        }
+        
+        .questionnaire-btn i {
+            font-size: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        .questionnaire-description {
+            margin-top: 15px;
+            color: #6c757d;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -554,69 +595,103 @@
                     </div>
                     
                     <!-- Contact Form Column -->
-                    <div class="col-lg-8">
-                        <div class="instant_contact_form fade-up">
-                            <span class="tech-badge-sm"><i class="fa-regular fa-envelope"></i> GET IN TOUCH</span>
-                            <div class="small_title">
-                                <i class="fa-solid fa-envelope-open-text"></i>
-                                Send Us a Message
-                            </div>
-                            <h3 class="form_title">
-                                Tell us about your vision, and we'll build the structural, intelligent, and visual framework for your future success.
-                            </h3>
-                            
-                            <form action="#" method="POST">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="input_title" for="input_name">
-                                                <i class="fa-regular fa-user"></i>
-                                            </label>
-                                            <input id="input_name" class="form-control" type="text" name="name" placeholder="Your Full Name" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="input_title" for="input_email">
-                                                <i class="fa-regular fa-envelope"></i>
-                                            </label>
-                                            <input id="input_email" class="form-control" type="email" name="email" placeholder="Your Email Address" required>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="input_title" for="input_phone">
-                                                <i class="fa-regular fa-phone-volume"></i>
-                                            </label>
-                                            <input id="input_phone" class="form-control" type="tel" name="phone" placeholder="Your Phone Number">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label class="input_title" for="input_company">
-                                                <i class="fa-regular fa-globe"></i>
-                                            </label>
-                                            <input id="input_company" class="form-control" type="text" name="companyname" placeholder="Your Company Name">
-                                        </div>
-                                    </div>
-                                    <div class="col-12">
-                                        <div class="form-group">
-                                            <label class="input_title" for="input_message">
-                                                <i class="fa-regular fa-comments"></i>
-                                            </label>
-                                            <textarea id="input_message" class="form-control" name="message" rows="5" placeholder="How can we help revolutionize your business?"></textarea>
-                                        </div>
-                                        <button type="submit" class="btn btn-primary ripple-effect">
-                                            <span class="btn_label" data-text="Send Message">Send Message</span>
-                                            <span class="btn_icon">
-                                                <i class="fa-solid fa-arrow-up-right"></i>
-                                            </span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
+                   <!-- Contact Form Column -->
+<div class="col-lg-8">
+    <div class="instant_contact_form fade-up">
+        <span class="tech-badge-sm"><i class="fa-regular fa-envelope"></i> GET IN TOUCH</span>
+        <div class="small_title">
+            <i class="fa-solid fa-envelope-open-text"></i>
+            Send Us a Message
+        </div>
+        <h3 class="form_title">
+            Tell us about your vision, and we'll build the structural, intelligent, and visual framework for your future success.
+        </h3>
+        
+        <!-- UPDATED: Formspree Integration with Success Message -->
+        <form id="contactForm" action="https://formspree.io/f/mdawnera" method="POST">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="input_title" for="input_name">
+                            <i class="fa-regular fa-user"></i>
+                        </label>
+                        <input id="input_name" class="form-control" type="text" name="name" placeholder="Your Full Name" required>
                     </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="input_title" for="input_email">
+                            <i class="fa-regular fa-envelope"></i>
+                        </label>
+                        <input id="input_email" class="form-control" type="email" name="email" placeholder="Your Email Address" required>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="input_title" for="input_phone">
+                            <i class="fa-regular fa-phone-volume"></i>
+                        </label>
+                        <input id="input_phone" class="form-control" type="tel" name="phone" placeholder="Your Phone Number">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label class="input_title" for="input_company">
+                            <i class="fa-regular fa-globe"></i>
+                        </label>
+                        <input id="input_company" class="form-control" type="text" name="company" placeholder="Your Company Name">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="form-group">
+                        <label class="input_title" for="input_message">
+                            <i class="fa-regular fa-comments"></i>
+                        </label>
+                        <textarea id="input_message" class="form-control" name="message" rows="5" placeholder="How can we help revolutionize your business?" required></textarea>
+                    </div>
+                    
+                    <!-- Hidden fields for Formspree -->
+                    <input type="hidden" name="_subject" value="New Contact Form Submission from Afribiz Connect">
+                    
+                    <button type="submit" id="submitBtn" class="btn btn-primary ripple-effect">
+                        <span class="btn_label" data-text="Send Message">Send Message</span>
+                        <span class="btn_icon">
+                            <i class="fa-solid fa-arrow-up-right"></i>
+                        </span>
+                    </button>
+                </div>
+            </div>
+        </form>
+        
+        <!-- Success Message Popup (Hidden by default) -->
+        <div id="successMessage" class="success-message" style="display: none;">
+            <div class="success-content">
+                <div class="success-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4>Message Sent Successfully!</h4>
+                <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                <button class="btn btn-primary" onclick="closeSuccessMessage()">Close</button>
+            </div>
+        </div>
+        
+        <!-- End Success Message -->
+        
+        <!-- Questionnaire Button -->
+        <div class="questionnaire-section">
+            <a href="https://docs.google.com/forms/d/183knnov07qFifgcordDvT2wZ_fkPHBPCguk6GaQ5l1k/viewform?usp=sharing" target="_blank" class="questionnaire-btn ripple-effect">
+                <i class="fa-regular fa-clipboard"></i>
+                Tell Us Your Vision
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+            <p class="questionnaire-description">
+                Help us understand your vision for your business by completing our detailed questionnaire.
+            </p>
+        </div>
+        <!-- End Questionnaire Button -->
+        
+    </div>
+</div>
                 </div>
             </div>
             
@@ -806,5 +881,57 @@
     <script src="js/appear.min.js"></script>
     <script src="js/odometer.min.js"></script>
     <script src="js/main.js"></script>
+    <!-- Add this before the closing </body> tag -->
+<script>
+// Handle form submission with success message
+document.getElementById('contactForm').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = this;
+    const submitBtn = document.getElementById('submitBtn');
+    const formData = new FormData(form);
+    
+    // Show loading state
+    submitBtn.classList.add('btn-loading');
+    submitBtn.disabled = true;
+    
+    try {
+        const response = await fetch(form.action, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json'
+            }
+        });
+        
+        if (response.ok) {
+            // Show success message
+            document.getElementById('successMessage').style.display = 'flex';
+            form.reset(); // Clear the form
+        } else {
+            alert('Oops! There was a problem sending your message. Please try again.');
+        }
+    } catch (error) {
+        alert('Oops! There was a problem sending your message. Please try again.');
+    } finally {
+        // Remove loading state
+        submitBtn.classList.remove('btn-loading');
+        submitBtn.disabled = false;
+    }
+});
+
+// Function to close success message
+function closeSuccessMessage() {
+    document.getElementById('successMessage').style.display = 'none';
+}
+
+// Close success message when clicking outside
+document.addEventListener('click', function(e) {
+    const successMessage = document.getElementById('successMessage');
+    if (e.target === successMessage) {
+        closeSuccessMessage();
+    }
+});
+</script>
 </body>
 </html>
