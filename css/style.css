@@ -7022,7 +7022,7 @@ mark,
 
 /* Gradient text for mark */
 .gradient-text {
-  background: linear-gradient(135deg, #E53E7E 0%, #F58A42 100%);
+  background: linear-gradient(135deg, #F58A42 0%, #F58A42 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -7069,7 +7069,7 @@ h1, h2, h3, h4, h5, h6,
 
 /* Gradient text utility */
 .gradient-text-pink {
-  background: linear-gradient(135deg, #E53E7E, #F58A42);
+  background: linear-gradient(135deg, #F58A42, #F58A42);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -7715,4 +7715,252 @@ h1, h2, h3, h4, h5, h6,
 
 @keyframes spinner {
     to { transform: rotate(360deg); }
+}
+/* Make Free Consultation button orange with white text */
+.site_header_2 .header_btns_group .btn-primary {
+  background: #F58A42 !important; /* Solid orange color */
+  color: white !important;
+  border: none !important;
+  padding: 0 30px !important;
+  box-shadow: 0 4px 15px rgba(245, 138, 66, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.site_header_2 .header_btns_group .btn-primary:hover {
+  background: #e07a3a !important; /* Darker orange on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(245, 138, 66, 0.5) !important;
+}
+
+.site_header_2 .header_btns_group .btn-primary .btn_label,
+.site_header_2 .header_btns_group .btn-primary .btn_icon {
+  color: white !important;
+}
+
+.site_header_2 .header_btns_group .btn-primary .btn_label:before {
+  color: white !important;
+}
+
+/* For non-sticky header (on dark background) */
+.site_header_2:not(.sticky) .header_btns_group .btn-primary {
+  background: #F58A42 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.site_header_2:not(.sticky) .header_btns_group .btn-primary:hover {
+  background: #e07a3a !important;
+}
+
+/* For sticky header (keep same orange) */
+.site_header_2.sticky .header_btns_group .btn-primary {
+  background: #F58A42 !important;
+  color: white !important;
+  border: none !important;
+}
+
+.site_header_2.sticky .header_btns_group .btn-primary:hover {
+  background: #e07a3a !important;
+}
+
+/* Mobile menu button - make it visible */
+.site_header_2 .mobile_menu_btn {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: all 0.3s ease;
+}
+
+/* For non-sticky header (on dark background) */
+.site_header_2:not(.sticky) .mobile_menu_btn {
+  background: rgba(219, 164, 10, 0.2);
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.site_header_2:not(.sticky) .mobile_menu_btn:hover {
+  background: #F58A42;
+  border-color: #F58A42;
+  color: white !important;
+}
+
+/* For sticky header (on light background) */
+.site_header_2.sticky .mobile_menu_btn {
+  background: rgba(245, 138, 66, 0.1);
+  color: #F58A42 !important;
+  border: 1px solid rgba(245, 138, 66, 0.3);
+}
+
+.site_header_2.sticky .mobile_menu_btn:hover {
+  background: #F58A42;
+  color: white !important;
+  border-color: #F58A42;
+}
+
+/* Dropdown toggle arrow color */
+.site_header_2:not(.sticky) .dropdown-toggle::after {
+  color: white !important;
+}
+
+.site_header_2.sticky .dropdown-toggle::after {
+  color: var(--bs-dark) !important;
+}
+
+/* For tablet/mobile screens */
+@media screen and (max-width: 991px) {
+  .site_header_2 .header_btns_group {
+    gap: 8px;
+  }
+  
+  .site_header_2 .header_btns_group .btn {
+    padding: 0 15px !important;
+    font-size: 13px;
+  }
+  
+  .site_header_2 .header_btns_group .btn .btn_label {
+    padding: 12px 0px 10px !important;
+  }
+  
+  /* Make mobile menu button more visible */
+  .site_header_2:not(.sticky) .mobile_menu_btn {
+    background: #F58A42;
+    border: none;
+    color: white !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  
+  .site_header_2.sticky .mobile_menu_btn {
+    background: #F58A42;
+    color: white !important;
+    border: none;
+    box-shadow: 0 4px 10px rgba(245, 138, 66, 0.3);
+  }
+}
+
+/* For very small screens */
+@media screen and (max-width: 575px) {
+  .site_header_2 .header_btns_group .btn .btn_label {
+    font-size: 12px;
+    padding: 10px 0px 8px !important;
+  }
+  
+  .site_header_2 .mobile_menu_btn {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+  }
+}
+/* Make navigation menu buttons have white containers */
+.site_header_2 .main_menu_list > li > a {
+  background: transparent !important;
+  border: 2px solid white !important;
+  border-radius: 50px !important;
+  padding: 8px 20px !important;
+  color: white !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+/* For non-sticky header - white borders with white text */
+.site_header_2:not(.sticky) .main_menu_list > li > a {
+  border: 2px solid white !important;
+  color: white !important;
+}
+
+/* Hover state - orange background with white text */
+.site_header_2:not(.sticky) .main_menu_list > li > a:hover,
+.site_header_2:not(.sticky) .main_menu_list > li.active > a {
+  background: #F58A42 !important;
+  border-color: #F58A42 !important;
+  color: white !important;
+}
+
+/* For sticky header - white borders with dark text */
+.site_header_2.sticky .main_menu_list > li > a {
+  border: 2px solid rgba(0, 0, 0, 0.2) !important;
+  color: #333333 !important;
+}
+
+/* Hover state for sticky - orange background with white text */
+.site_header_2.sticky .main_menu_list > li > a:hover,
+.site_header_2.sticky .main_menu_list > li.active > a {
+  background: #F58A42 !important;
+  border-color: #F58A42 !important;
+  color: white !important;
+}
+
+/* Dropdown toggle arrow color */
+.site_header_2:not(.sticky) .dropdown-toggle::after {
+  color: white !important;
+}
+
+.site_header_2.sticky .dropdown-toggle::after {
+  color: #333333 !important;
+}
+
+.site_header_2.sticky .main_menu_list > li > a:hover .dropdown-toggle::after,
+.site_header_2.sticky .main_menu_list > li.active > a .dropdown-toggle::after {
+  color: white !important;
+}
+
+/* For tablet/mobile screens */
+@media screen and (max-width: 991px) {
+  .site_header_2 .main_menu_list {
+    display: flex !important;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 0;
+  }
+  
+  .site_header_2 .main_menu_list > li {
+    width: auto;
+  }
+  
+  .site_header_2 .main_menu_list > li > a {
+    padding: 6px 15px !important;
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .site_header_2 .main_menu_list > li > a {
+    padding: 5px 12px !important;
+    font-size: 13px;
+    border-width: 1.5px !important;
+  }
+}
+
+@media screen and (max-width: 575px) {
+  .site_header_2 .main_menu_list > li > a {
+    padding: 4px 10px !important;
+    font-size: 12px;
+  }
+}
+
+/* If you want the text to be orange instead of dark on sticky header */
+/* Option 2: Orange text on sticky header */
+.site_header_2.sticky .main_menu_list > li > a {
+  border: 2px solid rgba(245, 138, 66, 0.3) !important;
+  color: #F58A42 !important;
+}
+
+.site_header_2.sticky .main_menu_list > li > a:hover,
+.site_header_2.sticky .main_menu_list > li.active > a {
+  background: #F58A42 !important;
+  border-color: #F58A42 !important;
+  color: white !important;
+}
+
+.site_header_2.sticky .dropdown-toggle::after {
+  color: #F58A42 !important;
+}
+
+.site_header_2.sticky .main_menu_list > li > a:hover .dropdown-toggle::after,
+.site_header_2.sticky .main_menu_list > li.active > a .dropdown-toggle::after {
+  color: white !important;
 }
