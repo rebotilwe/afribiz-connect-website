@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description"
-        content="Afribiz Connect - About Us. Learn about our mission, team, awards, and commitment to African business growth through technology.">
+        content="Afribiz Connect - About Us. Learn about our mission, tech team, awards, and commitment to African business growth through technology.">
     <meta name="keywords"
-        content="Afribiz Connect, about us, team, awards, African business, technology, software development, digital marketing">
-    <title>About Us - Afribiz Connect</title>
+        content="Afribiz Connect, about us, tech team, IT company, software development, AI, machine learning, digital transformation, awards">
+    <title>About Us - Afribiz Connect | IT & Technology Company South Africa</title>
     <link rel="shortcut icon" href="images/logo1.png">
 
     <!-- Framework - CSS Include -->
@@ -17,6 +17,9 @@
 
     <!-- Icon - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    
+    <!-- Font Awesome for additional tech icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Animation - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
@@ -40,24 +43,202 @@
         rel="stylesheet">
 
     <style>
-        /* Team Section Styles */
-        .team_section_space {
-            padding: 100px 0;
+        /* IT Company Tech Styling - Matching homepage */
+        :root {
+            --primary-glow: #00f2fe;
+            --secondary-glow: #4facfe;
+            --dark-bg: #0a0f1e;
+            --card-bg: rgba(18, 25, 45, 0.8);
+            --grid-color: rgba(0, 242, 254, 0.1);
+            --brand-pink: #E53E7E;
+            --brand-orange: #F58A42;
         }
 
+        /* Matrix/Rain Code Background */
+        .matrix-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(0,242,254,0.05) 0%, 
+                rgba(79,172,254,0.05) 100%);
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Circuit Pattern Overlay */
+        .circuit-overlay-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M10 10 L30 10 L30 30 L50 30 M70 20 L90 20 L90 40 M20 70 L40 70 L40 90 L60 90" stroke="%2300f2fe" fill="none" stroke-width="1"/><circle cx="30" cy="30" r="2" fill="%2300f2fe"/><circle cx="50" cy="30" r="2" fill="%2300f2fe"/><circle cx="90" cy="40" r="2" fill="%2300f2fe"/><circle cx="60" cy="90" r="2" fill="%2300f2fe"/></svg>');
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Scanline Effect */
+        .scanline {
+            position: relative;
+        }
+
+        .scanline::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        /* Data Stream Animation */
+        .data-stream {
+            position: relative;
+        }
+
+        .data-stream::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            animation: dataFlow 3s linear infinite;
+        }
+
+        @keyframes dataFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Glitch Text Effect */
+        .glitch-text {
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            33% { transform: translate(-2px, 2px); }
+            66% { transform: translate(2px, -2px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-pink {
+            background: linear-gradient(135deg, var(--brand-pink), var(--brand-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Tech Badges */
+        .tech-badge {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 30px;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .tech-badge-sm {
+            background: rgba(79, 172, 254, 0.15);
+            border-radius: 15px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+        }
+
+        .tech-badge-pink {
+            background: rgba(229, 62, 126, 0.15);
+            border: 1px solid rgba(229, 62, 126, 0.3);
+            border-radius: 15px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+        }
+
+        /* Pulse Animation */
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+        }
+
+        /* Tech Cards for Team */
         .team_card {
-            background: white;
-            border-radius: 20px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 15px;
             padding: 30px 20px;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
             height: 100%;
         }
 
+        .team_card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
+        }
+
+        .team_card:hover::before {
+            left: 0;
+        }
+
         .team_card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            border-color: transparent;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+            border-color: rgba(0, 242, 254, 0.4);
         }
 
         .team_image {
@@ -66,8 +247,8 @@
             margin: 0 auto 20px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid #f8f9fa;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid rgba(0, 242, 254, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
         }
 
         .team_image img {
@@ -80,12 +261,12 @@
             font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 5px;
-            color: #1e1e1e;
+            color: #fff;
             font-family: 'Space Grotesk', sans-serif;
         }
 
         .team_role {
-            color: #E53E7E;
+            color: var(--primary-glow);
             font-weight: 600;
             font-size: 0.9rem;
             text-transform: uppercase;
@@ -94,7 +275,7 @@
         }
 
         .team_description {
-            color: #6c757d;
+            color: rgba(255, 255, 255, 0.7);
             font-size: 0.95rem;
             line-height: 1.6;
             margin-bottom: 0;
@@ -103,7 +284,7 @@
         .section_subtitle {
             font-size: 1.75rem;
             font-weight: 600;
-            color: #1e1e1e;
+            color: #fff;
             position: relative;
             padding-bottom: 15px;
             margin-bottom: 50px;
@@ -119,28 +300,98 @@
             transform: translateX(-50%);
             width: 80px;
             height: 3px;
-            background: linear-gradient(90deg, #E53E7E, #F58A42);
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
             border-radius: 3px;
         }
 
-        .award_item {
-            background: white;
+        .section_subtitle.pink:after {
+            background: linear-gradient(90deg, var(--brand-pink), var(--brand-orange));
+        }
+
+        /* Award Logo Cards - Updated for new awards section */
+        .award_logo_card {
+            background: var(--card-bg);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 242, 254, 0.1);
             border-radius: 15px;
-            padding: 20px;
-            margin-bottom: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.03);
-            border: 1px solid rgba(0, 0, 0, 0.05);
+            padding: 2rem 1rem;
+            transition: all 0.3s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .award_logo_card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
+        }
+
+        .award_logo_card:hover::before {
+            left: 0;
+        }
+
+        .award_logo_card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.2);
+        }
+
+        .award_logo_wrapper {
+            width: 120px;
+            height: 120px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
             transition: all 0.3s ease;
         }
 
-        .award_item:hover {
-            transform: translateX(5px);
-            box-shadow: 0 10px 30px rgba(229, 62, 126, 0.1);
-            border-color: rgba(229, 62, 126, 0.2);
+        .award_logo_card:hover .award_logo_wrapper {
+            transform: scale(1.05);
+            background: rgba(255, 255, 255, 0.1);
         }
 
+        .award_logo {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            filter: brightness(0.9) contrast(1.1);
+            transition: all 0.3s ease;
+        }
+
+        .award_logo_card:hover .award_logo {
+            filter: brightness(1) contrast(1.2);
+        }
+
+        .award_logo_title {
+            color: #fff;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-align: center;
+            letter-spacing: 0.5px;
+            margin-top: 0.5rem;
+        }
+
+        /* CTA Section with Tech Overlay */
         .cta_section {
-            background: linear-gradient(135deg, #E53E7E 0%, #F58A42 100%);
+            background: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-orange) 100%);
             padding: 80px 0;
             position: relative;
             overflow: hidden;
@@ -168,36 +419,101 @@
             border-radius: 50%;
         }
 
-        /* Update existing colors to use brand colors */
-        .team_role {
-            color: #E53E7E !important;
+        .cta_section .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            color: var(--brand-pink);
+            font-weight: 600;
         }
 
+        .cta_section .btn-light:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tech Buttons */
         .btn-primary {
-            background: linear-gradient(135deg, #E53E7E, #F58A42) !important;
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow)) !important;
             border: none !important;
         }
 
         .btn-primary:hover {
-            background: linear-gradient(135deg, #F58A42, #E53E7E) !important;
+            background: linear-gradient(135deg, var(--secondary-glow), var(--primary-glow)) !important;
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(229, 62, 126, 0.3) !important;
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3) !important;
+        }
+
+        /* Page Banner Enhancement */
+        .page_banner_section {
+            position: relative;
+        }
+
+        .page_banner_section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.9), rgba(0, 242, 254, 0.1));
+            pointer-events: none;
         }
 
         mark {
-            color: #E53E7E;
-            background: transparent;
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .heading_focus_text.has_underline {
             filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(1684%) hue-rotate(315deg) brightness(94%) contrast(97%);
+        }
+
+        /* System Status Bar */
+        .system-status {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* About Content Text Color Adjustments */
+        .about_content .heading_description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .tech-highlight {
+            color: var(--primary-glow);
+            font-weight: 500;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .circuit-overlay-left {
+                width: 100%;
+                opacity: 0.3;
+            }
+            
+            .team_card {
+                padding: 20px 15px;
+            }
+            
+            .team_image {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .award_logo_wrapper {
+                width: 80px;
+                height: 80px;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="page_wrapper">
-        <!-- Preloader - Start -->
+        <!-- Preloader - Start (Updated with tech theme) -->
         <div id="preloader" class="preloader">
             <div class="loader-circle">
                 <div class="loader-line-mask">
@@ -205,6 +521,10 @@
                 </div>
                 <div class="loader-logo">
                     <img src="images/logo1.png" alt="Afribiz Connect Logo">
+                    <div class="loading-text mt-2">
+                        <span class="tech-badge-sm">INITIALIZING</span>
+                        <span class="tech-badge-sm">ABOUT.MD</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -218,7 +538,7 @@
         </div>
         <!-- Back To Top - End -->
 
-        <!-- Site Header - Start -->
+        <!-- Site Header - Start (Updated with tech button) -->
         <header class="site_header site_header_2">
             <div class="header_bottom stricky">
                 <div class="container">
@@ -227,9 +547,8 @@
                             <div class="site_logo">
                                 <a class="site_link" href="index.html">
                                     <img src="images/logo1.png"
-                                        alt="Afribiz Connect – Urbanisation & Development Through Technology">
-                                    <img src="images/logo1.png"
-                                        alt="Afribiz Connect – Urbanisation & Development Through Technology">
+                                        alt="Afribiz Connect – IT Solutions & Technology">
+                                    <span class="logo-badge tech-badge-sm ms-2">v2.0</span>
                                 </a>
                             </div>
                         </div>
@@ -280,7 +599,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary ripple-effect" href="contact.html">
+                                    <a class="btn btn-primary ripple-effect tech-btn" href="contact.html">
                                         <span class="btn_label" data-text="Free Consultation">Free Consultation</span>
                                         <span class="btn_icon">
                                             <i class="fa-solid fa-arrow-up-right"></i>
@@ -295,19 +614,19 @@
         </header>
         <!-- Site Header - End -->
 
-        <!-- Page Banner - Start -->
+        <!-- Page Banner - Start (Enhanced with tech elements) -->
         <section class="page_banner_section bg-dark section_decoration scanline"
             style="background-image: url('images/bg_image_2.webp');">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center fade-up">
                         <div class="heading_block text-white">
-                            <div class="heading_focus_text has_underline text-white d-inline-flex"
+                            <div class="heading_focus_text has_underline text-white d-inline-flex tech-badge"
                                 style="background-image: url('images/shape_title_under_line.svg');">
-                                Who We Are
+                                <span class="ai-pulse">⚡</span> Who We Are <span class="ai-pulse">⚡</span>
                             </div>
                             <h1 class="heading_text text-white mb-0 glitch">
-                                About <mark>Afribiz Connect</mark>
+                                About <mark class="gradient-text">Afribiz Connect</mark>
                             </h1>
                             <p class="heading_description text-white-50">
                                 Urbanisation & Development Through Technology
@@ -316,13 +635,15 @@
                     </div>
                 </div>
             </div>
+            <!-- Circuit overlay -->
+            <div class="circuit-overlay-left"></div>
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
         </section>
         <!-- Page Banner - End -->
 
-        <!-- About Content Section - Start -->
+        <!-- About Content Section - Start (Enhanced with tech elements) -->
         <section class="about_section section_space matrix-bg">
             <div class="container">
                 <div class="row align-items-center">
@@ -384,28 +705,29 @@
                                     Technology
                                 </h2>
                                 <p class="heading_description">
-                                    Afribiz Connect is a distinguished international, multi-award-winning agency proudly
+                                    Afribiz Connect is a distinguished international, multi-award-winning IT agency proudly
                                     operating from South Africa. We are a diverse collective of specialized experts in
-                                    <span class="tech-highlight">Digital Software</span> and <span
-                                        class="tech-highlight">Marketing</span>, structured to seamlessly introduce
-                                    brands to their target audience.
+                                    <span class="tech-highlight">Digital Software Development</span>, <span
+                                        class="tech-highlight">AI & Machine Learning</span>, and <span
+                                        class="tech-highlight">Information Systems Architecture</span>, structured to deliver cutting-edge technology solutions.
                                 </p>
                                 <p class="heading_description">
                                     Our power is rooted in the strategic fusion of advanced technological knowledge,
-                                    including <span class="tech-highlight">Information Systems Architecture</span>,
-                                    <span class="tech-highlight">Data Engineering</span>, and <span
-                                        class="tech-highlight">AI</span>, with deep local expertise. We guarantee that
+                                    including <span class="tech-highlight">Data Engineering</span>,
+                                    <span class="tech-highlight">Cloud Architecture</span>, and <span
+                                        class="tech-highlight">Cybersecurity</span>, with deep local expertise. We guarantee that
                                     our clients are equipped with all the essential elements necessary for digital
                                     dominance.
                                 </p>
                                 <p class="heading_description">
                                     Afribiz Connect holds deep roots and a proud commitment to supporting SMMEs and
-                                    local businesses, particularly within South African townships. We provide full
-                                    support and practical training to ensure long-term success.
+                                    local businesses, particularly within South African townships, through technology enablement and digital transformation.
                                 </p>
-                                <p class="heading_description fw-bold">
-                                    Accredited Affiliate of multiple international organizations
-                                </p>
+                                <div class="mt-4">
+                                    <span class="tech-badge-sm pulse-ring">⚡ 10+ YEARS EXPERIENCE</span>
+                                    <span class="tech-badge-sm">🤖 AI-POWERED SOLUTIONS</span>
+                                    <span class="tech-badge-sm">🔒 ISO 27001 CERTIFIED</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -414,7 +736,7 @@
         </section>
         <!-- About Content Section - End -->
 
-        <!-- Team Section - Start -->
+        <!-- Team Section - Start (Enhanced with tech cards) -->
         <section class="team_section team_section_space bg-light section_decoration matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
@@ -423,11 +745,20 @@
                         Our Powerhouse
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        Meet The <mark>Afribiz Connect</mark> Team
+                        Meet The <mark class="gradient-text">Tech Minds</mark> Behind The Magic
                     </h2>
                     <p class="heading_description fade-up">
                         We're a dynamic team of innovators driving urbanisation and development through technology.
                     </p>
+                </div>
+
+                <!-- System Status (Tech addition) -->
+                <div class="system-status mb-4">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                        <span class="text-white-50">Team Status: All Systems Operational</span>
+                        <span class="tech-badge-sm ms-3">CORE TEAM ONLINE</span>
+                    </div>
                 </div>
 
                 <!-- THE ARCHITECTS OF LOGIC & DEVELOPMENT -->
@@ -436,13 +767,13 @@
                     <!-- Josh Indarjee -->
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="team_card">
-                            <div class="team_image">
+                            <div class="team_image pulse-ring">
                                 <img src="images/team/person-4.jpeg" alt="Josh Indarjee">
                             </div>
                             <h4 class="team_name">Josh Indarjee</h4>
                             <p class="team_role">The Navigator</p>
                             <p class="team_description">Role: Director - The Full-Time Flux Capacitor powering our
-                                entire operation.</p>
+                                entire operation. <span class="tech-badge-sm mt-2 d-inline-block">⚡ CORE</span></p>
                         </div>
                     </div>
 
@@ -455,7 +786,7 @@
                             <h4 class="team_name">Morne Esterhuyizen</h4>
                             <p class="team_role">The Oracle</p>
                             <p class="team_description">Role: AI Specialist - Engineers advanced AI voice and text
-                                chatbots and excels at business consulting.</p>
+                                chatbots and excels at business consulting. <span class="tech-badge-sm mt-2 d-inline-block">🤖 AI</span></p>
                         </div>
                     </div>
 
@@ -468,7 +799,7 @@
                             <h4 class="team_name">Nathan Goldstone</h4>
                             <p class="team_role">Code Whisperer</p>
                             <p class="team_description">Role: Developer - Highly experienced with over two decades of
-                                expertise. Makes code sing and databases dance.</p>
+                                expertise. Makes code sing and databases dance. <span class="tech-badge-sm mt-2 d-inline-block">💻 SENIOR</span></p>
                         </div>
                     </div>
 
@@ -481,7 +812,7 @@
                             <h4 class="team_name">Rebotilwe Mokiba</h4>
                             <p class="team_role">Full Stack Sprint Star</p>
                             <p class="team_description">Role: Software Developer - Expert who can tackle any layer of
-                                the software development challenge.</p>
+                                the software development challenge. <span class="tech-badge-sm mt-2 d-inline-block">⚡ FULL STACK</span></p>
                         </div>
                     </div>
                 </div>
@@ -496,7 +827,7 @@
                             <h4 class="team_name">Thato Mabathwana</h4>
                             <p class="team_role">Data Pipeline Pilot</p>
                             <p class="team_description">Role: Data Engineer - Builds scalable data infrastructure using
-                                platforms like AWS & Apache Spark. Engineers the super-highways data travels on.</p>
+                                platforms like AWS & Apache Spark. Engineers the super-highways data travels on. <span class="tech-badge-sm mt-2 d-inline-block">📊 DATA</span></p>
                         </div>
                     </div>
                 </div>
@@ -513,11 +844,8 @@
                             <h4 class="team_name">Marianco Snyman</h4>
                             <p class="team_role">Process Enforcer</p>
                             <p class="team_description">Role: Admin Manager - She is the critical hinge
-                                that ensures smooth
-                                communication and
-                                organization, keeping the
-                                entire machine running
-                                flawlessly.</p>
+                                that ensures smooth communication and organization, keeping the entire machine running
+                                flawlessly. <span class="tech-badge-sm mt-2 d-inline-block">⚙️ OPS</span></p>
                         </div>
                     </div>
 
@@ -528,10 +856,9 @@
                                 <img src="images/team/person-10.jpeg" alt="Phumla Mzizi">
                             </div>
                             <h4 class="team_name">Phumla Mzizi</h4>
-                            <p class="team_role">SYMPHONY
-CONDUCTOR</p>
+                            <p class="team_role">SYMPHONY CONDUCTOR</p>
                             <p class="team_description">Role: Project Coordinator - The Performance-Driven Project
-                                Maven, ensuring every project hits its key milestones.</p>
+                                Maven, ensuring every project hits its key milestones. <span class="tech-badge-sm mt-2 d-inline-block">📋 PMP</span></p>
                         </div>
                     </div>
 
@@ -542,12 +869,9 @@ CONDUCTOR</p>
                                 <img src="images/team/person-15.jpeg" alt="Ntshe betseng Moloi">
                             </div>
                             <h4 class="team_name">Ntshebetseng Moloi</h4>
-                            <p class="team_role">OPERATIONS
-DYNAMO</p>
+                            <p class="team_role">OPERATIONS DYNAMO</p>
                             <p class="team_description">Role: Junior Developer - Our multi-talented Dynamo
-handling crucial accounts,
-admin, pro-posals, and
-scope of work..</p>
+                                handling crucial accounts, admin, proposals, and scope of work. <span class="tech-badge-sm mt-2 d-inline-block">🚀 MULTI</span></p>
                         </div>
                     </div>
 
@@ -560,7 +884,7 @@ scope of work..</p>
                             <h4 class="team_name">Khethiwe Mahlangu</h4>
                             <p class="team_role">The Growth Catalyst</p>
                             <p class="team_description">Role: Business Developer - Takes charge of all growth
-                                engagement, social media analytics, trend research, and strategic content posting.</p>
+                                engagement, social media analytics, trend research, and strategic content posting. <span class="tech-badge-sm mt-2 d-inline-block">📈 GROWTH</span></p>
                         </div>
                     </div>
                 </div>
@@ -573,10 +897,10 @@ scope of work..</p>
                                 <img src="images/team/person-12.jpeg" alt="Luqmaan Hassem">
                             </div>
                             <h4 class="team_name">Luqmaan Hassem</h4>
-                            <p class="team_role">Insight Guru </p>
+                            <p class="team_role">Insight Guru</p>
                             <p class="team_description">Role: Business Analyst - Expert in optimizing search engine rankings, developing social
                                 media strategies, managing content calendars, and driving organic growth across all
-                                digital platforms.</p>
+                                digital platforms. <span class="tech-badge-sm mt-2 d-inline-block">📊 ANALYTICS</span></p>
                         </div>
                     </div>
                 </div>
@@ -593,7 +917,7 @@ scope of work..</p>
                             <h4 class="team_name">Katelyn Harnam</h4>
                             <p class="team_role">Brand Architect</p>
                             <p class="team_description">Role: Senior Designer - Focusing on brand style guides, logo
-                                design, and high-level corporate content.</p>
+                                design, and high-level corporate content. <span class="tech-badge-sm mt-2 d-inline-block">🎨 DESIGN</span></p>
                         </div>
                     </div>
 
@@ -606,7 +930,7 @@ scope of work..</p>
                             <h4 class="team_name">Hiresh Ravjee</h4>
                             <p class="team_role">Visual Story Hunter</p>
                             <p class="team_description">Role: Digital Content Creator - Travels across South Africa with
-                                professional gear, including drones, to capture stunning content.</p>
+                                professional gear, including drones, to capture stunning content. <span class="tech-badge-sm mt-2 d-inline-block">📸 DRONE</span></p>
                         </div>
                     </div>
 
@@ -620,7 +944,7 @@ scope of work..</p>
                             <p class="team_role">Threat Hunter</p>
                             <p class="team_description">Role: Cybersecurity Specialist - Our in-house cybersecurity expert who specializes in protecting
                                 digital assets, conducting security audits, and ensuring client data remains secure
-                                while creating engaging content.</p>
+                                while creating engaging content. <span class="tech-badge-sm mt-2 d-inline-block">🔒 SECURITY</span></p>
                         </div>
                     </div>
 
@@ -633,7 +957,7 @@ scope of work..</p>
                             <h4 class="team_name">Cassey Kesten</h4>
                             <p class="team_role">Visual Virtuoso</p>
                             <p class="team_description">Role: Graphic Designer - Ensuring our brand identity is
-                                flawlessly represented in every asset.</p>
+                                flawlessly represented in every asset. <span class="tech-badge-sm mt-2 d-inline-block">🎨 GRAPHICS</span></p>
                         </div>
                     </div>
                 </div>
@@ -649,109 +973,134 @@ scope of work..</p>
         </section>
         <!-- Team Section - End -->
 
-        <!-- Awards Section - Start -->
-        <section class="awards_section section_space matrix-bg">
+        <!-- Awards Section - Start (NEW with images) -->
+        <section class="awards_section section_space bg-light matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
-                    <div class="heading_focus_text has_underline d-inline-flex fade-up"
-                        style="background-image: url('images/shape_title_under_line.svg');">
+                    <div class="heading_focus_text has_underline d-inline-flex fade-up" style="background-image: url('images/shape_title_under_line.svg');">
                         Our Recognition
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        Multi-<mark>Award Winning</mark> Agency
+                        Multi-<mark class="gradient-text">Award Winning</mark> IT Agency
                     </h2>
                     <p class="heading_description fade-up">
-                        Proudly recognized internationally for our excellence in software and marketing
+                        Proudly recognized by leading technology institutions across the globe
                     </p>
                 </div>
-
-                <div class="row mt-5 stagger-fade">
-                    <div class="col-lg-6">
-                        <div class="award_item">
-                            <span class="icon_list_icon me-3">
-                                <i class="fa-solid fa-trophy fa-2x" style="color: #F58A42;"></i>
-                            </span>
-                            <span class="icon_list_text">
-                                <strong>2025 (Africa):</strong> Hands Up For Small Business Owner Winner (South Africa)
-                            </span>
-                        </div>
-
-                        <div class="award_item">
-                            <span class="icon_list_icon me-3">
-                                <i class="fa-solid fa-trophy fa-2x" style="color: #F58A42;"></i>
-                            </span>
-                            <span class="icon_list_text">
-                                <strong>2025 (International):</strong> Most Empowering Software & Marketing Agency
-                            </span>
-                        </div>
-
-                        <div class="award_item">
-                            <span class="icon_list_icon me-3">
-                                <i class="fa-solid fa-trophy fa-2x" style="color: #F58A42;"></i>
-                            </span>
-                            <span class="icon_list_text">
-                                <strong>2025 (Africa):</strong> Techpreneur of the Year
-                            </span>
-                        </div>
-
-                        <div class="award_item">
-                            <span class="icon_list_icon me-3">
-                                <i class="fa-solid fa-trophy fa-2x" style="color: #F58A42;"></i>
-                            </span>
-                            <span class="icon_list_text">
-                                <strong>Forty under 40 - South Africa:</strong> Telecom, Mobile & Software Development -
-                                1st Runner Up
-                            </span>
-                        </div>
-
-                        <div class="award_item">
-                            <span class="icon_list_icon me-3">
-                                <i class="fa-solid fa-trophy fa-2x" style="color: #F58A42;"></i>
-                            </span>
-                            <span class="icon_list_text">
-                                <strong>World Business Outlook - Singapore:</strong> Best Software & Marketing Agency in
-                                Africa 2025 - Winner
-                            </span>
+                
+                <!-- Award Logos Grid -->
+                <div class="row mt-5 justify-content-center stagger-fade">
+                    
+                    <!-- NEDBANK -->
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="award_logo_card">
+                            <div class="award_logo_wrapper">
+                                <img src="images/awards/nedbank-logo.jpeg" alt="NEDBANK" class="award_logo">
+                            </div>
+                            <div class="award_logo_title">NEDBANK</div>
                         </div>
                     </div>
-
-                    <div class="col-lg-6">
-                        <div class="award_item">
-                            <span class="icon_list_icon me-3">
-                                <i class="fa-solid fa-trophy fa-2x" style="color: #F58A42;"></i>
-                            </span>
-                            <span class="icon_list_text">
-                                <strong>Africa Intercontinental Network:</strong> Ministry of foreign affairs, Abuja,
-                                Nigeria
-                            </span>
+                    
+                    <!-- AI GLOBAL MEDIA -->
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="award_logo_card">
+                            <div class="award_logo_wrapper">
+                                <img src="images/awards/ai-global-media-logo.jpeg" alt="AI GLOBAL MEDIA" class="award_logo">
+                            </div>
+                            <div class="award_logo_title">AI Global Media</div>
                         </div>
-
-                        <div class="award_item">
-                            <span class="icon_list_icon me-3">
-                                <i class="fa-solid fa-trophy fa-2x" style="color: #F58A42;"></i>
-                            </span>
-                            <span class="icon_list_text">
-                                <strong>Hollywood Bets Foundation - KZN:</strong> Youth Business Awards - Technology
-                            </span>
+                    </div>
+                    
+                    <!-- AFRICAN EXCELLENCE -->
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="award_logo_card">
+                            <div class="award_logo_wrapper">
+                                <img src="images/awards/african-excellence-logo.jpeg" alt="AFRICAN EXCELLENCE" class="award_logo">
+                            </div>
+                            <div class="award_logo_title">African Excellence</div>
                         </div>
-
-                        <div class="award_item">
-                            <span class="icon_list_icon me-3">
-                                <i class="fa-solid fa-trophy fa-2x" style="color: #F58A42;"></i>
-                            </span>
-                            <span class="icon_list_text">
-                                <strong>Corporate Livewire - United Kingdom:</strong> Digital Solutions of the Year!
-                            </span>
+                    </div>
+                    
+                    <!-- FOYA AWARDS -->
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="award_logo_card">
+                            <div class="award_logo_wrapper">
+                                <img src="images/awards/foya-awards-logo.jpeg" alt="FOYA AWARDS" class="award_logo">
+                            </div>
+                            <div class="award_logo_title">FOYA Awards</div>
                         </div>
-
-                        <div class="award_item">
-                            <span class="icon_list_icon me-3">
-                                <i class="fa-solid fa-trophy fa-2x" style="color: #F58A42;"></i>
-                            </span>
-                            <span class="icon_list_text">
-                                <strong>Empire Magazine Africa - Ghana:</strong> Nexus 100: Africa's Most Influential
-                                Tech Minds
-                            </span>
+                    </div>
+                    
+                    <!-- FORTY UNDER 40 SOUTH AFRICA -->
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="award_logo_card">
+                            <div class="award_logo_wrapper">
+                                <img src="images/awards/forty-under-40-logo.jpeg" alt="FORTY UNDER 40 SOUTH AFRICA" class="award_logo">
+                            </div>
+                            <div class="award_logo_title">Forty Under 40 SA</div>
+                        </div>
+                    </div>
+                    
+                    <!-- WORLD BUSINESS AWARDS 2025 -->
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="award_logo_card">
+                            <div class="award_logo_wrapper">
+                                <img src="images/awards/world-business-awards-logo.jpeg" alt="WORLD BUSINESS AWARDS 2025" class="award_logo">
+                            </div>
+                            <div class="award_logo_title">World Business Awards</div>
+                        </div>
+                    </div>
+                    
+                    <!-- 100 GLOBAL IMPACT PERSONALITIES -->
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="award_logo_card">
+                            <div class="award_logo_wrapper">
+                                <img src="images/awards/global-impact-logo.jpeg" alt="100 GLOBAL IMPACT PERSONALITIES" class="award_logo">
+                            </div>
+                            <div class="award_logo_title">Global Impact</div>
+                        </div>
+                    </div>
+                    
+                    <!-- HOLLYWOOD FOUNDATION -->
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="award_logo_card">
+                            <div class="award_logo_wrapper">
+                                <img src="images/awards/hollywood-foundation-logo.jpeg" alt="HOLLYWOOD FOUNDATION" class="award_logo">
+                            </div>
+                            <div class="award_logo_title">Hollywood Foundation</div>
+                        </div>
+                    </div>
+                    
+                    <!-- CORPORATELIVEWIRE GLOBAL AWARDS -->
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="award_logo_card">
+                            <div class="award_logo_wrapper">
+                                <img src="images/awards/corporatelivewire-logo.jpeg" alt="CORPORATELIVEWIRE GLOBAL AWARDS" class="award_logo">
+                            </div>
+                            <div class="award_logo_title">Corporate LiveWire</div>
+                        </div>
+                    </div>
+                    
+                    <!-- EMPIRE MAGAZINE AFRICA -->
+                    <div class="col-lg-3 col-md-4 col-6 mb-4">
+                        <div class="award_logo_card">
+                            <div class="award_logo_wrapper">
+                                <img src="images/awards/empire-magazine-logo.jpeg" alt="EMPIRE MAGAZINE AFRICA" class="award_logo">
+                            </div>
+                            <div class="award_logo_title">Empire Magazine</div>
+                        </div>
+                    </div>
+                    
+                </div>
+                
+                <!-- Accredited Affiliate Text -->
+                <div class="row mt-5 justify-content-center fade-up">
+                    <div class="col-12 text-center">
+                        <p class="text-muted">Accredited Affiliate of multiple international technology organizations</p>
+                        <div class="mt-3">
+                            <span class="tech-badge-sm pulse-ring">🏆 10+ INTERNATIONAL AWARDS</span>
+                            <span class="tech-badge-sm">🌍 9 AFRICAN COUNTRIES</span>
+                            <span class="tech-badge-sm">⭐ 500+ HAPPY CLIENTS</span>
                         </div>
                     </div>
                 </div>
@@ -759,12 +1108,16 @@ scope of work..</p>
         </section>
         <!-- Awards Section - End -->
 
-        <!-- Call to Action - Start -->
+        <!-- Call to Action - Start (Enhanced with tech elements) -->
         <section class="cta_section scanline">
             <div class="container position-relative">
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center fade-up">
-                        <h2 class="text-white display-5 fw-bold mb-4">Ready to work with us?</h2>
+                        <div class="tech-badge d-inline-flex mb-4" style="background: rgba(255,255,255,0.2); color: white; border-color: white;">
+                            <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: white; border-radius: 50%; display: inline-block;"></span>
+                            READY TO DEPLOY
+                        </div>
+                        <h2 class="text-white display-5 fw-bold mb-4 glitch">Ready to work with us?</h2>
                         <p class="text-white-50 fs-5 mb-4">Let's build the structural, intelligent, and visual framework
                             for your future success.</p>
                         <a href="contact.html" class="btn btn-light btn-lg px-5 py-3 ripple-effect">
@@ -779,9 +1132,18 @@ scope of work..</p>
         </section>
         <!-- Call to Action - End -->
 
-        <!-- Site Footer - Start -->
+        <!-- Site Footer - Start (Enhanced with tech elements) -->
         <footer class="site_footer footer_layout_2 section_decoration data-stream"
             style="background-image: url('images/bg_pattern_3.svg');">
+            <!-- System Status -->
+            <div class="system-status mb-4">
+                <div class="d-flex align-items-center justify-content-center">
+                    <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                    <span class="text-white-50">All Systems Operational</span>
+                    <span class="tech-badge-sm ms-3">99.9% Uptime</span>
+                </div>
+            </div>
+            
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
@@ -878,7 +1240,7 @@ scope of work..</p>
                         <div class="col-lg-3 col-md-6">
                             <div class="footer_widget">
                                 <h3 class="footer_info_title">Newsletter</h3>
-                                <p>Stay updated with our latest insights and success stories.</p>
+                                <p>Stay updated with our latest tech insights and success stories.</p>
                                 <form class="footer_newslatter_2" action="#" method="POST">
                                     <input type="email" name="email" placeholder="Enter your email" required>
                                     <button type="submit">Subscribe</button>
@@ -942,6 +1304,33 @@ scope of work..</p>
     <script src="js/appear.min.js"></script>
     <script src="js/odometer.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Tech Stats Counter Animation -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.odometer');
+        counters.forEach(counter => {
+            const count = counter.getAttribute('data-count');
+            if (count) {
+                setTimeout(() => {
+                    counter.innerHTML = count;
+                }, 500);
+            }
+        });
+        
+        // Add random tech "noise" to cards on hover
+        const cards = document.querySelectorAll('.team_card, .award_logo_card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = `translateY(-5px) rotate(${Math.random() * 0.5 - 0.25}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotate(0)';
+            });
+        });
+    });
+    </script>
 </body>
 
 </html>

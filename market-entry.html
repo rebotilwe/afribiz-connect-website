@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Market Entry Strategy services by Afribiz Connect. Your gateway to African markets with expert guidance on feasibility, compliance, and partner identification.">
-    <meta name="keywords" content="market entry, African markets, business expansion, market feasibility, regulatory compliance, South Africa market entry">
-    <title>Market Entry Strategy - Afribiz Connect</title>
+    <meta name="keywords" content="market entry, African markets, business expansion, market feasibility, regulatory compliance, South Africa market entry, technology consulting">
+    <title>Market Entry Strategy - Afribiz Connect | IT & Technology Consulting</title>
     <link rel="shortcut icon" href="images/logo1.png">
 
     <!-- Framework - CSS Include -->
@@ -14,6 +14,9 @@
 
     <!-- Icon - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    
+    <!-- Font Awesome for additional tech icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Animation - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
@@ -36,112 +39,363 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* IT Company Tech Styling - Matching homepage */
+        :root {
+            --primary-glow: #00f2fe;
+            --secondary-glow: #4facfe;
+            --dark-bg: #0a0f1e;
+            --card-bg: rgba(18, 25, 45, 0.8);
+            --grid-color: rgba(0, 242, 254, 0.1);
+            --brand-pink: #E53E7E;
+            --brand-orange: #F58A42;
+        }
+
+        /* Matrix/Rain Code Background */
+        .matrix-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(0,242,254,0.05) 0%, 
+                rgba(79,172,254,0.05) 100%);
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Circuit Pattern Overlay */
+        .circuit-overlay-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M10 10 L30 10 L30 30 L50 30 M70 20 L90 20 L90 40 M20 70 L40 70 L40 90 L60 90" stroke="%2300f2fe" fill="none" stroke-width="1"/><circle cx="30" cy="30" r="2" fill="%2300f2fe"/><circle cx="50" cy="30" r="2" fill="%2300f2fe"/><circle cx="90" cy="40" r="2" fill="%2300f2fe"/><circle cx="60" cy="90" r="2" fill="%2300f2fe"/></svg>');
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Scanline Effect */
+        .scanline {
+            position: relative;
+        }
+
+        .scanline::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        /* Data Stream Animation */
+        .data-stream {
+            position: relative;
+        }
+
+        .data-stream::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            animation: dataFlow 3s linear infinite;
+        }
+
+        @keyframes dataFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Glitch Text Effect */
+        .glitch-text {
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            33% { transform: translate(-2px, 2px); }
+            66% { transform: translate(2px, -2px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-pink {
+            background: linear-gradient(135deg, var(--brand-pink), var(--brand-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Tech Badges */
+        .tech-badge {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 30px;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-badge-sm {
+            background: rgba(79, 172, 254, 0.15);
+            border-radius: 15px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            display: inline-block;
+        }
+
+        .tech-badge-pink {
+            background: rgba(229, 62, 126, 0.15);
+            border: 1px solid rgba(229, 62, 126, 0.3);
+            border-radius: 15px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            color: var(--brand-pink);
+        }
+
+        /* Pulse Animation */
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+        }
+
+        /* Service Feature Cards - Updated with tech styling */
         .service_feature_card {
-            background: white;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 20px;
             padding: 30px;
             height: 100%;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
+
         .service_feature_card::before {
-            content: '';
+            content: "";
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #E53E7E, #F58A42, #E53E7E);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
         }
+
+        .service_feature_card:hover::before {
+            left: 0;
+        }
+
         .service_feature_card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
-            border-color: rgba(229,62,126,0.3);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
         }
-        .service_feature_card:hover::before {
-            opacity: 1;
-            animation: border-rotate 3s linear infinite;
-        }
-        @keyframes border-rotate {
-            from { filter: hue-rotate(0deg); }
-            to { filter: hue-rotate(360deg); }
-        }
+
         .service_icon_large {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1) 0%, rgba(245,138,66,0.1) 100%);
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(79, 172, 254, 0.1) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 25px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
             transition: all 0.3s ease;
         }
+
         .service_icon_large i {
             font-size: 40px;
-            color: #E53E7E;
+            color: var(--primary-glow);
+            filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.5));
             transition: all 0.3s ease;
         }
+
         .service_feature_card:hover .service_icon_large {
             transform: scale(1.1);
+            border-color: rgba(0, 242, 254, 0.8);
         }
-        .service_feature_card:hover .service_icon_large i {
-            color: #F58A42;
+
+        .service_feature_card h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
         }
+
+        .service_feature_card p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .service_feature_card .icon_list li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+        }
+
+        .service_feature_card .fa-circle-check {
+            color: var(--primary-glow) !important;
+            filter: drop-shadow(0 0 3px rgba(0, 242, 254, 0.5));
+            margin-right: 8px;
+        }
+
+        /* Country Cards - Updated with tech styling */
         .country_card {
-            background: white;
+            background: var(--card-bg);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 15px;
             padding: 25px;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
-        .country_card::after {
-            content: '';
+
+        .country_card::before {
+            content: "";
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(229,62,126,0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            transform: scale(0);
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
         }
+
+        .country_card:hover::before {
+            left: 0;
+        }
+
         .country_card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
-            border-color: rgba(229,62,126,0.3);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
         }
-        .country_card:hover::after {
-            opacity: 1;
-            transform: scale(1);
-        }
+
         .country_flag {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1), rgba(79, 172, 254, 0.1));
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 15px;
             font-size: 30px;
-            color: #E53E7E;
+            color: var(--primary-glow);
+            border: 1px solid rgba(0, 242, 254, 0.3);
         }
+
+        .country_card:hover .country_flag {
+            transform: scale(1.1);
+            border-color: rgba(0, 242, 254, 0.8);
+        }
+
+        .country_card h5 {
+            color: #fff;
+            font-weight: 600;
+        }
+
+        /* Process Steps - Updated with tech styling */
+        .process_step {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 20px;
+            position: relative;
+            height: 100%;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .process_step::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
+        }
+
+        .process_step:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.2);
+        }
+
+        .process_step:hover::before {
+            left: 100%;
+        }
+
         .step_number {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             border-radius: 50%;
             display: flex;
@@ -150,60 +404,63 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0 auto 20px;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
             transition: all 0.3s ease;
         }
-        .process_step {
-            text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 20px;
-            position: relative;
-            border: 1px solid rgba(0,0,0,0.05);
-            height: 100%;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        .process_step::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #E53E7E, #F58A42, transparent);
-            transition: left 0.5s ease;
-        }
-        .process_step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(229,62,126,0.1);
-        }
-        .process_step:hover::before {
-            left: 100%;
-        }
+
         .process_step:hover .step_number {
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(229,62,126,0.5);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.8);
         }
+
+        .process_step h4 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .process_step p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Benefit Items - Updated with tech styling */
         .benefit_item {
             padding: 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.1);
             transition: all 0.3s ease;
+            background: transparent;
         }
+
         .benefit_item:hover {
-            background: rgba(229,62,126,0.02);
+            background: rgba(0, 242, 254, 0.05);
             transform: translateX(10px);
+            border-color: var(--primary-glow);
         }
+
         .benefit_item:last-child {
             border-bottom: none;
         }
+
         .benefit_icon i {
-            color: #E53E7E !important;
+            color: var(--primary-glow) !important;
+            filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.5));
         }
+
+        .benefit_item h4 {
+            color: #fff;
+        }
+
+        .benefit_item p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* CTA Section - Updated with tech overlay */
         .cta_section {
-            background: linear-gradient(135deg, #E53E7E 0%, #F58A42 100%) !important;
+            background: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-orange) 100%);
+            padding: 80px 0;
             position: relative;
             overflow: hidden;
         }
+
         .cta_section::before {
             content: '';
             position: absolute;
@@ -214,35 +471,107 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
         }
+
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        mark {
-            color: #E53E7E;
-            background: transparent;
-        }
-        .heading_focus_text.has_underline {
-            filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(1684%) hue-rotate(315deg) brightness(94%) contrast(97%);
-        }
-        .tech-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
-            border: 1px solid rgba(229,62,126,0.3);
-            border-radius: 20px;
-            font-size: 12px;
+
+        .cta_section .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            color: var(--brand-pink);
             font-weight: 600;
-            color: #E53E7E;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
+        }
+
+        .cta_section .btn-light:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tech Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow)) !important;
+            border: none !important;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--secondary-glow), var(--primary-glow)) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3) !important;
+        }
+
+        /* Page Banner Enhancement */
+        .page_banner_section {
+            position: relative;
+        }
+
+        .page_banner_section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.9), rgba(0, 242, 254, 0.1));
+            pointer-events: none;
+        }
+
+        mark {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* System Status Bar */
+        .system-status {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Service Content Text Adjustments */
+        .service_content .heading_description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .service_image img {
+            border: 3px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Benefits Image */
+        .benefits_image img {
+            border: 3px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .circuit-overlay-left {
+                width: 100%;
+                opacity: 0.3;
+            }
+            
+            .service_feature_card {
+                padding: 20px;
+            }
+            
+            .service_icon_large {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .service_icon_large i {
+                font-size: 30px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="page_wrapper">
-        <!-- Preloader - Start -->
+        <!-- Preloader - Start (Updated with tech theme) -->
         <div id="preloader" class="preloader">
             <div class="loader-circle">
                 <div class="loader-line-mask">
@@ -250,6 +579,10 @@
                 </div>
                 <div class="loader-logo">
                     <img src="images/logo1.png" alt="Afribiz Connect Logo">
+                    <div class="loading-text mt-2">
+                        <span class="tech-badge-sm">INITIALIZING</span>
+                        <span class="tech-badge-sm">MARKET-ENTRY.MD</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -263,7 +596,7 @@
         </div>
         <!-- Back To Top - End -->
 
-        <!-- Site Header - Start -->
+        <!-- Site Header - Start (Updated with tech button) -->
         <header class="site_header site_header_2">
             <div class="header_bottom stricky">
                 <div class="container">
@@ -271,8 +604,8 @@
                         <div class="col-lg-3 col-5">
                             <div class="site_logo">
                                 <a class="site_link" href="index.html">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
+                                    <img src="images/logo1.png" alt="Afribiz Connect – IT Solutions & Technology">
+                                    <span class="logo-badge tech-badge-sm ms-2">v2.0</span>
                                 </a>
                             </div>
                         </div>
@@ -319,7 +652,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary ripple-effect" href="contact.html">
+                                    <a class="btn btn-primary ripple-effect tech-btn" href="contact.html">
                                         <span class="btn_label" data-text="Free Consultation">Free Consultation</span>
                                         <span class="btn_icon">
                                             <i class="fa-solid fa-arrow-up-right"></i>
@@ -334,32 +667,34 @@
         </header>
         <!-- Site Header - End -->
 
-        <!-- Page Banner - Start -->
+        <!-- Page Banner - Start (Enhanced with tech elements) -->
         <section class="page_banner_section bg-dark section_decoration scanline" style="background-image: url('images/bg_image_2.webp');">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center fade-up">
                         <div class="heading_block text-white">
-                            <div class="heading_focus_text has_underline text-white d-inline-flex" style="background-image: url('images/shape_title_under_line.svg');">
-                                Our Services
+                            <div class="heading_focus_text has_underline text-white d-inline-flex tech-badge" style="background-image: url('images/shape_title_under_line.svg');">
+                                <span class="ai-pulse">⚡</span> Our Services <span class="ai-pulse">⚡</span>
                             </div>
                             <h1 class="heading_text text-white mb-0 glitch">
-                                Market Entry <mark>Strategy</mark>
+                                Market Entry <mark class="gradient-text">Strategy</mark>
                             </h1>
                             <p class="heading_description text-white-50">
-                                Your gateway to successful expansion into African markets
+                                Your technology-enabled gateway to successful expansion into African markets
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Circuit overlay -->
+            <div class="circuit-overlay-left"></div>
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
         </section>
         <!-- Page Banner - End -->
 
-        <!-- Service Overview - Start -->
+        <!-- Service Overview - Start (Enhanced with tech styling) -->
         <section class="service_overview_section section_space matrix-bg">
             <div class="container">
                 <div class="row align-items-center">
@@ -378,11 +713,16 @@
                                     Successful <mark class="gradient-text-pink">Market Entry</mark> in Africa
                                 </h2>
                                 <p class="heading_description">
-                                    We help international businesses enter and succeed in African markets with our deep local expertise and extensive network. Our proven methodology minimizes risks and maximizes opportunities for successful market penetration.
+                                    We help international technology businesses enter and succeed in African markets with our deep local expertise and extensive network. Our proven data-driven methodology minimizes risks and maximizes opportunities for successful market penetration.
                                 </p>
                                 <p class="heading_description">
-                                    With over 20 years of experience across the continent, we understand the unique challenges and opportunities that each African market presents. Let us be your trusted guide to African business success.
+                                    With over 20 years of technology experience across the continent, we understand the unique digital challenges and opportunities that each African market presents. Let us be your trusted technology guide to African business success.
                                 </p>
+                                <div class="mt-4">
+                                    <span class="tech-badge-sm pulse-ring">⚡ 20+ YEARS EXPERIENCE</span>
+                                    <span class="tech-badge-sm">🌍 9 COUNTRIES</span>
+                                    <span class="tech-badge-sm">📊 DATA-DRIVEN</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -391,7 +731,7 @@
         </section>
         <!-- Service Overview - End -->
 
-        <!-- Our Market Entry Services - Start -->
+        <!-- Our Market Entry Services - Start (Enhanced with tech cards) -->
         <section class="what_we_offer_section section_space bg-light matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
@@ -399,30 +739,39 @@
                         Our Expertise
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        Comprehensive <mark>Market Entry</mark> Solutions
+                        Comprehensive <mark class="gradient-text">Market Entry</mark> Solutions
                     </h2>
                     <p class="heading_description fade-up">
-                        End-to-end support for your African expansion
+                        End-to-end technology-enabled support for your African expansion
                     </p>
+                </div>
+
+                <!-- System Status (Tech addition) -->
+                <div class="system-status mb-4">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                        <span class="text-white-50">Services Status: All Systems Operational</span>
+                        <span class="tech-badge-sm ms-3">EXPERT TEAM ONLINE</span>
+                    </div>
                 </div>
 
                 <div class="row mt-5 stagger-fade">
                     <!-- Market Feasibility Studies -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-chart-pie"></i>
                             </div>
                             <div>
-                                <span class="tech-badge">📊 DATA-DRIVEN</span>
-                                <span class="tech-badge">🔍 ANALYTICS</span>
+                                <span class="tech-badge-sm">📊 DATA-DRIVEN</span>
+                                <span class="tech-badge-sm">🔍 ANALYTICS</span>
                             </div>
                             <h3>Market Feasibility Studies</h3>
-                            <p class="text-muted">In-depth analysis of market potential, competition, and entry barriers to validate your business opportunity.</p>
+                            <p class="text-muted">In-depth data analysis of market potential, competition, and entry barriers to validate your business opportunity using advanced analytics.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Market size & growth potential</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Competitor analysis</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Customer insights</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Market size & growth potential</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Competitor analysis</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Customer insights & analytics</li>
                             </ul>
                         </div>
                     </div>
@@ -430,19 +779,19 @@
                     <!-- Regulatory Compliance -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-file-shield"></i>
                             </div>
                             <div>
-                                <span class="tech-badge">⚖️ COMPLIANCE</span>
-                                <span class="tech-badge">📋 LEGAL</span>
+                                <span class="tech-badge-sm">⚖️ COMPLIANCE</span>
+                                <span class="tech-badge-sm">📋 LEGAL</span>
                             </div>
                             <h3>Regulatory Compliance Analysis</h3>
-                            <p class="text-muted">Navigate complex regulatory environments with expert guidance on licenses, permits, and legal requirements.</p>
+                            <p class="text-muted">Navigate complex digital and regulatory environments with expert guidance on licenses, permits, and technology legal requirements.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Industry-specific regulations</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Licensing requirements</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Compliance monitoring</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Technology regulations</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Data compliance requirements</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Digital licensing</li>
                             </ul>
                         </div>
                     </div>
@@ -450,19 +799,19 @@
                     <!-- Partner Identification -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-handshake"></i>
                             </div>
                             <div>
-                                <span class="tech-badge">🤝 NETWORK</span>
-                                <span class="tech-badge">🔗 CONNECT</span>
+                                <span class="tech-badge-sm">🤝 NETWORK</span>
+                                <span class="tech-badge-sm">🔗 CONNECT</span>
                             </div>
                             <h3>Partner Identification & Vetting</h3>
-                            <p class="text-muted">Connect with reliable local partners, distributors, and suppliers through our extensive network.</p>
+                            <p class="text-muted">Connect with reliable local technology partners, distributors, and digital suppliers through our extensive network.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Partner sourcing</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Due diligence</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Negotiation support</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Technology partner sourcing</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Due diligence</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Negotiation support</li>
                             </ul>
                         </div>
                     </div>
@@ -470,19 +819,19 @@
                     <!-- Entry Mode Strategy -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-diagram-project"></i>
                             </div>
                             <div>
-                                <span class="tech-badge">🎯 STRATEGY</span>
-                                <span class="tech-badge">📈 OPTIMIZATION</span>
+                                <span class="tech-badge-sm">🎯 STRATEGY</span>
+                                <span class="tech-badge-sm">📈 OPTIMIZATION</span>
                             </div>
                             <h3>Entry Mode Strategy</h3>
-                            <p class="text-muted">Determine the optimal entry strategy - whether joint venture, acquisition, or greenfield investment.</p>
+                            <p class="text-muted">Determine the optimal digital entry strategy - whether joint venture, acquisition, or technology partnership.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Entry mode analysis</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Risk assessment</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Cost-benefit analysis</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Entry mode analysis</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Digital risk assessment</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Cost-benefit analysis</li>
                             </ul>
                         </div>
                     </div>
@@ -490,19 +839,19 @@
                     <!-- Local Network Activation -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-network-wired"></i>
                             </div>
                             <div>
-                                <span class="tech-badge">🌍 CONNECTIONS</span>
-                                <span class="tech-badge">🤝 RELATIONS</span>
+                                <span class="tech-badge-sm">🌍 CONNECTIONS</span>
+                                <span class="tech-badge-sm">🤝 RELATIONS</span>
                             </div>
                             <h3>Local Network Activation</h3>
-                            <p class="text-muted">Leverage our extensive network of government contacts, industry associations, and business leaders.</p>
+                            <p class="text-muted">Leverage our extensive network of government contacts, tech industry associations, and digital business leaders.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Government relations</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Industry connections</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Business introductions</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Government tech relations</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Tech industry connections</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Business introductions</li>
                             </ul>
                         </div>
                     </div>
@@ -510,19 +859,19 @@
                     <!-- Post-Entry Support -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-headset"></i>
                             </div>
                             <div>
-                                <span class="tech-badge">🛠️ SUPPORT</span>
-                                <span class="tech-badge">📊 ANALYTICS</span>
+                                <span class="tech-badge-sm">🛠️ SUPPORT</span>
+                                <span class="tech-badge-sm">📊 ANALYTICS</span>
                             </div>
                             <h3>Post-Entry Support</h3>
-                            <p class="text-muted">Ongoing support after market entry to ensure smooth operations and sustainable growth.</p>
+                            <p class="text-muted">Ongoing technology support after market entry to ensure smooth digital operations and sustainable growth.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Operational setup</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Local staffing</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Ongoing advisory</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Digital operational setup</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Local tech staffing</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Ongoing tech advisory</li>
                             </ul>
                         </div>
                     </div>
@@ -531,7 +880,7 @@
         </section>
         <!-- Our Market Entry Services - End -->
 
-        <!-- Countries We Cover - Start -->
+        <!-- Countries We Cover - Start (Enhanced with tech styling) -->
         <section class="countries_section section_space matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
@@ -539,10 +888,10 @@
                         Pan-African Coverage
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        Markets We <mark>Cover</mark>
+                        Markets We <mark class="gradient-text">Cover</mark>
                     </h2>
                     <p class="heading_description fade-up">
-                        Deep local expertise across Africa's key markets
+                        Deep local technology expertise across Africa's key markets
                     </p>
                 </div>
 
@@ -553,6 +902,7 @@
                                 <i class="fa-solid fa-flag"></i>
                             </div>
                             <h5>South Africa</h5>
+                            <span class="tech-badge-sm mt-2">TECH HUB</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-6 mb-4">
@@ -561,6 +911,7 @@
                                 <i class="fa-solid fa-flag"></i>
                             </div>
                             <h5>Kenya</h5>
+                            <span class="tech-badge-sm mt-2">SILICON SAVANNAH</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-6 mb-4">
@@ -569,6 +920,7 @@
                                 <i class="fa-solid fa-flag"></i>
                             </div>
                             <h5>Nigeria</h5>
+                            <span class="tech-badge-sm mt-2">YABABA VALLEY</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-6 mb-4">
@@ -577,6 +929,7 @@
                                 <i class="fa-solid fa-flag"></i>
                             </div>
                             <h5>Ghana</h5>
+                            <span class="tech-badge-sm mt-2">GROWING TECH</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-6 mb-4">
@@ -585,6 +938,7 @@
                                 <i class="fa-solid fa-flag"></i>
                             </div>
                             <h5>Botswana</h5>
+                            <span class="tech-badge-sm mt-2">EMERGING</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-6 mb-4">
@@ -593,6 +947,7 @@
                                 <i class="fa-solid fa-flag"></i>
                             </div>
                             <h5>Zambia</h5>
+                            <span class="tech-badge-sm mt-2">GROWING</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-6 mb-4">
@@ -601,6 +956,7 @@
                                 <i class="fa-solid fa-flag"></i>
                             </div>
                             <h5>Mozambique</h5>
+                            <span class="tech-badge-sm mt-2">EMERGING</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-4 col-6 mb-4">
@@ -609,6 +965,7 @@
                                 <i class="fa-solid fa-flag"></i>
                             </div>
                             <h5>Namibia</h5>
+                            <span class="tech-badge-sm mt-2">GROWING</span>
                         </div>
                     </div>
                 </div>
@@ -616,48 +973,48 @@
         </section>
         <!-- Countries We Cover - End -->
 
-        <!-- Our Approach - Start -->
-        <section class="our_approach_section section_space bg-light">
+        <!-- Our Approach - Start (Enhanced with tech styling) -->
+        <section class="our_approach_section section_space bg-light matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
                     <div class="heading_focus_text has_underline d-inline-flex fade-up" style="background-image: url('images/shape_title_under_line.svg');">
                         Our Methodology
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        How We <mark>Work</mark>
+                        How We <mark class="gradient-text">Work</mark>
                     </h2>
                     <p class="heading_description fade-up">
-                        A structured approach to successful market entry
+                        A structured technology approach to successful market entry
                     </p>
                 </div>
 
                 <div class="row mt-5 stagger-fade">
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">1</div>
+                            <div class="step_number">1</div>
                             <h4>Discovery</h4>
-                            <p class="text-muted mb-0">Understand your business goals, target markets, and entry objectives.</p>
+                            <p class="text-muted mb-0">Understand your business goals, target markets, and technology entry objectives.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">2</div>
+                            <div class="step_number">2</div>
                             <h4>Research</h4>
-                            <p class="text-muted mb-0">In-depth market analysis, feasibility studies, and regulatory mapping.</p>
+                            <p class="text-muted mb-0">In-depth market analysis, digital feasibility studies, and regulatory mapping.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">3</div>
+                            <div class="step_number">3</div>
                             <h4>Strategy</h4>
-                            <p class="text-muted mb-0">Develop tailored entry strategy with clear roadmap and milestones.</p>
+                            <p class="text-muted mb-0">Develop tailored technology entry strategy with clear roadmap and milestones.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">4</div>
+                            <div class="step_number">4</div>
                             <h4>Execution</h4>
-                            <p class="text-muted mb-0">Hands-on support for implementation, partner activation, and setup.</p>
+                            <p class="text-muted mb-0">Hands-on support for technology implementation, partner activation, and digital setup.</p>
                         </div>
                     </div>
                 </div>
@@ -665,7 +1022,7 @@
         </section>
         <!-- Our Approach - End -->
 
-        <!-- Key Benefits - Start -->
+        <!-- Key Benefits - Start (Enhanced with tech styling) -->
         <section class="benefits_section section_space matrix-bg">
             <div class="container">
                 <div class="row align-items-center">
@@ -675,50 +1032,56 @@
                                 Why Choose Us
                             </div>
                             <h2 class="heading_text">
-                                Key <mark>Benefits</mark> of Our Market Entry Services
+                                Key <mark class="gradient-text">Benefits</mark> of Our Market Entry Services
                             </h2>
                         </div>
                         
                         <div class="benefits_list mt-4">
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Deep Local Knowledge</h4>
-                                    <p class="text-muted mb-0">20+ years of on-the-ground experience across African markets.</p>
+                                    <h4>Deep Local Tech Knowledge</h4>
+                                    <p class="text-muted mb-0">20+ years of on-the-ground technology experience across African markets.</p>
                                 </div>
                             </div>
                             
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Extensive Network</h4>
-                                    <p class="text-muted mb-0">Access to key decision-makers, partners, and industry leaders.</p>
+                                    <h4>Extensive Tech Network</h4>
+                                    <p class="text-muted mb-0">Access to key technology decision-makers, digital partners, and industry leaders.</p>
                                 </div>
                             </div>
                             
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Risk Mitigation</h4>
-                                    <p class="text-muted mb-0">Identify and avoid common pitfalls in African market entry.</p>
+                                    <h4>Digital Risk Mitigation</h4>
+                                    <p class="text-muted mb-0">Identify and avoid common technology pitfalls in African market entry.</p>
                                 </div>
                             </div>
                             
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Accelerated Timeline</h4>
-                                    <p class="text-muted mb-0">Faster market entry through established relationships and processes.</p>
+                                    <h4>Accelerated Digital Timeline</h4>
+                                    <p class="text-muted mb-0">Faster market entry through established technology relationships and processes.</p>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <span class="tech-badge-sm pulse-ring">🏆 10+ AWARDS</span>
+                            <span class="tech-badge-sm">🌍 9 COUNTRIES</span>
+                            <span class="tech-badge-sm">⭐ 500+ CLIENTS</span>
                         </div>
                     </div>
                     <div class="col-lg-6 fade-up">
@@ -731,14 +1094,18 @@
         </section>
         <!-- Key Benefits - End -->
 
-        <!-- Call to Action - Start -->
+        <!-- Call to Action - Start (Enhanced with tech elements) -->
         <section class="cta_section py-5 scanline">
             <div class="container text-center">
                 <div class="fade-up">
-                    <h2 class="text-white mb-4">Ready to Enter the African Market?</h2>
-                    <p class="text-white mb-4 fs-5">Let's discuss your expansion plans and create your market entry strategy.</p>
+                    <div class="tech-badge d-inline-flex mb-4" style="background: rgba(255,255,255,0.2); color: white; border-color: white;">
+                        <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: white; border-radius: 50%; display: inline-block;"></span>
+                        READY TO EXPAND
+                    </div>
+                    <h2 class="text-white mb-4 glitch">Ready to Enter the African Market?</h2>
+                    <p class="text-white mb-4 fs-5">Let's discuss your technology expansion plans and create your digital market entry strategy.</p>
                     <a href="contact.html" class="btn btn-light btn-lg px-5 py-3 ripple-effect">
-                        <span class="btn_label" data-text="Start Your Journey">Start Your Journey</span>
+                        <span class="btn_label" data-text="Start Your Tech Journey">Start Your Tech Journey</span>
                         <span class="btn_icon">
                             <i class="fa-solid fa-arrow-up-right"></i>
                         </span>
@@ -748,8 +1115,17 @@
         </section>
         <!-- Call to Action - End -->
 
-        <!-- Site Footer - Start -->
+        <!-- Site Footer - Start (Enhanced with tech elements) -->
         <footer class="site_footer footer_layout_2 section_decoration data-stream" style="background-image: url('images/bg_pattern_3.svg');">
+            <!-- System Status -->
+            <div class="system-status mb-4">
+                <div class="d-flex align-items-center justify-content-center">
+                    <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                    <span class="text-white-50">All Systems Operational</span>
+                    <span class="tech-badge-sm ms-3">99.9% Uptime</span>
+                </div>
+            </div>
+            
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
@@ -846,7 +1222,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="footer_widget">
                                 <h3 class="footer_info_title">Newsletter</h3>
-                                <p>Stay updated with our latest insights and success stories.</p>
+                                <p>Stay updated with our latest tech insights and success stories.</p>
                                 <form class="footer_newslatter_2" action="#" method="POST">
                                     <input type="email" name="email" placeholder="Enter your email" required>
                                     <button type="submit">Subscribe</button>
@@ -905,5 +1281,21 @@
     <script src="js/appear.min.js"></script>
     <script src="js/odometer.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Tech Effects Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add random tech "noise" to cards on hover
+        const cards = document.querySelectorAll('.service_feature_card, .process_step, .benefit_item, .country_card');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = `translateY(-5px) rotate(${Math.random() * 0.5 - 0.25}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotate(0)';
+            });
+        });
+    });
+    </script>
 </body>
 </html>

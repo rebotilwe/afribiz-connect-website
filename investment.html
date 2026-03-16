@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Investment Facilitation services by Afribiz Connect. Expert guidance on FDI, joint ventures, and investment opportunities across African markets.">
-    <meta name="keywords" content="investment facilitation, FDI, foreign direct investment, joint venture, African investment, business investment South Africa">
-    <title>Investment Facilitation - Afribiz Connect</title>
+    <meta name="keywords" content="investment facilitation, FDI, foreign direct investment, joint venture, African investment, business investment South Africa, technology investment">
+    <title>Investment Facilitation - Afribiz Connect | IT & Technology Investment</title>
     <link rel="shortcut icon" href="images/logo1.png">
 
     <!-- Framework - CSS Include -->
@@ -14,6 +14,9 @@
 
     <!-- Icon - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    
+    <!-- Font Awesome for additional tech icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Animation - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
@@ -36,113 +39,390 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* IT Company Tech Styling - Matching homepage */
+        :root {
+            --primary-glow: #00f2fe;
+            --secondary-glow: #4facfe;
+            --dark-bg: #0a0f1e;
+            --card-bg: rgba(18, 25, 45, 0.8);
+            --grid-color: rgba(0, 242, 254, 0.1);
+            --brand-pink: #E53E7E;
+            --brand-orange: #F58A42;
+        }
+
+        /* Matrix/Rain Code Background */
+        .matrix-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(0,242,254,0.05) 0%, 
+                rgba(79,172,254,0.05) 100%);
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Circuit Pattern Overlay */
+        .circuit-overlay-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M10 10 L30 10 L30 30 L50 30 M70 20 L90 20 L90 40 M20 70 L40 70 L40 90 L60 90" stroke="%2300f2fe" fill="none" stroke-width="1"/><circle cx="30" cy="30" r="2" fill="%2300f2fe"/><circle cx="50" cy="30" r="2" fill="%2300f2fe"/><circle cx="90" cy="40" r="2" fill="%2300f2fe"/><circle cx="60" cy="90" r="2" fill="%2300f2fe"/></svg>');
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Scanline Effect */
+        .scanline {
+            position: relative;
+        }
+
+        .scanline::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        /* Data Stream Animation */
+        .data-stream {
+            position: relative;
+        }
+
+        .data-stream::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            animation: dataFlow 3s linear infinite;
+        }
+
+        @keyframes dataFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Glitch Text Effect */
+        .glitch-text {
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            33% { transform: translate(-2px, 2px); }
+            66% { transform: translate(2px, -2px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-pink {
+            background: linear-gradient(135deg, var(--brand-pink), var(--brand-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Tech Badges */
+        .tech-badge {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 30px;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-badge-sm {
+            background: rgba(79, 172, 254, 0.15);
+            border-radius: 15px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            display: inline-block;
+        }
+
+        .tech-badge-pink {
+            background: rgba(229, 62, 126, 0.15);
+            border: 1px solid rgba(229, 62, 126, 0.3);
+            border-radius: 15px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            color: var(--brand-pink);
+        }
+
+        .tech-badge i {
+            margin-right: 4px;
+        }
+
+        /* Pulse Animation */
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+        }
+
+        /* Service Feature Cards - Updated with tech styling */
         .service_feature_card {
-            background: white;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 20px;
             padding: 30px;
             height: 100%;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
+
         .service_feature_card::before {
-            content: '';
+            content: "";
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #E53E7E, #F58A42, #E53E7E);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
         }
+
+        .service_feature_card:hover::before {
+            left: 0;
+        }
+
         .service_feature_card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
-            border-color: rgba(229,62,126,0.3);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
         }
-        .service_feature_card:hover::before {
-            opacity: 1;
-            animation: border-rotate 3s linear infinite;
-        }
-        @keyframes border-rotate {
-            from { filter: hue-rotate(0deg); }
-            to { filter: hue-rotate(360deg); }
-        }
+
         .service_icon_large {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1) 0%, rgba(245,138,66,0.1) 100%);
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(79, 172, 254, 0.1) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 25px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
             transition: all 0.3s ease;
         }
+
         .service_icon_large i {
             font-size: 40px;
-            color: #E53E7E;
+            color: var(--primary-glow);
+            filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.5));
             transition: all 0.3s ease;
         }
+
         .service_feature_card:hover .service_icon_large {
             transform: scale(1.1);
+            border-color: rgba(0, 242, 254, 0.8);
         }
-        .service_feature_card:hover .service_icon_large i {
-            color: #F58A42;
+
+        .service_feature_card h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
         }
+
+        .service_feature_card p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .service_feature_card .icon_list li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+        }
+
+        .service_feature_card .fa-circle-check {
+            color: var(--primary-glow) !important;
+            filter: drop-shadow(0 0 3px rgba(0, 242, 254, 0.5));
+            margin-right: 8px;
+        }
+
+        /* Stat Cards - Updated with tech styling */
         .stat_card {
-            background: white;
+            background: var(--card-bg);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 20px;
             padding: 30px;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
-        .stat_card::after {
-            content: '';
+
+        .stat_card::before {
+            content: "";
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(229,62,126,0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            transform: scale(0);
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
         }
+
+        .stat_card:hover::before {
+            left: 0;
+        }
+
         .stat_card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
         }
-        .stat_card:hover::after {
-            opacity: 1;
-            transform: scale(1);
-        }
+
         .stat_number {
             font-size: 3rem;
             font-weight: 700;
-            color: #E53E7E;
+            color: var(--primary-glow);
             line-height: 1.2;
             margin-bottom: 10px;
             font-family: 'Space Grotesk', sans-serif;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5));
         }
+
         .stat_label {
             font-size: 1.1rem;
-            color: #6c757d;
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 0;
         }
+
+        /* Sector Tags - Updated with tech styling */
+        .sector_tag {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 30px;
+            margin: 5px;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            cursor: default;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .sector_tag i {
+            color: var(--primary-glow);
+            margin-right: 5px;
+        }
+
+        .sector_tag:hover {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            color: white;
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3);
+            border-color: transparent;
+        }
+
+        .sector_tag:hover i {
+            color: white;
+        }
+
+        /* Process Steps - Updated with tech styling */
+        .process_step {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 20px;
+            position: relative;
+            height: 100%;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .process_step::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
+        }
+
+        .process_step:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.2);
+        }
+
+        .process_step:hover::before {
+            left: 100%;
+        }
+
         .step_number {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             border-radius: 50%;
             display: flex;
@@ -151,77 +431,63 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0 auto 20px;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
             transition: all 0.3s ease;
         }
-        .process_step {
-            text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 20px;
-            position: relative;
-            border: 1px solid rgba(0,0,0,0.05);
-            height: 100%;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        .process_step::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #E53E7E, #F58A42, transparent);
-            transition: left 0.5s ease;
-        }
-        .process_step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(229,62,126,0.1);
-        }
-        .process_step:hover::before {
-            left: 100%;
-        }
+
         .process_step:hover .step_number {
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(229,62,126,0.5);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.8);
         }
+
+        .process_step h4 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .process_step p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Benefit Items - Updated with tech styling */
         .benefit_item {
             padding: 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.1);
             transition: all 0.3s ease;
+            background: transparent;
         }
+
         .benefit_item:hover {
-            background: rgba(229,62,126,0.02);
+            background: rgba(0, 242, 254, 0.05);
             transform: translateX(10px);
+            border-color: var(--primary-glow);
         }
+
         .benefit_item:last-child {
             border-bottom: none;
         }
+
         .benefit_icon i {
-            color: #E53E7E !important;
+            color: var(--primary-glow) !important;
+            filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.5));
         }
-        .sector_tag {
-            display: inline-block;
-            padding: 8px 20px;
-            background: #f8f9fa;
-            border-radius: 30px;
-            margin: 5px;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            cursor: default;
+
+        .benefit_item h4 {
+            color: #fff;
         }
-        .sector_tag:hover {
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
-            color: white;
-            transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 10px 20px rgba(229,62,126,0.3);
+
+        .benefit_item p {
+            color: rgba(255, 255, 255, 0.7);
         }
+
+        /* CTA Section - Updated with tech overlay */
         .cta_section {
-            background: linear-gradient(135deg, #E53E7E 0%, #F58A42 100%) !important;
+            background: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-orange) 100%);
+            padding: 80px 0;
             position: relative;
             overflow: hidden;
         }
+
         .cta_section::before {
             content: '';
             position: absolute;
@@ -232,38 +498,111 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
         }
+
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        mark {
-            color: #E53E7E;
-            background: transparent;
-        }
-        .heading_focus_text.has_underline {
-            filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(1684%) hue-rotate(315deg) brightness(94%) contrast(97%);
-        }
-        .tech-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
-            border: 1px solid rgba(229,62,126,0.3);
-            border-radius: 20px;
-            font-size: 12px;
+
+        .cta_section .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            color: var(--brand-pink);
             font-weight: 600;
-            color: #E53E7E;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
         }
-        .tech-badge i {
-            margin-right: 4px;
+
+        .cta_section .btn-light:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tech Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow)) !important;
+            border: none !important;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--secondary-glow), var(--primary-glow)) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3) !important;
+        }
+
+        /* Page Banner Enhancement */
+        .page_banner_section {
+            position: relative;
+        }
+
+        .page_banner_section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.9), rgba(0, 242, 254, 0.1));
+            pointer-events: none;
+        }
+
+        mark {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* System Status Bar */
+        .system-status {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Service Content Text Adjustments */
+        .service_content .heading_description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .service_image img {
+            border: 3px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Benefits Image */
+        .benefits_image img {
+            border: 3px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .circuit-overlay-left {
+                width: 100%;
+                opacity: 0.3;
+            }
+            
+            .service_feature_card {
+                padding: 20px;
+            }
+            
+            .service_icon_large {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .service_icon_large i {
+                font-size: 30px;
+            }
+            
+            .stat_number {
+                font-size: 2.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="page_wrapper">
-        <!-- Preloader - Start -->
+        <!-- Preloader - Start (Updated with tech theme) -->
         <div id="preloader" class="preloader">
             <div class="loader-circle">
                 <div class="loader-line-mask">
@@ -271,6 +610,10 @@
                 </div>
                 <div class="loader-logo">
                     <img src="images/logo1.png" alt="Afribiz Connect Logo">
+                    <div class="loading-text mt-2">
+                        <span class="tech-badge-sm">INITIALIZING</span>
+                        <span class="tech-badge-sm">INVESTMENT.MD</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -284,7 +627,7 @@
         </div>
         <!-- Back To Top - End -->
 
-        <!-- Site Header - Start -->
+        <!-- Site Header - Start (Updated with tech button) -->
         <header class="site_header site_header_2">
             <div class="header_bottom stricky">
                 <div class="container">
@@ -292,8 +635,8 @@
                         <div class="col-lg-3 col-5">
                             <div class="site_logo">
                                 <a class="site_link" href="index.html">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
+                                    <img src="images/logo1.png" alt="Afribiz Connect – IT Solutions & Technology">
+                                    <span class="logo-badge tech-badge-sm ms-2">v2.0</span>
                                 </a>
                             </div>
                         </div>
@@ -340,7 +683,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary ripple-effect" href="contact.html">
+                                    <a class="btn btn-primary ripple-effect tech-btn" href="contact.html">
                                         <span class="btn_label" data-text="Free Consultation">Free Consultation</span>
                                         <span class="btn_icon">
                                             <i class="fa-solid fa-arrow-up-right"></i>
@@ -355,32 +698,34 @@
         </header>
         <!-- Site Header - End -->
 
-        <!-- Page Banner - Start -->
+        <!-- Page Banner - Start (Enhanced with tech elements) -->
         <section class="page_banner_section bg-dark section_decoration scanline" style="background-image: url('images/bg_image_2.webp');">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center fade-up">
                         <div class="heading_block text-white">
-                            <div class="heading_focus_text has_underline text-white d-inline-flex" style="background-image: url('images/shape_title_under_line.svg');">
-                                Our Services
+                            <div class="heading_focus_text has_underline text-white d-inline-flex tech-badge" style="background-image: url('images/shape_title_under_line.svg');">
+                                <span class="ai-pulse">⚡</span> Our Services <span class="ai-pulse">⚡</span>
                             </div>
                             <h1 class="heading_text text-white mb-0 glitch">
-                                Investment <mark>Facilitation</mark>
+                                Investment <mark class="gradient-text">Facilitation</mark>
                             </h1>
                             <p class="heading_description text-white-50">
-                                Your trusted partner for successful investments across Africa
+                                Your trusted technology investment partner for successful investments across Africa
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Circuit overlay -->
+            <div class="circuit-overlay-left"></div>
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
         </section>
         <!-- Page Banner - End -->
 
-        <!-- Service Overview - Start -->
+        <!-- Service Overview - Start (Enhanced with tech styling) -->
         <section class="service_overview_section section_space matrix-bg">
             <div class="container">
                 <div class="row align-items-center">
@@ -396,14 +741,19 @@
                                     Strategic Investment Partner
                                 </div>
                                 <h2 class="heading_text">
-                                    Unlock <mark class="gradient-text-pink">Investment</mark> Opportunities in Africa
+                                    Unlock <mark class="gradient-text-pink">Technology Investment</mark> Opportunities in Africa
                                 </h2>
                                 <p class="heading_description">
-                                    We provide comprehensive investment facilitation services to help international investors navigate the African investment landscape. From FDI advisory to joint venture setup, our team ensures your investment journey is smooth and successful.
+                                    We provide comprehensive investment facilitation services to help international technology investors navigate the African investment landscape. From tech FDI advisory to digital joint venture setup, our team ensures your investment journey is smooth and successful.
                                 </p>
                                 <p class="heading_description">
-                                    With deep knowledge of local regulations, incentive programs, and market dynamics, we position your investment for maximum returns while minimizing risks.
+                                    With deep knowledge of local tech regulations, digital incentive programs, and market dynamics, we position your technology investment for maximum returns while minimizing risks.
                                 </p>
+                                <div class="mt-4">
+                                    <span class="tech-badge-sm pulse-ring">⚡ 20+ YEARS EXPERIENCE</span>
+                                    <span class="tech-badge-sm">💰 $500M+ FACILITATED</span>
+                                    <span class="tech-badge-sm">📊 98% SUCCESS RATE</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -412,32 +762,45 @@
         </section>
         <!-- Service Overview - End -->
 
-        <!-- Key Statistics - Start -->
+        <!-- Key Statistics - Start (Enhanced with tech styling) -->
         <section class="stats_section section_space bg-light matrix-bg">
             <div class="container">
+                <!-- System Status (Tech addition) -->
+                <div class="system-status mb-4">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                        <span class="text-white-50">Investment Dashboard: All Systems Operational</span>
+                        <span class="tech-badge-sm ms-3">REAL-TIME DATA</span>
+                    </div>
+                </div>
+
                 <div class="row stagger-fade">
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="500">500M+</div>
                             <p class="stat_label">Investment Facilitated</p>
+                            <span class="tech-badge-sm mt-2">USD</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="50">50+</div>
                             <p class="stat_label">Investment Projects</p>
+                            <span class="tech-badge-sm mt-2">TECH FOCUSED</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="15">15+</div>
                             <p class="stat_label">Countries Covered</p>
+                            <span class="tech-badge-sm mt-2">PAN-AFRICAN</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="98">98%</div>
                             <p class="stat_label">Success Rate</p>
+                            <span class="tech-badge-sm mt-2">INVESTMENT ROI</span>
                         </div>
                     </div>
                 </div>
@@ -445,18 +808,18 @@
         </section>
         <!-- Key Statistics - End -->
 
-        <!-- Our Investment Services - Start -->
-        <section class="what_we_offer_section section_space">
+        <!-- Our Investment Services - Start (Enhanced with tech cards) -->
+        <section class="what_we_offer_section section_space matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
                     <div class="heading_focus_text has_underline d-inline-flex fade-up" style="background-image: url('images/shape_title_under_line.svg');">
                         Our Expertise
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        Comprehensive <mark>Investment</mark> Solutions
+                        Comprehensive <mark class="gradient-text">Technology Investment</mark> Solutions
                     </h2>
                     <p class="heading_description fade-up">
-                        End-to-end support for your African investment journey
+                        End-to-end support for your African technology investment journey
                     </p>
                 </div>
 
@@ -464,19 +827,19 @@
                     <!-- FDI Advisory -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-chart-line"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-chart-simple"></i> FDI</span>
-                                <span class="tech-badge"><i class="fa-solid fa-globe"></i> GLOBAL</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-chart-simple"></i> TECH FDI</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-globe"></i> GLOBAL</span>
                             </div>
-                            <h3>FDI Advisory</h3>
-                            <p class="text-muted">Expert guidance on foreign direct investment strategies, market entry, and regulatory compliance.</p>
+                            <h3>Tech FDI Advisory</h3>
+                            <p class="text-muted">Expert guidance on technology foreign direct investment strategies, digital market entry, and tech regulatory compliance.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Investment strategy development</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Regulatory framework analysis</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Incentive navigation</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Digital investment strategy</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Tech regulatory framework</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Innovation incentive navigation</li>
                             </ul>
                         </div>
                     </div>
@@ -484,19 +847,19 @@
                     <!-- Joint Venture Setup -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-handshake"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-handshake"></i> JV</span>
-                                <span class="tech-badge"><i class="fa-solid fa-briefcase"></i> PARTNERS</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-handshake"></i> TECH JV</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-briefcase"></i> PARTNERS</span>
                             </div>
-                            <h3>Joint Venture Setup</h3>
-                            <p class="text-muted">Identify and establish successful joint ventures with reliable local partners.</p>
+                            <h3>Tech Joint Venture Setup</h3>
+                            <p class="text-muted">Identify and establish successful technology joint ventures with reliable local digital partners.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Partner identification</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> JV agreement structuring</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Negotiation support</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Tech partner identification</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Digital JV structuring</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Tech negotiation support</li>
                             </ul>
                         </div>
                     </div>
@@ -504,19 +867,19 @@
                     <!-- Incentive Navigation -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-gift"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-percent"></i> INCENTIVES</span>
-                                <span class="tech-badge"><i class="fa-solid fa-coins"></i> TAX</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-percent"></i> INCENTIVES</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-coins"></i> TAX</span>
                             </div>
-                            <h3>Incentive Navigation</h3>
-                            <p class="text-muted">Maximize investment benefits through available incentives, grants, and tax breaks.</p>
+                            <h3>Tech Incentive Navigation</h3>
+                            <p class="text-muted">Maximize investment benefits through available technology incentives, innovation grants, and digital tax breaks.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Incentive identification</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Application assistance</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Compliance monitoring</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Innovation incentive ID</li>
+                                <li><i class="fa-regular fa-circle-check"></i> R&D grant assistance</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Tech compliance monitoring</li>
                             </ul>
                         </div>
                     </div>
@@ -524,19 +887,19 @@
                     <!-- Risk Assessment -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-shield"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-shield"></i> RISK</span>
-                                <span class="tech-badge"><i class="fa-solid fa-chart-line"></i> ANALYSIS</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-shield"></i> CYBER RISK</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-chart-line"></i> ANALYSIS</span>
                             </div>
-                            <h3>Risk Assessment</h3>
-                            <p class="text-muted">Comprehensive risk analysis to protect your investment and ensure sustainable returns.</p>
+                            <h3>Digital Risk Assessment</h3>
+                            <p class="text-muted">Comprehensive technology risk analysis to protect your digital investment and ensure sustainable returns.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Political risk analysis</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Market risk assessment</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Mitigation strategies</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Cybersecurity analysis</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Digital market risk</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Tech mitigation strategies</li>
                             </ul>
                         </div>
                     </div>
@@ -544,19 +907,19 @@
                     <!-- Due Diligence -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-magnifying-glass"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-search"></i> DUE DIL</span>
-                                <span class="tech-badge"><i class="fa-solid fa-file"></i> AUDIT</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-search"></i> TECH DUE DIL</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-file"></i> AUDIT</span>
                             </div>
-                            <h3>Due Diligence</h3>
-                            <p class="text-muted">Thorough investigation of potential investments, partners, and opportunities.</p>
+                            <h3>Tech Due Diligence</h3>
+                            <p class="text-muted">Thorough investigation of potential technology investments, digital partners, and innovation opportunities.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Financial due diligence</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Legal due diligence</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Operational assessment</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Tech financial due diligence</li>
+                                <li><i class="fa-regular fa-circle-check"></i> IP legal assessment</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Digital operational audit</li>
                             </ul>
                         </div>
                     </div>
@@ -564,19 +927,19 @@
                     <!-- Post-Investment Support -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-headset"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-headset"></i> SUPPORT</span>
-                                <span class="tech-badge"><i class="fa-solid fa-chart-line"></i> GROWTH</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-headset"></i> TECH SUPPORT</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-chart-line"></i> GROWTH</span>
                             </div>
-                            <h3>Post-Investment Support</h3>
-                            <p class="text-muted">Ongoing support to ensure your investment performs optimally and grows.</p>
+                            <h3>Post-Tech Investment Support</h3>
+                            <p class="text-muted">Ongoing support to ensure your technology investment performs optimally and scales digitally.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Performance monitoring</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Expansion planning</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Exit strategy</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Digital performance monitoring</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Tech expansion planning</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Digital exit strategy</li>
                             </ul>
                         </div>
                     </div>
@@ -585,7 +948,7 @@
         </section>
         <!-- Our Investment Services - End -->
 
-        <!-- Investment Sectors - Start -->
+        <!-- Investment Sectors - Start (Enhanced with tech styling) -->
         <section class="sectors_section section_space bg-light matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
@@ -593,75 +956,81 @@
                         Investment Opportunities
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        Key <mark>Investment</mark> Sectors
+                        Key <mark class="gradient-text">Technology Investment</mark> Sectors
                     </h2>
                     <p class="heading_description fade-up">
-                        High-potential sectors across African markets
+                        High-potential digital sectors across African markets
                     </p>
                 </div>
 
                 <div class="row mt-5 stagger-fade">
                     <div class="col-12 text-center">
-                        <span class="sector_tag"><i class="fa-solid fa-truck-front" style="margin-right: 5px;"></i> Mining & Resources</span>
-                        <span class="sector_tag"><i class="fa-solid fa-building-columns" style="margin-right: 5px;"></i> Financial Services</span>
-                        <span class="sector_tag"><i class="fa-solid fa-tractor" style="margin-right: 5px;"></i> Agriculture & Agribusiness</span>
-                        <span class="sector_tag"><i class="fa-solid fa-bridge" style="margin-right: 5px;"></i> Infrastructure</span>
-                        <span class="sector_tag"><i class="fa-solid fa-bolt" style="margin-right: 5px;"></i> Energy & Power</span>
-                        <span class="sector_tag"><i class="fa-solid fa-microchip" style="margin-right: 5px;"></i> Technology</span>
-                        <span class="sector_tag"><i class="fa-solid fa-tower-cell" style="margin-right: 5px;"></i> Telecommunications</span>
-                        <span class="sector_tag"><i class="fa-solid fa-building" style="margin-right: 5px;"></i> Real Estate</span>
-                        <span class="sector_tag"><i class="fa-solid fa-industry" style="margin-right: 5px;"></i> Manufacturing</span>
-                        <span class="sector_tag"><i class="fa-solid fa-hospital" style="margin-right: 5px;"></i> Healthcare</span>
-                        <span class="sector_tag"><i class="fa-solid fa-umbrella-beach" style="margin-right: 5px;"></i> Tourism & Hospitality</span>
-                        <span class="sector_tag"><i class="fa-solid fa-solar-panel" style="margin-right: 5px;"></i> Renewable Energy</span>
+                        <span class="sector_tag"><i class="fa-solid fa-microchip"></i> FinTech</span>
+                        <span class="sector_tag"><i class="fa-solid fa-cloud"></i> Cloud Computing</span>
+                        <span class="sector_tag"><i class="fa-solid fa-robot"></i> AI & Machine Learning</span>
+                        <span class="sector_tag"><i class="fa-solid fa-tower-cell"></i> 5G Infrastructure</span>
+                        <span class="sector_tag"><i class="fa-solid fa-shield"></i> Cybersecurity</span>
+                        <span class="sector_tag"><i class="fa-solid fa-cart-shopping"></i> E-Commerce</span>
+                        <span class="sector_tag"><i class="fa-solid fa-truck-front"></i> Mining & Resources</span>
+                        <span class="sector_tag"><i class="fa-solid fa-building-columns"></i> Financial Services</span>
+                        <span class="sector_tag"><i class="fa-solid fa-tractor"></i> Agritech</span>
+                        <span class="sector_tag"><i class="fa-solid fa-bridge"></i> Infrastructure</span>
+                        <span class="sector_tag"><i class="fa-solid fa-bolt"></i> Energy & Power</span>
+                        <span class="sector_tag"><i class="fa-solid fa-building"></i> PropTech</span>
+                        <span class="sector_tag"><i class="fa-solid fa-industry"></i> Manufacturing</span>
+                        <span class="sector_tag"><i class="fa-solid fa-hospital"></i> HealthTech</span>
+                        <span class="sector_tag"><i class="fa-solid fa-umbrella-beach"></i> Tourism Tech</span>
+                        <span class="sector_tag"><i class="fa-solid fa-solar-panel"></i> CleanTech</span>
+                        <span class="sector_tag"><i class="fa-solid fa-graduation-cap"></i> EdTech</span>
+                        <span class="sector_tag"><i class="fa-solid fa-truck"></i> Logistics Tech</span>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Investment Sectors - End -->
 
-        <!-- Our Approach - Start -->
-        <section class="our_approach_section section_space">
+        <!-- Our Approach - Start (Enhanced with tech styling) -->
+        <section class="our_approach_section section_space matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
                     <div class="heading_focus_text has_underline d-inline-flex fade-up" style="background-image: url('images/shape_title_under_line.svg');">
                         Our Methodology
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        How We <mark>Facilitate</mark> Investments
+                        How We <mark class="gradient-text">Facilitate</mark> Technology Investments
                     </h2>
                     <p class="heading_description fade-up">
-                        A structured approach to successful investment
+                        A structured data-driven approach to successful technology investment
                     </p>
                 </div>
 
                 <div class="row mt-5 stagger-fade">
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">1</div>
+                            <div class="step_number">1</div>
                             <h4>Discovery</h4>
-                            <p class="text-muted mb-0">Understand your investment goals, risk appetite, and target sectors.</p>
+                            <p class="text-muted mb-0">Understand your technology investment goals, digital risk appetite, and target tech sectors.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">2</div>
+                            <div class="step_number">2</div>
                             <h4>Opportunity Identification</h4>
-                            <p class="text-muted mb-0">Identify and vet investment opportunities aligned with your objectives.</p>
+                            <p class="text-muted mb-0">Identify and vet technology investment opportunities aligned with your digital objectives.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">3</div>
+                            <div class="step_number">3</div>
                             <h4>Due Diligence</h4>
-                            <p class="text-muted mb-0">Comprehensive analysis of opportunities, partners, and market conditions.</p>
+                            <p class="text-muted mb-0">Comprehensive analysis of tech opportunities, digital partners, and market conditions.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">4</div>
+                            <div class="step_number">4</div>
                             <h4>Execution</h4>
-                            <p class="text-muted mb-0">Hands-on support for deal structuring, negotiations, and setup.</p>
+                            <p class="text-muted mb-0">Hands-on support for technology deal structuring, digital negotiations, and setup.</p>
                         </div>
                     </div>
                 </div>
@@ -669,7 +1038,7 @@
         </section>
         <!-- Our Approach - End -->
 
-        <!-- Key Benefits - Start -->
+        <!-- Key Benefits - Start (Enhanced with tech styling) -->
         <section class="benefits_section section_space bg-light matrix-bg">
             <div class="container">
                 <div class="row align-items-center">
@@ -679,50 +1048,56 @@
                                 Why Choose Us
                             </div>
                             <h2 class="heading_text">
-                                Key <mark>Benefits</mark> of Our Investment Services
+                                Key <mark class="gradient-text">Benefits</mark> of Our Technology Investment Services
                             </h2>
                         </div>
                         
                         <div class="benefits_list mt-4">
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Deep Market Knowledge</h4>
-                                    <p class="text-muted mb-0">20+ years of investment experience across African markets.</p>
+                                    <h4>Deep Tech Market Knowledge</h4>
+                                    <p class="text-muted mb-0">20+ years of technology investment experience across African digital markets.</p>
                                 </div>
                             </div>
                             
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Extensive Network</h4>
-                                    <p class="text-muted mb-0">Access to government agencies, investment authorities, and local partners.</p>
+                                    <h4>Extensive Tech Network</h4>
+                                    <p class="text-muted mb-0">Access to government tech agencies, digital investment authorities, and local innovation partners.</p>
                                 </div>
                             </div>
                             
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Risk Mitigation</h4>
-                                    <p class="text-muted mb-0">Comprehensive due diligence and risk assessment to protect your investment.</p>
+                                    <h4>Digital Risk Mitigation</h4>
+                                    <p class="text-muted mb-0">Comprehensive tech due diligence and cybersecurity risk assessment to protect your investment.</p>
                                 </div>
                             </div>
                             
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>End-to-End Support</h4>
-                                    <p class="text-muted mb-0">From opportunity identification to post-investment support.</p>
+                                    <h4>End-to-End Tech Support</h4>
+                                    <p class="text-muted mb-0">From digital opportunity identification to post-technology investment support.</p>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <span class="tech-badge-sm pulse-ring">🏆 10+ AWARDS</span>
+                            <span class="tech-badge-sm">🌍 15 COUNTRIES</span>
+                            <span class="tech-badge-sm">💰 $500M+ FACILITATED</span>
                         </div>
                     </div>
                     <div class="col-lg-6 fade-up">
@@ -735,14 +1110,18 @@
         </section>
         <!-- Key Benefits - End -->
 
-        <!-- Call to Action - Start -->
+        <!-- Call to Action - Start (Enhanced with tech elements) -->
         <section class="cta_section py-5 scanline">
             <div class="container text-center">
                 <div class="fade-up">
-                    <h2 class="text-white mb-4">Ready to Invest in Africa?</h2>
-                    <p class="text-white mb-4 fs-5">Let's discuss your investment goals and find the right opportunities for you.</p>
+                    <div class="tech-badge d-inline-flex mb-4" style="background: rgba(255,255,255,0.2); color: white; border-color: white;">
+                        <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: white; border-radius: 50%; display: inline-block;"></span>
+                        READY TO INVEST
+                    </div>
+                    <h2 class="text-white mb-4 glitch">Ready to Invest in African Tech?</h2>
+                    <p class="text-white mb-4 fs-5">Let's discuss your technology investment goals and find the right digital opportunities for you.</p>
                     <a href="contact.html" class="btn btn-light btn-lg px-5 py-3 ripple-effect">
-                        <span class="btn_label" data-text="Start Your Investment Journey">Start Your Investment Journey</span>
+                        <span class="btn_label" data-text="Start Your Tech Investment Journey">Start Your Tech Investment Journey</span>
                         <span class="btn_icon">
                             <i class="fa-solid fa-arrow-up-right"></i>
                         </span>
@@ -752,8 +1131,17 @@
         </section>
         <!-- Call to Action - End -->
 
-        <!-- Site Footer - Start -->
+        <!-- Site Footer - Start (Enhanced with tech elements) -->
         <footer class="site_footer footer_layout_2 section_decoration data-stream" style="background-image: url('images/bg_pattern_3.svg');">
+            <!-- System Status -->
+            <div class="system-status mb-4">
+                <div class="d-flex align-items-center justify-content-center">
+                    <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                    <span class="text-white-50">All Systems Operational</span>
+                    <span class="tech-badge-sm ms-3">99.9% Uptime</span>
+                </div>
+            </div>
+            
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
@@ -850,7 +1238,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="footer_widget">
                                 <h3 class="footer_info_title">Newsletter</h3>
-                                <p>Stay updated with our latest insights and success stories.</p>
+                                <p>Stay updated with our latest tech investment insights and success stories.</p>
                                 <form class="footer_newslatter_2" action="#" method="POST">
                                     <input type="email" name="email" placeholder="Enter your email" required>
                                     <button type="submit">Subscribe</button>
@@ -909,5 +1297,32 @@
     <script src="js/appear.min.js"></script>
     <script src="js/odometer.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Tech Effects Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.counter-number');
+        counters.forEach(counter => {
+            const count = counter.getAttribute('data-count');
+            if (count) {
+                setTimeout(() => {
+                    counter.innerHTML = count + (counter.innerHTML.includes('M') ? 'M+' : counter.innerHTML.includes('%') ? '%' : '+');
+                }, 500);
+            }
+        });
+        
+        // Add random tech "noise" to cards on hover
+        const cards = document.querySelectorAll('.service_feature_card, .process_step, .benefit_item, .stat_card, .sector_tag');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = `translateY(-5px) rotate(${Math.random() * 0.5 - 0.25}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotate(0)';
+            });
+        });
+    });
+    </script>
 </body>
 </html>

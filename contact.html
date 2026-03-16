@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="Get in touch with Afribiz Connect. Contact us for business consulting, market entry, and investment opportunities in Africa.">
-    <title>Contact Us - Afribiz Connect</title>
+    <meta name="description" content="Get in touch with Afribiz Connect. Contact us for technology consulting, digital transformation, and tech investment opportunities in Africa.">
+    <title>Contact Us - Afribiz Connect | Technology Consulting</title>
     <link rel="shortcut icon" href="images/logo1.png">
 
     <!-- Framework - CSS Include -->
@@ -13,6 +13,9 @@
 
     <!-- Icon - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    
+    <!-- Font Awesome for additional tech icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Animation - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
@@ -29,6 +32,169 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* IT Company Tech Styling - Matching homepage */
+        :root {
+            --primary-glow: #00f2fe;
+            --secondary-glow: #4facfe;
+            --dark-bg: #0a0f1e;
+            --card-bg: rgba(18, 25, 45, 0.8);
+            --grid-color: rgba(0, 242, 254, 0.1);
+            --brand-pink: #E53E7E;
+            --brand-orange: #F58A42;
+        }
+
+        /* Matrix/Rain Code Background */
+        .matrix-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(0,242,254,0.05) 0%, 
+                rgba(79,172,254,0.05) 100%);
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Circuit Pattern Overlay */
+        .circuit-overlay-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M10 10 L30 10 L30 30 L50 30 M70 20 L90 20 L90 40 M20 70 L40 70 L40 90 L60 90" stroke="%2300f2fe" fill="none" stroke-width="1"/><circle cx="30" cy="30" r="2" fill="%2300f2fe"/><circle cx="50" cy="30" r="2" fill="%2300f2fe"/><circle cx="90" cy="40" r="2" fill="%2300f2fe"/><circle cx="60" cy="90" r="2" fill="%2300f2fe"/></svg>');
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Scanline Effect */
+        .scanline {
+            position: relative;
+        }
+
+        .scanline::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        /* Data Stream Animation */
+        .data-stream {
+            position: relative;
+        }
+
+        .data-stream::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            animation: dataFlow 3s linear infinite;
+        }
+
+        @keyframes dataFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Glitch Text Effect */
+        .glitch-text {
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            33% { transform: translate(-2px, 2px); }
+            66% { transform: translate(2px, -2px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-pink {
+            background: linear-gradient(135deg, var(--brand-pink), var(--brand-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Tech Badges */
+        .tech-badge {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 30px;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-badge-sm {
+            background: rgba(79, 172, 254, 0.15);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            border-radius: 20px;
+            padding: 3px 10px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--primary-glow);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        .tech-badge-sm i {
+            margin-right: 4px;
+        }
+
+        /* Pulse Animation */
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+        }
+
         /* Responsive Map Fix */
         .map_section {
             overflow: hidden;
@@ -69,7 +235,7 @@
             right: 0;
             bottom: 0;
             pointer-events: none;
-            background: linear-gradient(135deg, rgba(229,62,126,0.05) 0%, rgba(245,138,66,0.05) 100%);
+            background: linear-gradient(135deg, rgba(0,242,254,0.05) 0%, rgba(79,172,254,0.05) 100%);
             z-index: 1;
         }
 
@@ -127,15 +293,21 @@
             flex-shrink: 0;
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
-            color: #E53E7E;
+            background: linear-gradient(135deg, rgba(0,242,254,0.1), rgba(79,172,254,0.1));
+            border: 1px solid rgba(0,242,254,0.3);
+            color: var(--primary-glow);
             transition: all 0.3s ease;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
         }
 
         .contact_method_list li a:hover .icon {
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             transform: scale(1.1);
+            border-color: transparent;
         }
 
         .contact_method_list .text {
@@ -146,10 +318,11 @@
             -ms-word-break: break-all;
             hyphens: auto;
             transition: all 0.3s ease;
+            color: rgba(255, 255, 255, 0.8);
         }
 
         .contact_method_list li a:hover .text {
-            color: #E53E7E;
+            color: var(--primary-glow);
         }
 
         @media screen and (max-width: 575px) {
@@ -164,150 +337,228 @@
 
         /* Contact method box enhancements */
         .contact_method_box {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0,242,254,0.2);
+            border-radius: 20px;
+            padding: 30px;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(229,62,126,0.1);
             transition: all 0.3s ease;
+            height: 100%;
         }
 
         .contact_method_box:hover {
-            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
-            border-color: rgba(229,62,126,0.3);
+            box-shadow: 0 20px 40px rgba(0,242,254,0.2);
+            border-color: rgba(0,242,254,0.4);
         }
 
         .contact_method_box::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(229,62,126,0.03) 0%, transparent 70%);
-            animation: rotate 30s linear infinite;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
         }
 
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        .contact_method_box:hover::before {
+            left: 0;
+        }
+
+        .contact_method_box .heading_block {
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact_method_box .heading_text {
+            color: #fff;
+        }
+
+        .contact_method_box .heading_description {
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* Instant contact form enhancements */
         .instant_contact_form {
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0,242,254,0.2);
+            border-radius: 20px;
+            padding: 40px;
             position: relative;
             overflow: hidden;
-            border: 1px solid rgba(229,62,126,0.1);
         }
 
         .instant_contact_form::before {
             content: '';
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(229,62,126,0.03) 0%, transparent 70%);
-            animation: rotate-reverse 30s linear infinite;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
         }
 
-        @keyframes rotate-reverse {
-            from { transform: rotate(360deg); }
-            to { transform: rotate(0deg); }
+        .instant_contact_form:hover::before {
+            left: 0;
         }
 
         /* Form input enhancements */
         .form-group {
             position: relative;
+            margin-bottom: 20px;
         }
 
         .form-group .input_title {
             position: absolute;
-            top: 20px;
-            left: 20px;
+            top: 15px;
+            left: 15px;
             z-index: 2;
             transition: all 0.3s ease;
         }
 
         .form-group .input_title i {
-            color: #E53E7E;
+            color: var(--primary-glow);
+            font-size: 18px;
             transition: all 0.3s ease;
         }
 
         .form-group:hover .input_title i {
             transform: scale(1.1);
-            color: #F58A42;
+            color: var(--secondary-glow);
         }
 
         .form-group .form-control {
-            padding-left: 50px;
+            padding-left: 45px;
+            padding-right: 15px;
+            height: 50px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0,242,254,0.2);
+            border-radius: 10px;
+            color: #fff;
             transition: all 0.3s ease;
-            border: 1px solid rgba(229,62,126,0.1);
         }
 
         .form-group .form-control:focus {
-            border-color: #E53E7E;
-            box-shadow: 0 0 0 3px rgba(229,62,126,0.1);
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 0 3px rgba(0,242,254,0.1);
             transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .form-group .form-control::placeholder {
+            color: rgba(255, 255, 255, 0.4);
+        }
+
+        textarea.form-control {
+            height: auto !important;
+            padding-top: 15px;
         }
 
         /* Support step enhancements */
         .support_step {
             position: relative;
             z-index: 2;
+            list-style: none;
+            padding: 0;
+            margin-top: 30px;
+        }
+
+        .support_step li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding: 10px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .support_step li:hover {
+            background: rgba(0,242,254,0.05);
+            transform: translateX(5px);
         }
 
         .support_step .serial_number {
-            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
-            color: #E53E7E;
-            border: 1px solid rgba(229,62,126,0.3);
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, rgba(0,242,254,0.1), rgba(79,172,254,0.1));
+            border: 1px solid rgba(0,242,254,0.3);
+            color: var(--primary-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            font-weight: 600;
             transition: all 0.3s ease;
         }
 
         .support_step li:hover .serial_number {
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(229,62,126,0.5);
-        }
-
-        .support_step li:hover .text {
-            color: #E53E7E;
-            transform: translateX(5px);
+            box-shadow: 0 0 20px rgba(0,242,254,0.5);
+            border-color: transparent;
         }
 
         .support_step .text {
+            color: rgba(255, 255, 255, 0.8);
             transition: all 0.3s ease;
+            font-size: 15px;
         }
 
-        .support_step::before {
-            background: linear-gradient(180deg, #E53E7E, #F58A42);
-            opacity: 0.3;
+        .support_step li:hover .text {
+            color: var(--primary-glow);
         }
 
         /* Small title enhancement */
-        .small_title i {
-            color: #E53E7E;
-            animation: pulse 2s ease-in-out infinite;
+        .small_title {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 10px;
         }
 
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.2); }
+        .small_title i {
+            color: var(--primary-glow);
+            margin-right: 8px;
+            animation: pulse 2s ease-in-out infinite;
         }
 
         /* Form title */
         .form_title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            margin-bottom: 30px;
             position: relative;
             display: inline-block;
+            font-family: 'Space Grotesk', sans-serif;
         }
 
         .form_title::after {
             content: '';
             position: absolute;
-            bottom: -5px;
+            bottom: -10px;
             left: 0;
             width: 50px;
             height: 2px;
-            background: linear-gradient(90deg, #E53E7E, #F58A42);
+            background: linear-gradient(90deg, var(--primary-glow), var(--secondary-glow));
             animation: width-pulse 3s ease-in-out infinite;
         }
 
@@ -316,21 +567,15 @@
             50% { width: 100px; }
         }
 
-        /* Brand colors */
-        mark {
-            color: #E53E7E;
-            background: transparent;
-        }
-
-        .heading_focus_text.has_underline {
-            filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(1684%) hue-rotate(315deg) brightness(94%) contrast(97%);
-        }
-
+        /* Tech Buttons */
         .btn-primary {
-            background: linear-gradient(135deg, #E53E7E, #F58A42) !important;
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow)) !important;
             border: none !important;
             position: relative;
             overflow: hidden;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
         }
 
         .btn-primary::before {
@@ -350,27 +595,114 @@
 
         .btn-primary:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(229,62,126,0.4) !important;
+            box-shadow: 0 10px 30px rgba(0,242,254,0.4) !important;
         }
 
-        .tech-badge-sm {
-            display: inline-block;
-            padding: 3px 10px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
-            border: 1px solid rgba(229,62,126,0.3);
+        .btn-primary .btn_icon {
+            margin-left: 10px;
+        }
+
+        /* Page Banner Enhancement */
+        .page_banner_section {
+            position: relative;
+        }
+
+        .page_banner_section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.9), rgba(0, 242, 254, 0.1));
+            pointer-events: none;
+        }
+
+        mark {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* System Status Bar */
+        .system-status {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Success Message Popup */
+        .success-message {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .success-content {
+            background: var(--card-bg);
+            border: 1px solid rgba(0,242,254,0.3);
             border-radius: 20px;
-            font-size: 10px;
-            font-weight: 600;
-            color: #E53E7E;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            padding: 40px;
+            text-align: center;
+            max-width: 400px;
+            animation: slideUp 0.3s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, rgba(0,242,254,0.1), rgba(79,172,254,0.1));
+            border: 2px solid var(--primary-glow);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+        }
+
+        .success-icon i {
+            font-size: 40px;
+            color: var(--primary-glow);
+        }
+
+        .success-content h4 {
+            color: #fff;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .success-content p {
+            color: rgba(255, 255, 255, 0.7);
+            margin-bottom: 20px;
         }
 
         /* Questionnaire Button Styles */
         .questionnaire-section {
             margin-top: 40px;
             text-align: center;
+            padding: 30px;
+            background: rgba(255,255,255,0.02);
+            border-radius: 15px;
+            border: 1px dashed rgba(0,242,254,0.3);
         }
         
         .questionnaire-btn {
@@ -381,19 +713,36 @@
             padding: 20px 40px;
             font-size: 18px;
             font-weight: 600;
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             border-radius: 50px;
             text-decoration: none;
             transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(229,62,126,0.3);
+            box-shadow: 0 10px 30px rgba(0,242,254,0.3);
             border: none;
             cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .questionnaire-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .questionnaire-btn:hover::before {
+            left: 100%;
         }
         
         .questionnaire-btn:hover {
             transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(229,62,126,0.4);
+            box-shadow: 0 20px 40px rgba(0,242,254,0.4);
             color: white;
         }
         
@@ -402,16 +751,63 @@
             animation: bounce 2s ease-in-out infinite;
         }
         
+        @keyframes bounce {
+            0%, 100% { transform: translateX(0); }
+            50% { transform: translateX(5px); }
+        }
+        
         .questionnaire-description {
             margin-top: 15px;
-            color: #6c757d;
+            color: rgba(255, 255, 255, 0.6);
             font-size: 16px;
+        }
+
+        /* Button loading state */
+        .btn-loading {
+            position: relative;
+            pointer-events: none;
+            opacity: 0.8;
+        }
+
+        .btn-loading::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            border: 2px solid rgba(255,255,255,0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: translateY(-50%) rotate(360deg); }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .circuit-overlay-left {
+                width: 100%;
+                opacity: 0.3;
+            }
+            
+            .instant_contact_form {
+                padding: 25px;
+            }
+            
+            .questionnaire-btn {
+                padding: 15px 25px;
+                font-size: 16px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="page_wrapper">
-        <!-- Preloader - Start -->
+        <!-- Preloader - Start (Updated with tech theme) -->
         <div id="preloader" class="preloader">
             <div class="loader-circle">
                 <div class="loader-line-mask">
@@ -419,6 +815,10 @@
                 </div>
                 <div class="loader-logo">
                     <img src="images/logo1.png" alt="Afribiz Connect Logo">
+                    <div class="loading-text mt-2">
+                        <span class="tech-badge-sm">INITIALIZING</span>
+                        <span class="tech-badge-sm">CONTACT.MD</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -432,7 +832,7 @@
         </div>
         <!-- Back To Top - End -->
 
-        <!-- Site Header - Start -->
+        <!-- Site Header - Start (Updated with tech button) -->
         <header class="site_header site_header_2">
             <div class="header_bottom stricky">
                 <div class="container">
@@ -440,8 +840,8 @@
                         <div class="col-lg-3 col-5">
                             <div class="site_logo">
                                 <a class="site_link" href="index.html">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
+                                    <img src="images/logo1.png" alt="Afribiz Connect – IT Solutions & Technology">
+                                    <span class="logo-badge tech-badge-sm ms-2">v2.0</span>
                                 </a>
                             </div>
                         </div>
@@ -488,7 +888,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary ripple-effect" href="contact.html">
+                                    <a class="btn btn-primary ripple-effect tech-btn" href="contact.html">
                                         <span class="btn_label" data-text="Free Consultation">Free Consultation</span>
                                         <span class="btn_icon">
                                             <i class="fa-solid fa-arrow-up-right"></i>
@@ -503,30 +903,42 @@
         </header>
         <!-- Site Header - End -->
 
-        <!-- Page Banner - Start -->
+        <!-- Page Banner - Start (Enhanced with tech elements) -->
         <section class="page_banner_section bg-dark section_decoration scanline" style="background-image: url('images/bg_image_2.webp');">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center fade-up">
                         <div class="heading_block text-white">
-                            <div class="heading_focus_text has_underline text-white d-inline-flex" style="background-image: url('images/shape_title_under_line.svg');">
-                                Get In Touch
+                            <div class="heading_focus_text has_underline text-white d-inline-flex tech-badge" style="background-image: url('images/shape_title_under_line.svg');">
+                                <span class="ai-pulse">⚡</span> Get In Touch <span class="ai-pulse">⚡</span>
                             </div>
                             <h1 class="heading_text text-white mb-0 glitch">
-                                Contact <mark>Us</mark>
+                                Contact <mark class="gradient-text">Us</mark>
                             </h1>
                             <p class="heading_description text-white-50">
-                                Ready to revolutionize your business? Let's start a conversation.
+                                Ready to revolutionize your business with technology? Let's start a conversation.
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Circuit overlay -->
+            <div class="circuit-overlay-left"></div>
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
         </section>
         <!-- Page Banner - End -->
+
+        <!-- System Status Bar (Tech addition) -->
+        <div class="system-status mb-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                <span class="text-white-50">Contact Form: Online & Ready</span>
+                <span class="tech-badge-sm ms-3">24/7 RESPONSE</span>
+                <span class="tech-badge-sm ms-2">ENCRYPTED</span>
+            </div>
+        </div>
 
         <!-- Contact Section - Start -->
         <section class="contact_section pb-80 bg-light section_decoration matrix-bg">
@@ -535,15 +947,15 @@
                     <!-- Contact Info Column -->
                     <div class="col-lg-4">
                         <div class="contact_method_box fade-up">
-                            <span class="tech-badge-sm"><i class="fa-regular fa-message"></i> LET'S CHAT</span>
+                            <span class="tech-badge-sm"><i class="fa-regular fa-message"></i> LET'S CONNECT</span>
                             <div class="heading_block">
                                 <div class="heading_focus_text has_underline d-inline-flex mb-3" style="background-image: url('images/shape_title_under_line.svg');">
                                     Connect With Us
                                 </div>
                                 <h2 class="heading_text mb-0">
-                                    Let's Talk
+                                    Let's Talk Tech
                                 </h2>
-                                <p class="heading_description mb-0">We're here to help you succeed in African markets.</p>
+                                <p class="heading_description mb-0">We're here to help you succeed in African digital markets.</p>
                             </div>
                             
                             <ul class="contact_method_list unordered_list_block">
@@ -576,26 +988,30 @@
                             <ul class="support_step unordered_list_block">
                                 <li>
                                     <span class="serial_number">01</span>
-                                    <span class="text">Share your business goals</span>
+                                    <span class="text">Share your tech vision</span>
                                 </li>
                                 <li>
                                     <span class="serial_number">02</span>
-                                    <span class="text">Consult with our experts</span>
+                                    <span class="text">Consult with our tech experts</span>
                                 </li>
                                 <li>
                                     <span class="serial_number">03</span>
-                                    <span class="text">Receive tailored strategy</span>
+                                    <span class="text">Receive tailored digital strategy</span>
                                 </li>
                                 <li>
                                     <span class="serial_number">04</span>
                                     <span class="text">Achieve digital dominance</span>
                                 </li>
                             </ul>
+                            
+                            <div class="mt-4">
+                                <span class="tech-badge-sm pulse-ring">⚡ 24/7 SUPPORT</span>
+                                <span class="tech-badge-sm">🔒 ENCRYPTED</span>
+                            </div>
                         </div>
                     </div>
                     
                     <!-- Contact Form Column -->
-                   <!-- Contact Form Column -->
 <div class="col-lg-8">
     <div class="instant_contact_form fade-up">
         <span class="tech-badge-sm"><i class="fa-regular fa-envelope"></i> GET IN TOUCH</span>
@@ -604,7 +1020,7 @@
             Send Us a Message
         </div>
         <h3 class="form_title">
-            Tell us about your vision, and we'll build the structural, intelligent, and visual framework for your future success.
+            Tell us about your digital vision, and we'll build the structural, intelligent, and visual framework for your future tech success.
         </h3>
         
         <!-- UPDATED: Formspree Integration with Success Message -->
@@ -647,11 +1063,11 @@
                         <label class="input_title" for="input_message">
                             <i class="fa-regular fa-comments"></i>
                         </label>
-                        <textarea id="input_message" class="form-control" name="message" rows="5" placeholder="How can we help revolutionize your business?" required></textarea>
+                        <textarea id="input_message" class="form-control" name="message" rows="5" placeholder="How can we help revolutionize your business with technology?" required></textarea>
                     </div>
                     
                     <!-- Hidden fields for Formspree -->
-                    <input type="hidden" name="_subject" value="New Contact Form Submission from Afribiz Connect">
+                    <input type="hidden" name="_subject" value="New Tech Consultation Request from Afribiz Connect">
                     
                     <button type="submit" id="submitBtn" class="btn btn-primary ripple-effect">
                         <span class="btn_label" data-text="Send Message">Send Message</span>
@@ -670,7 +1086,7 @@
                     <i class="fa-solid fa-circle-check"></i>
                 </div>
                 <h4>Message Sent Successfully!</h4>
-                <p>Thank you for reaching out. We'll get back to you within 24 hours.</p>
+                <p>Thank you for reaching out. Our tech team will get back to you within 24 hours.</p>
                 <button class="btn btn-primary" onclick="closeSuccessMessage()">Close</button>
             </div>
         </div>
@@ -681,12 +1097,17 @@
         <div class="questionnaire-section">
             <a href="https://docs.google.com/forms/d/183knnov07qFifgcordDvT2wZ_fkPHBPCguk6GaQ5l1k/viewform?usp=sharing" target="_blank" class="questionnaire-btn ripple-effect">
                 <i class="fa-regular fa-clipboard"></i>
-                Tell Us Your Vision
+                Tell Us Your Tech Vision
                 <i class="fa-solid fa-arrow-right"></i>
             </a>
             <p class="questionnaire-description">
-                Help us understand your vision for your business by completing our detailed questionnaire.
+                Help us understand your digital vision for your business by completing our detailed technology questionnaire.
             </p>
+            <div class="mt-3">
+                <span class="tech-badge-sm">📊 AI ANALYSIS</span>
+                <span class="tech-badge-sm">⚡ FAST TRACK</span>
+                <span class="tech-badge-sm">🔒 SECURE</span>
+            </div>
         </div>
         <!-- End Questionnaire Button -->
         
@@ -724,8 +1145,17 @@
         </section>
         <!-- Map Section - End -->
 
-        <!-- Site Footer - Start -->
+        <!-- Site Footer - Start (Enhanced with tech elements) -->
         <footer class="site_footer footer_layout_2 section_decoration data-stream" style="background-image: url('images/bg_pattern_3.svg');">
+            <!-- System Status -->
+            <div class="system-status mb-4">
+                <div class="d-flex align-items-center justify-content-center">
+                    <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                    <span class="text-white-50">All Systems Operational</span>
+                    <span class="tech-badge-sm ms-3">99.9% Uptime</span>
+                </div>
+            </div>
+            
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
@@ -822,7 +1252,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="footer_widget">
                                 <h3 class="footer_info_title">Newsletter</h3>
-                                <p>Stay updated with our latest insights and success stories.</p>
+                                <p>Stay updated with our latest tech insights and success stories.</p>
                                 <form class="footer_newslatter_2" action="#" method="POST">
                                     <input type="email" name="email" placeholder="Enter your email" required>
                                     <button type="submit">Subscribe</button>
@@ -931,6 +1361,19 @@ document.addEventListener('click', function(e) {
     if (e.target === successMessage) {
         closeSuccessMessage();
     }
+});
+
+// Add hover effects for tech "noise"
+document.addEventListener('DOMContentLoaded', function() {
+    const cards = document.querySelectorAll('.contact_method_box, .instant_contact_form, .questionnaire-btn');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            card.style.transform = `translateY(-5px) rotate(${Math.random() * 0.5 - 0.25}deg)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'translateY(0) rotate(0)';
+        });
+    });
 });
 </script>
 </body>

@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="Insights and news from Afribiz Connect. Latest analysis on African markets, investment opportunities, business trends, and success stories.">
-    <meta name="keywords" content="African market insights, business news, investment trends, market analysis, Africa business blog">
-    <title>Insights - Afribiz Connect</title>
+    <meta name="description" content="Insights and news from Afribiz Connect. Latest analysis on African tech markets, digital investment opportunities, business trends, and technology success stories.">
+    <meta name="keywords" content="African tech insights, digital business news, investment trends, tech market analysis, Africa technology blog">
+    <title>Tech Insights - Afribiz Connect | Digital Market Intelligence</title>
     <link rel="shortcut icon" href="images/logo1.png">
 
     <!-- Framework - CSS Include -->
@@ -14,6 +14,9 @@
 
     <!-- Icon - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    
+    <!-- Font Awesome for additional tech icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Animation - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
@@ -36,83 +39,260 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* IT Company Tech Styling - Matching homepage */
+        :root {
+            --primary-glow: #00f2fe;
+            --secondary-glow: #4facfe;
+            --dark-bg: #0a0f1e;
+            --card-bg: rgba(18, 25, 45, 0.8);
+            --grid-color: rgba(0, 242, 254, 0.1);
+            --brand-pink: #E53E7E;
+            --brand-orange: #F58A42;
+        }
+
+        /* Matrix/Rain Code Background */
+        .matrix-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(0,242,254,0.05) 0%, 
+                rgba(79,172,254,0.05) 100%);
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Circuit Pattern Overlay */
+        .circuit-overlay-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M10 10 L30 10 L30 30 L50 30 M70 20 L90 20 L90 40 M20 70 L40 70 L40 90 L60 90" stroke="%2300f2fe" fill="none" stroke-width="1"/><circle cx="30" cy="30" r="2" fill="%2300f2fe"/><circle cx="50" cy="30" r="2" fill="%2300f2fe"/><circle cx="90" cy="40" r="2" fill="%2300f2fe"/><circle cx="60" cy="90" r="2" fill="%2300f2fe"/></svg>');
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Scanline Effect */
+        .scanline {
+            position: relative;
+        }
+
+        .scanline::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        /* Data Stream Animation */
+        .data-stream {
+            position: relative;
+        }
+
+        .data-stream::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            animation: dataFlow 3s linear infinite;
+        }
+
+        @keyframes dataFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Glitch Text Effect */
+        .glitch-text {
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            33% { transform: translate(-2px, 2px); }
+            66% { transform: translate(2px, -2px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-pink {
+            background: linear-gradient(135deg, var(--brand-pink), var(--brand-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Tech Badges */
+        .tech-badge {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 30px;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-badge-sm {
+            background: rgba(79, 172, 254, 0.15);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            border-radius: 20px;
+            padding: 3px 10px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--primary-glow);
+            margin-right: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        .tech-badge-sm i {
+            margin-right: 4px;
+        }
+
+        /* Pulse Animation */
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+        }
+
+        /* Blog Cards - Updated with tech styling */
         .blog_card {
-            background: white;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 20px;
             overflow: hidden;
             height: 100%;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             position: relative;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
+
         .blog_card::before {
-            content: '';
+            content: "";
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #E53E7E, #F58A42, #E53E7E);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
+            z-index: 2;
         }
+
+        .blog_card:hover::before {
+            left: 0;
+        }
+
         .blog_card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
-            border-color: rgba(229,62,126,0.3);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
         }
-        .blog_card:hover::before {
-            opacity: 1;
-            animation: border-rotate 3s linear infinite;
-        }
-        @keyframes border-rotate {
-            from { filter: hue-rotate(0deg); }
-            to { filter: hue-rotate(360deg); }
-        }
+
         .blog_image {
             height: 250px;
             overflow: hidden;
             position: relative;
         }
+
         .blog_image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: all 0.5s ease;
         }
+
         .blog_card:hover .blog_image img {
             transform: scale(1.1);
         }
+
         .blog_category {
             position: absolute;
             top: 20px;
             left: 20px;
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             padding: 5px 15px;
             border-radius: 30px;
             font-size: 0.85rem;
             font-weight: 600;
             z-index: 2;
-            box-shadow: 0 5px 15px rgba(229,62,126,0.3);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
         }
+
+        .blog_category i {
+            margin-right: 5px;
+        }
+
         .blog_content {
             padding: 25px;
         }
+
         .blog_meta {
             display: flex;
             gap: 15px;
             margin-bottom: 15px;
             font-size: 0.9rem;
-            color: #6c757d;
+            color: rgba(255, 255, 255, 0.7);
         }
+
         .blog_meta i {
             margin-right: 5px;
-            color: #E53E7E;
+            color: var(--primary-glow);
         }
+
         .blog_title {
             font-size: 1.35rem;
             font-weight: 700;
@@ -120,21 +300,25 @@
             line-height: 1.4;
             font-family: 'Space Grotesk', sans-serif;
         }
+
         .blog_title a {
-            color: #1e1e1e;
+            color: #fff;
             text-decoration: none;
             transition: all 0.3s ease;
         }
+
         .blog_title a:hover {
-            color: #E53E7E;
+            color: var(--primary-glow);
         }
+
         .blog_excerpt {
-            color: #6c757d;
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 20px;
             line-height: 1.6;
         }
+
         .blog_link {
-            color: #E53E7E;
+            color: var(--primary-glow);
             text-decoration: none;
             font-weight: 600;
             display: inline-flex;
@@ -142,12 +326,15 @@
             gap: 8px;
             transition: all 0.3s ease;
         }
+
         .blog_link:hover {
             gap: 12px;
-            color: #F58A42;
+            color: var(--secondary-glow);
         }
+
+        /* Featured Post - Updated with tech styling */
         .featured_post {
-            background: linear-gradient(135deg, #E53E7E 0%, #F58A42 100%);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             border-radius: 20px;
             padding: 50px;
             color: white;
@@ -155,6 +342,7 @@
             position: relative;
             overflow: hidden;
         }
+
         .featured_post::before {
             content: '';
             position: absolute;
@@ -165,13 +353,15 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
         }
+
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
+
         .featured_post .blog_category {
             background: white;
-            color: #E53E7E;
+            color: var(--primary-glow);
             position: relative;
             top: 0;
             left: 0;
@@ -179,41 +369,51 @@
             margin-bottom: 20px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
+
         .featured_post .blog_title {
             color: white;
             font-size: 2rem;
             position: relative;
             z-index: 2;
         }
+
         .featured_post .blog_title a {
             color: white;
         }
+
         .featured_post .blog_meta {
             color: rgba(255,255,255,0.8);
             position: relative;
             z-index: 2;
         }
+
         .featured_post .blog_meta i {
             color: white;
         }
+
         .featured_post .blog_excerpt {
             color: rgba(255,255,255,0.9);
             position: relative;
             z-index: 2;
         }
+
         .featured_post .blog_link {
-            color: #E53E7E;
+            color: var(--primary-glow);
             background: white;
             padding: 12px 30px;
             border-radius: 50px;
             position: relative;
             z-index: 2;
+            border: none;
         }
+
         .featured_post .blog_link:hover {
             background: rgba(255,255,255,0.9);
             transform: translateY(-2px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.1);
         }
+
+        /* Category Filters - Updated with tech styling */
         .category_filter {
             display: flex;
             flex-wrap: wrap;
@@ -221,101 +421,134 @@
             justify-content: center;
             margin-bottom: 40px;
         }
+
         .filter_btn {
             padding: 10px 25px;
-            background: #f8f9fa;
-            border: 1px solid rgba(0,0,0,0.05);
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 30px;
-            color: #495057;
+            color: rgba(255, 255, 255, 0.8);
             font-weight: 600;
             transition: all 0.3s ease;
             cursor: pointer;
+            backdrop-filter: blur(5px);
         }
+
         .filter_btn:hover, .filter_btn.active {
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             border-color: transparent;
             transform: translateY(-2px);
-            box-shadow: 0 10px 20px rgba(229,62,126,0.3);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3);
         }
+
+        /* Pagination - Updated with tech styling */
         .pagination {
             display: flex;
             justify-content: center;
             gap: 10px;
             margin-top: 50px;
         }
+
         .page_link {
             width: 45px;
             height: 45px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #f8f9fa;
+            background: var(--card-bg);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 50%;
-            color: #495057;
+            color: rgba(255, 255, 255, 0.8);
             font-weight: 600;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
+            backdrop-filter: blur(5px);
         }
+
         .page_link:hover, .page_link.active {
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             border-color: transparent;
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(229,62,126,0.3);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
         }
+
+        /* Newsletter Box - Updated with tech styling */
         .newsletter_box {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 20px;
             padding: 40px;
             text-align: center;
-            border: 1px solid rgba(229,62,126,0.1);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
+
         .newsletter_box h3 {
             font-size: 1.75rem;
             font-weight: 700;
             margin-bottom: 15px;
             font-family: 'Space Grotesk', sans-serif;
+            color: #fff;
         }
+
+        .newsletter_box p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
         .newsletter_form {
             max-width: 500px;
             margin: 30px auto 0;
             display: flex;
             gap: 10px;
         }
+
         .newsletter_form input {
             flex: 1;
             padding: 15px 20px;
-            border: 1px solid rgba(229,62,126,0.2);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
             border-radius: 50px;
             font-size: 1rem;
             transition: all 0.3s ease;
+            color: #fff;
         }
+
         .newsletter_form input:focus {
             outline: none;
-            border-color: #E53E7E;
-            box-shadow: 0 0 0 3px rgba(229,62,126,0.1);
+            border-color: var(--primary-glow);
+            box-shadow: 0 0 0 3px rgba(0, 242, 254, 0.1);
         }
+
+        .newsletter_form input::placeholder {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
         .newsletter_form button {
             padding: 15px 30px;
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             border: none;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
+
         .newsletter_form button:hover {
             transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 10px 20px rgba(229,62,126,0.3);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3);
         }
+
+        /* CTA Section - Updated with tech overlay */
         .cta_section {
-            background: linear-gradient(135deg, #E53E7E 0%, #F58A42 100%) !important;
+            background: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-orange) 100%);
+            padding: 80px 0;
             position: relative;
             overflow: hidden;
         }
+
         .cta_section::before {
             content: '';
             position: absolute;
@@ -326,31 +559,91 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
         }
-        mark {
-            color: #E53E7E;
-            background: transparent;
-        }
-        .heading_focus_text.has_underline {
-            filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(1684%) hue-rotate(315deg) brightness(94%) contrast(97%);
-        }
-        .tech-badge-sm {
-            display: inline-block;
-            padding: 3px 10px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
-            border: 1px solid rgba(229,62,126,0.3);
-            border-radius: 20px;
-            font-size: 10px;
+
+        .cta_section .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            color: var(--brand-pink);
             font-weight: 600;
-            color: #E53E7E;
-            margin-right: 8px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta_section .btn-light:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tech Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow)) !important;
+            border: none !important;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--secondary-glow), var(--primary-glow)) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3) !important;
+        }
+
+        /* Page Banner Enhancement */
+        .page_banner_section {
+            position: relative;
+        }
+
+        .page_banner_section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.9), rgba(0, 242, 254, 0.1));
+            pointer-events: none;
+        }
+
+        mark {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* System Status Bar */
+        .system-status {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .circuit-overlay-left {
+                width: 100%;
+                opacity: 0.3;
+            }
+            
+            .featured_post {
+                padding: 30px;
+            }
+            
+            .featured_post .blog_title {
+                font-size: 1.5rem;
+            }
+            
+            .newsletter_form {
+                flex-direction: column;
+            }
+            
+            .blog_image {
+                height: 200px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="page_wrapper">
-        <!-- Preloader - Start -->
+        <!-- Preloader - Start (Updated with tech theme) -->
         <div id="preloader" class="preloader">
             <div class="loader-circle">
                 <div class="loader-line-mask">
@@ -358,6 +651,10 @@
                 </div>
                 <div class="loader-logo">
                     <img src="images/logo1.png" alt="Afribiz Connect Logo">
+                    <div class="loading-text mt-2">
+                        <span class="tech-badge-sm">INITIALIZING</span>
+                        <span class="tech-badge-sm">INSIGHTS.MD</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -371,7 +668,7 @@
         </div>
         <!-- Back To Top - End -->
 
-        <!-- Site Header - Start -->
+        <!-- Site Header - Start (Updated with tech button) -->
         <header class="site_header site_header_2">
             <div class="header_bottom stricky">
                 <div class="container">
@@ -379,8 +676,8 @@
                         <div class="col-lg-3 col-5">
                             <div class="site_logo">
                                 <a class="site_link" href="index.html">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
+                                    <img src="images/logo1.png" alt="Afribiz Connect – IT Solutions & Technology">
+                                    <span class="logo-badge tech-badge-sm ms-2">v2.0</span>
                                 </a>
                             </div>
                         </div>
@@ -427,7 +724,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary ripple-effect" href="contact.html">
+                                    <a class="btn btn-primary ripple-effect tech-btn" href="contact.html">
                                         <span class="btn_label" data-text="Free Consultation">Free Consultation</span>
                                         <span class="btn_icon">
                                             <i class="fa-solid fa-arrow-up-right"></i>
@@ -442,63 +739,82 @@
         </header>
         <!-- Site Header - End -->
 
-        <!-- Page Banner - Start -->
+        <!-- Page Banner - Start (Enhanced with tech elements) -->
         <section class="page_banner_section bg-dark section_decoration scanline" style="background-image: url('images/bg_image_2.webp');">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center fade-up">
                         <div class="heading_block text-white">
-                            <div class="heading_focus_text has_underline text-white d-inline-flex" style="background-image: url('images/shape_title_under_line.svg');">
-                                Knowledge Hub
+                            <div class="heading_focus_text has_underline text-white d-inline-flex tech-badge" style="background-image: url('images/shape_title_under_line.svg');">
+                                <span class="ai-pulse">⚡</span> Tech Knowledge Hub <span class="ai-pulse">⚡</span>
                             </div>
                             <h1 class="heading_text text-white mb-0 glitch">
-                                Insights & <mark>News</mark>
+                                Tech Insights & <mark class="gradient-text">Digital News</mark>
                             </h1>
                             <p class="heading_description text-white-50">
-                                Latest analysis, trends, and success stories from African markets
+                                Latest analysis, digital trends, and tech success stories from African markets
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Circuit overlay -->
+            <div class="circuit-overlay-left"></div>
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
         </section>
         <!-- Page Banner - End -->
 
-        <!-- Category Filters - Start -->
+        <!-- System Status Bar (Tech addition) -->
+        <div class="system-status mb-4">
+            <div class="d-flex align-items-center justify-content-center">
+                <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                <span class="text-white-50">Insights Feed: Live Updates</span>
+                <span class="tech-badge-sm ms-3">REAL-TIME DATA</span>
+                <span class="tech-badge-sm ms-2">AI-CURATED</span>
+            </div>
+        </div>
+
+        <!-- Category Filters - Start (Enhanced with tech styling) -->
         <section class="filters_section section_space pb-0">
             <div class="container">
                 <div class="category_filter fade-up">
-                    <span class="filter_btn active">All Posts</span>
-                    <span class="filter_btn">Market Analysis</span>
-                    <span class="filter_btn">Investment Trends</span>
-                    <span class="filter_btn">Success Stories</span>
-                    <span class="filter_btn">Industry Insights</span>
-                    <span class="filter_btn">News & Events</span>
+                    <span class="filter_btn active">All Tech Posts</span>
+                    <span class="filter_btn">Digital Market Analysis</span>
+                    <span class="filter_btn">Tech Investment Trends</span>
+                    <span class="filter_btn">Digital Success Stories</span>
+                    <span class="filter_btn">Tech Industry Insights</span>
+                    <span class="filter_btn">AI & ML News</span>
+                    <span class="filter_btn">Fintech Updates</span>
                 </div>
             </div>
         </section>
         <!-- Category Filters - End -->
 
-        <!-- Featured Post - Start -->
+        <!-- Featured Post - Start (Enhanced with tech content) -->
         <section class="featured_post_section section_space pb-0">
             <div class="container">
                 <div class="featured_post fade-up">
                     <div class="row align-items-center">
                         <div class="col-lg-8">
-                            <span class="blog_category"><i class="fa-regular fa-star"></i> Featured Insight</span>
+                            <span class="blog_category"><i class="fa-regular fa-star"></i> Featured Tech Insight</span>
                             <h2 class="blog_title">
-                                <a href="insight-details.html">The Future of Renewable Energy Investment in South Africa: 2025 Outlook</a>
+                                <a href="insight-details.html">The Future of AI-Powered Renewable Energy Investment in South Africa: 2025 Tech Outlook</a>
                             </h2>
                             <div class="blog_meta">
                                 <span><i class="fa-regular fa-calendar"></i> March 15, 2024</span>
                                 <span><i class="fa-regular fa-user"></i> By Thabo Mbeki</span>
                                 <span><i class="fa-regular fa-comment"></i> 12 Comments</span>
+                                <span><i class="fa-regular fa-eye"></i> 2.5K Views</span>
                             </div>
-                            <p class="blog_excerpt">South Africa's energy sector is undergoing a massive transformation. With government policy changes, private sector investment, and technological advancements, renewable energy presents unprecedented opportunities for investors. This comprehensive analysis explores the regulatory landscape, key players, and projected growth areas for 2025 and beyond.</p>
-                            <a href="insight-details.html" class="blog_link">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+                            <p class="blog_excerpt">South Africa's energy sector is undergoing a massive digital transformation. With AI-powered grid management, government policy changes, and private sector tech investment, smart renewable energy presents unprecedented opportunities for technology investors. This comprehensive analysis explores the digital regulatory landscape, key tech players, and projected growth areas for 2025 and beyond.</p>
+                            <div class="mt-3 mb-3">
+                                <span class="tech-badge-sm"><i class="fa-regular fa-microchip"></i> AI TECH</span>
+                                <span class="tech-badge-sm"><i class="fa-regular fa-bolt"></i> SMART GRID</span>
+                                <span class="tech-badge-sm"><i class="fa-regular fa-sun"></i> SOLAR AI</span>
+                            </div>
+                            <!-- <a href="insight-details.html" class="blog_link">Read Full Tech Article <i class="fa-solid fa-arrow-right"></i></a> -->
                         </div>
                         <div class="col-lg-4 d-none d-lg-block">
                             <!-- Optional: Add featured image here -->
@@ -509,16 +825,16 @@
         </section>
         <!-- Featured Post - End -->
 
-        <!-- Blog Grid - Start -->
+        <!-- Blog Grid - Start (Enhanced with tech content) -->
         <section class="blog_grid_section section_space">
             <div class="container">
                 <div class="row stagger-fade">
-                    <!-- Blog Post 1 -->
+                    <!-- Blog Post 1 - Tech Market Entry -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="blog_card">
                             <div class="blog_image">
-                                <img src="images/blog_post_image_12.webp" alt="Market Entry Guide">
-                                <span class="blog_category"><i class="fa-regular fa-chart-line"></i> Market Analysis</span>
+                                <img src="images/blog_post_image_12.webp" alt="Tech Market Entry Guide">
+                                <span class="blog_category"><i class="fa-regular fa-chart-line"></i> Digital Market Analysis</span>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_meta">
@@ -526,20 +842,24 @@
                                     <span><i class="fa-regular fa-user"></i> Sarah Ndlovu</span>
                                 </div>
                                 <h3 class="blog_title">
-                                    <a href="insight-details.html">South Africa Market Entry: Complete Guide for International Businesses</a>
+                                    <a href="insight-details.html">South Africa Tech Market Entry: Complete Digital Guide for International Tech Companies</a>
                                 </h3>
-                                <p class="blog_excerpt">Everything you need to know about entering the South African market - from regulatory requirements to partner identification and local networking.</p>
-                                <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                                <p class="blog_excerpt">Everything you need to know about entering the South African tech market - from digital regulatory requirements to tech partner identification and local innovation networking.</p>
+                                <div class="mb-2">
+                                    <span class="tech-badge-sm">TECH</span>
+                                    <span class="tech-badge-sm">SAAS</span>
+                                </div>
+                                <!-- <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a> -->
                             </div>
                         </div>
                     </div>
 
-                    <!-- Blog Post 2 -->
+                    <!-- Blog Post 2 - Tech Investment Hotspots -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="blog_card">
                             <div class="blog_image">
-                                <img src="images/blog_post_image_13.webp" alt="Investment Hotspots">
-                                <span class="blog_category"><i class="fa-regular fa-chart-pie"></i> Investment Trends</span>
+                                <img src="images/blog_post_image_13.webp" alt="Tech Investment Hotspots">
+                                <span class="blog_category"><i class="fa-regular fa-chart-pie"></i> Tech Investment Trends</span>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_meta">
@@ -547,20 +867,24 @@
                                     <span><i class="fa-regular fa-user"></i> Michael Osei</span>
                                 </div>
                                 <h3 class="blog_title">
-                                    <a href="insight-details.html">Top 5 African Investment Hotspots for 2024</a>
+                                    <a href="insight-details.html">Top 5 African Tech Investment Hotspots for 2024: AI, Fintech & SaaS</a>
                                 </h3>
-                                <p class="blog_excerpt">Discover the most promising investment destinations across Africa this year, with analysis of growth potential, risks, and key sectors.</p>
-                                <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                                <p class="blog_excerpt">Discover the most promising tech investment destinations across Africa this year, with analysis of digital growth potential, tech ecosystem risks, and key innovation sectors.</p>
+                                <div class="mb-2">
+                                    <span class="tech-badge-sm">FINTECH</span>
+                                    <span class="tech-badge-sm">AI</span>
+                                </div>
+                                <!-- <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a> -->
                             </div>
                         </div>
                     </div>
 
-                    <!-- Blog Post 3 -->
+                    <!-- Blog Post 3 - Tech Regulatory Changes -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="blog_card">
                             <div class="blog_image">
-                                <img src="images/blog_post_image_14.webp" alt="Regulatory Changes">
-                                <span class="blog_category"><i class="fa-regular fa-file-lines"></i> Industry Insights</span>
+                                <img src="images/blog_post_image_14.webp" alt="Tech Regulatory Changes">
+                                <span class="blog_category"><i class="fa-regular fa-file-lines"></i> Tech Industry Insights</span>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_meta">
@@ -568,20 +892,24 @@
                                     <span><i class="fa-regular fa-user"></i> Thabo Mbeki</span>
                                 </div>
                                 <h3 class="blog_title">
-                                    <a href="insight-details.html">Navigating Regulatory Changes in Key African Markets: 2024 Update</a>
+                                    <a href="insight-details.html">Navigating Digital Regulatory Changes in Key African Tech Markets: 2024 Update</a>
                                 </h3>
-                                <p class="blog_excerpt">Important regulatory updates across South Africa, Kenya, Nigeria, and Ghana that could impact your business operations.</p>
-                                <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                                <p class="blog_excerpt">Important digital regulatory updates across South Africa, Kenya, Nigeria, and Ghana that could impact your tech business operations and data compliance.</p>
+                                <div class="mb-2">
+                                    <span class="tech-badge-sm">GDPR</span>
+                                    <span class="tech-badge-sm">DATA</span>
+                                </div>
+                                <!-- <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a> -->
                             </div>
                         </div>
                     </div>
 
-                    <!-- Blog Post 4 -->
+                    <!-- Blog Post 4 - Tech Success Story -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="blog_card">
                             <div class="blog_image">
-                                <img src="images/blog_post_image_12.webp" alt="Success Story">
-                                <span class="blog_category"><i class="fa-regular fa-trophy"></i> Success Stories</span>
+                                <img src="images/blog_post_image_12.webp" alt="Tech Success Story">
+                                <span class="blog_category"><i class="fa-regular fa-trophy"></i> Digital Success Stories</span>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_meta">
@@ -589,20 +917,24 @@
                                     <span><i class="fa-regular fa-user"></i> Sarah Ndlovu</span>
                                 </div>
                                 <h3 class="blog_title">
-                                    <a href="insight-details.html">How a European Mining Company Successfully Entered the South African Market</a>
+                                    <a href="insight-details.html">How a European SaaS Company Successfully Entered the South African Tech Market</a>
                                 </h3>
-                                <p class="blog_excerpt">A case study on navigating complex regulations, identifying partners, and establishing operations within 8 months.</p>
-                                <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                                <p class="blog_excerpt">A case study on navigating complex digital regulations, identifying tech partners, and establishing cloud operations within 8 months.</p>
+                                <div class="mb-2">
+                                    <span class="tech-badge-sm">SAAS</span>
+                                    <span class="tech-badge-sm">CLOUD</span>
+                                </div>
+                                <!-- <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a> -->
                             </div>
                         </div>
                     </div>
 
-                    <!-- Blog Post 5 -->
+                    <!-- Blog Post 5 - Fintech -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="blog_card">
                             <div class="blog_image">
                                 <img src="images/blog_post_image_13.webp" alt="Fintech">
-                                <span class="blog_category"><i class="fa-regular fa-building-columns"></i> Investment Trends</span>
+                                <span class="blog_category"><i class="fa-regular fa-building-columns"></i> Tech Investment Trends</span>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_meta">
@@ -610,20 +942,24 @@
                                     <span><i class="fa-regular fa-user"></i> Michael Osei</span>
                                 </div>
                                 <h3 class="blog_title">
-                                    <a href="insight-details.html">The Rise of Fintech in Africa: Opportunities and Challenges</a>
+                                    <a href="insight-details.html">The Rise of Fintech in Africa: AI-Powered Opportunities and Digital Challenges</a>
                                 </h3>
-                                <p class="blog_excerpt">Exploring the booming fintech sector across Africa, key players, regulatory frameworks, and investment opportunities.</p>
-                                <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                                <p class="blog_excerpt">Exploring the booming fintech sector across Africa, key tech players, digital regulatory frameworks, and AI-powered investment opportunities.</p>
+                                <div class="mb-2">
+                                    <span class="tech-badge-sm">FINTECH</span>
+                                    <span class="tech-badge-sm">BLOCKCHAIN</span>
+                                </div>
+                                <!-- <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a> -->
                             </div>
                         </div>
                     </div>
 
-                    <!-- Blog Post 6 -->
+                    <!-- Blog Post 6 - Agritech -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="blog_card">
                             <div class="blog_image">
-                                <img src="images/blog_post_image_14.webp" alt="Agriculture">
-                                <span class="blog_category"><i class="fa-regular fa-seedling"></i> Industry Insights</span>
+                                <img src="images/blog_post_image_14.webp" alt="Agritech">
+                                <span class="blog_category"><i class="fa-regular fa-seedling"></i> Tech Industry Insights</span>
                             </div>
                             <div class="blog_content">
                                 <div class="blog_meta">
@@ -631,16 +967,95 @@
                                     <span><i class="fa-regular fa-user"></i> Thabo Mbeki</span>
                                 </div>
                                 <h3 class="blog_title">
-                                    <a href="insight-details.html">Agritech Revolution: Transforming African Agriculture</a>
+                                    <a href="insight-details.html">Agritech Revolution: AI and IoT Transforming African Agriculture</a>
                                 </h3>
-                                <p class="blog_excerpt">How technology is revolutionizing agriculture across Africa, creating new opportunities for investors and farmers alike.</p>
-                                <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a>
+                                <p class="blog_excerpt">How AI, IoT, and drone technology are revolutionizing agriculture across Africa, creating new digital opportunities for tech investors and farmers alike.</p>
+                                <div class="mb-2">
+                                    <span class="tech-badge-sm">IOT</span>
+                                    <span class="tech-badge-sm">DRONES</span>
+                                </div>
+                                <!-- <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 7 - Cybersecurity -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="blog_card">
+                            <div class="blog_image">
+                                <img src="images/blog_post_image_12.webp" alt="Cybersecurity">
+                                <span class="blog_category"><i class="fa-regular fa-shield"></i> Tech Industry Insights</span>
+                            </div>
+                            <div class="blog_content">
+                                <div class="blog_meta">
+                                    <span><i class="fa-regular fa-calendar"></i> Feb 5, 2024</span>
+                                    <span><i class="fa-regular fa-user"></i> Craig Kavirayan</span>
+                                </div>
+                                <h3 class="blog_title">
+                                    <a href="insight-details.html">Cybersecurity in Africa: Protecting Digital Assets in a Growing Tech Economy</a>
+                                </h3>
+                                <p class="blog_excerpt">As Africa's digital economy grows, cybersecurity becomes critical. Learn about the threats, solutions, and opportunities in the African cybertech market.</p>
+                                <div class="mb-2">
+                                    <span class="tech-badge-sm">SECURITY</span>
+                                    <span class="tech-badge-sm">COMPLIANCE</span>
+                                </div>
+                                <!-- <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 8 - EdTech -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="blog_card">
+                            <div class="blog_image">
+                                <img src="images/blog_post_image_13.webp" alt="EdTech">
+                                <span class="blog_category"><i class="fa-regular fa-graduation-cap"></i> Digital Success Stories</span>
+                            </div>
+                            <div class="blog_content">
+                                <div class="blog_meta">
+                                    <span><i class="fa-regular fa-calendar"></i> Jan 28, 2024</span>
+                                    <span><i class="fa-regular fa-user"></i> Sarah Ndlovu</span>
+                                </div>
+                                <h3 class="blog_title">
+                                    <a href="insight-details.html">EdTech Boom: How Digital Learning Platforms Are Transforming African Education</a>
+                                </h3>
+                                <p class="blog_excerpt">Exploring the rapid growth of educational technology across Africa and the investment opportunities in this booming digital sector.</p>
+                                <div class="mb-2">
+                                    <span class="tech-badge-sm">EDTECH</span>
+                                    <span class="tech-badge-sm">E-LEARNING</span>
+                                </div>
+                                <!-- <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 9 - HealthTech -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="blog_card">
+                            <div class="blog_image">
+                                <img src="images/blog_post_image_14.webp" alt="HealthTech">
+                                <span class="blog_category"><i class="fa-regular fa-hospital"></i> Tech Investment Trends</span>
+                            </div>
+                            <div class="blog_content">
+                                <div class="blog_meta">
+                                    <span><i class="fa-regular fa-calendar"></i> Jan 20, 2024</span>
+                                    <span><i class="fa-regular fa-user"></i> Michael Osei</span>
+                                </div>
+                                <h3 class="blog_title">
+                                    <a href="insight-details.html">HealthTech Revolution: Digital Health Innovation Across Africa</a>
+                                </h3>
+                                <p class="blog_excerpt">How telemedicine, AI diagnostics, and digital health platforms are transforming healthcare delivery and creating new investment opportunities.</p>
+                                <div class="mb-2">
+                                    <span class="tech-badge-sm">HEALTHTECH</span>
+                                    <span class="tech-badge-sm">AI</span>
+                                </div>
+                                <!-- <a href="insight-details.html" class="blog_link">Read More <i class="fa-solid fa-arrow-right"></i></a> -->
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Pagination -->
+                <!-- Pagination - Updated with tech styling -->
                 <div class="pagination fade-up">
                     <a href="#" class="page_link active">1</a>
                     <a href="#" class="page_link">2</a>
@@ -653,28 +1068,37 @@
         </section>
         <!-- Blog Grid - End -->
 
-        <!-- Newsletter Section - Start -->
+        <!-- Newsletter Section - Start (Enhanced with tech styling) -->
         <section class="newsletter_section section_space bg-light matrix-bg">
             <div class="container">
                 <div class="newsletter_box fade-up">
                     <span class="tech-badge-sm"><i class="fa-regular fa-envelope"></i> STAY UPDATED</span>
-                    <h3>Stay Informed with <mark>Market Insights</mark></h3>
-                    <p class="mb-4">Subscribe to our newsletter and receive the latest analysis, trends, and opportunities in African markets directly in your inbox.</p>
+                    <h3>Stay Informed with <mark class="gradient-text">Tech Market Insights</mark></h3>
+                    <p class="mb-4">Subscribe to our tech newsletter and receive the latest digital analysis, AI trends, and tech investment opportunities in African markets directly in your inbox.</p>
                     <form class="newsletter_form" action="#" method="POST">
                         <input type="email" name="email" placeholder="Enter your email address" required>
                         <button type="submit" class="ripple-effect">Subscribe</button>
                     </form>
+                    <div class="mt-3">
+                        <span class="tech-badge-sm">📊 WEEKLY DIGEST</span>
+                        <span class="tech-badge-sm">🤖 AI CURATED</span>
+                        <span class="tech-badge-sm">🔒 PRIVACY FIRST</span>
+                    </div>
                 </div>
             </div>
         </section>
         <!-- Newsletter Section - End -->
 
-        <!-- Call to Action - Start -->
+        <!-- Call to Action - Start (Enhanced with tech elements) -->
         <section class="cta_section py-5 scanline">
             <div class="container text-center">
                 <div class="fade-up">
-                    <h2 class="text-white mb-4">Want to Contribute or Collaborate?</h2>
-                    <p class="text-white mb-4 fs-5">Share your expertise or suggest topics you'd like us to cover.</p>
+                    <div class="tech-badge d-inline-flex mb-4" style="background: rgba(255,255,255,0.2); color: white; border-color: white;">
+                        <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: white; border-radius: 50%; display: inline-block;"></span>
+                        CONTRIBUTE TO TECH HUB
+                    </div>
+                    <h2 class="text-white mb-4 glitch">Want to Contribute or Collaborate?</h2>
+                    <p class="text-white mb-4 fs-5">Share your tech expertise or suggest digital topics you'd like us to cover in our insights.</p>
                     <a href="contact.html" class="btn btn-light btn-lg px-5 py-3 ripple-effect">
                         <span class="btn_label" data-text="Get in Touch">Get in Touch</span>
                         <span class="btn_icon">
@@ -686,8 +1110,17 @@
         </section>
         <!-- Call to Action - End -->
 
-        <!-- Site Footer - Start -->
+        <!-- Site Footer - Start (Enhanced with tech elements) -->
         <footer class="site_footer footer_layout_2 section_decoration data-stream" style="background-image: url('images/bg_pattern_3.svg');">
+            <!-- System Status -->
+            <div class="system-status mb-4">
+                <div class="d-flex align-items-center justify-content-center">
+                    <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                    <span class="text-white-50">All Systems Operational</span>
+                    <span class="tech-badge-sm ms-3">99.9% Uptime</span>
+                </div>
+            </div>
+            
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
@@ -774,9 +1207,9 @@
                                 <h3 class="footer_info_title">Explore</h3>
                                 <ul class="icon_list unordered_list_block">
                                     <li><a href="sectors.html">Sectors We Serve</a></li>
-                                    <li><a href="insights.html">Insights & News</a></li>
-                                    <li><a href="#featured">Featured Article</a></li>
-                                    <li><a href="about.html#team">Meet the Team</a></li>
+                                    <li><a href="insights.html">Tech Insights & News</a></li>
+                                    <li><a href="#featured">Featured Tech Article</a></li>
+                                    <li><a href="about.html#team">Meet the Tech Team</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -784,7 +1217,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="footer_widget">
                                 <h3 class="footer_info_title">Newsletter</h3>
-                                <p>Stay updated with our latest insights and success stories.</p>
+                                <p>Stay updated with our latest tech insights and digital success stories.</p>
                                 <form class="footer_newslatter_2" action="#" method="POST">
                                     <input type="email" name="email" placeholder="Enter your email" required>
                                     <button type="submit">Subscribe</button>
@@ -843,5 +1276,21 @@
     <script src="js/appear.min.js"></script>
     <script src="js/odometer.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Tech Effects Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add random tech "noise" to cards on hover
+        const cards = document.querySelectorAll('.blog_card, .filter_btn, .page_link');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = `translateY(-5px) rotate(${Math.random() * 0.5 - 0.25}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotate(0)';
+            });
+        });
+    });
+    </script>
 </body>
 </html>

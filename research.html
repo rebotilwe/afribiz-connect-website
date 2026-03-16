@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="description" content="Market Research services by Afribiz Connect. Data-driven insights, industry analysis, and consumer intelligence for African markets.">
-    <meta name="keywords" content="market research, African market intelligence, industry analysis, consumer insights, competitor analysis, data analytics">
-    <title>Market Research - Afribiz Connect</title>
+    <meta name="description" content="Market Research services by Afribiz Connect. Data-driven insights, industry analysis, and consumer intelligence for African markets using AI and advanced analytics.">
+    <meta name="keywords" content="market research, African market intelligence, industry analysis, consumer insights, competitor analysis, data analytics, AI analytics">
+    <title>Market Research - Afribiz Connect | AI-Powered Data Analytics</title>
     <link rel="shortcut icon" href="images/logo1.png">
 
     <!-- Framework - CSS Include -->
@@ -14,6 +14,9 @@
 
     <!-- Icon - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    
+    <!-- Font Awesome for additional tech icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Animation - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
@@ -36,114 +39,432 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* IT Company Tech Styling - Matching homepage */
+        :root {
+            --primary-glow: #00f2fe;
+            --secondary-glow: #4facfe;
+            --dark-bg: #0a0f1e;
+            --card-bg: rgba(18, 25, 45, 0.8);
+            --grid-color: rgba(0, 242, 254, 0.1);
+            --brand-pink: #E53E7E;
+            --brand-orange: #F58A42;
+        }
+
+        /* Matrix/Rain Code Background */
+        .matrix-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(0,242,254,0.05) 0%, 
+                rgba(79,172,254,0.05) 100%);
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Circuit Pattern Overlay */
+        .circuit-overlay-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M10 10 L30 10 L30 30 L50 30 M70 20 L90 20 L90 40 M20 70 L40 70 L40 90 L60 90" stroke="%2300f2fe" fill="none" stroke-width="1"/><circle cx="30" cy="30" r="2" fill="%2300f2fe"/><circle cx="50" cy="30" r="2" fill="%2300f2fe"/><circle cx="90" cy="40" r="2" fill="%2300f2fe"/><circle cx="60" cy="90" r="2" fill="%2300f2fe"/></svg>');
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Scanline Effect */
+        .scanline {
+            position: relative;
+        }
+
+        .scanline::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        /* Data Stream Animation */
+        .data-stream {
+            position: relative;
+        }
+
+        .data-stream::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            animation: dataFlow 3s linear infinite;
+        }
+
+        @keyframes dataFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Glitch Text Effect */
+        .glitch-text {
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            33% { transform: translate(-2px, 2px); }
+            66% { transform: translate(2px, -2px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-pink {
+            background: linear-gradient(135deg, var(--brand-pink), var(--brand-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Tech Badges */
+        .tech-badge {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 30px;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-badge-sm {
+            background: rgba(79, 172, 254, 0.15);
+            border-radius: 15px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            display: inline-block;
+        }
+
+        .tech-badge-pink {
+            background: rgba(229, 62, 126, 0.15);
+            border: 1px solid rgba(229, 62, 126, 0.3);
+            border-radius: 15px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            color: var(--brand-pink);
+        }
+
+        .tech-badge i {
+            margin-right: 4px;
+        }
+
+        /* Pulse Animation */
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+        }
+
+        /* Service Feature Cards - Updated with tech styling */
         .service_feature_card {
-            background: white;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 20px;
             padding: 30px;
             height: 100%;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
+
         .service_feature_card::before {
-            content: '';
+            content: "";
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #E53E7E, #F58A42, #E53E7E);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
         }
+
+        .service_feature_card:hover::before {
+            left: 0;
+        }
+
         .service_feature_card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
-            border-color: rgba(229,62,126,0.3);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
         }
-        .service_feature_card:hover::before {
-            opacity: 1;
-            animation: border-rotate 3s linear infinite;
-        }
-        @keyframes border-rotate {
-            from { filter: hue-rotate(0deg); }
-            to { filter: hue-rotate(360deg); }
-        }
+
         .service_icon_large {
             width: 80px;
             height: 80px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1) 0%, rgba(245,138,66,0.1) 100%);
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(79, 172, 254, 0.1) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin-bottom: 25px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
             transition: all 0.3s ease;
         }
+
         .service_icon_large i {
             font-size: 40px;
-            color: #E53E7E;
+            color: var(--primary-glow);
+            filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.5));
             transition: all 0.3s ease;
         }
+
         .service_feature_card:hover .service_icon_large {
             transform: scale(1.1);
+            border-color: rgba(0, 242, 254, 0.8);
         }
-        .service_feature_card:hover .service_icon_large i {
-            color: #F58A42;
+
+        .service_feature_card h3 {
+            color: #fff;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
         }
+
+        .service_feature_card p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .service_feature_card .icon_list li {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 8px;
+        }
+
+        .service_feature_card .fa-circle-check {
+            color: var(--primary-glow) !important;
+            filter: drop-shadow(0 0 3px rgba(0, 242, 254, 0.5));
+            margin-right: 8px;
+        }
+
+        /* Stat Cards - Updated with tech styling */
         .stat_card {
-            background: white;
+            background: var(--card-bg);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 20px;
             padding: 30px;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            height: 100%;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
-        .stat_card::after {
-            content: '';
+
+        .stat_card::before {
+            content: "";
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(229,62,126,0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            transform: scale(0);
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
         }
+
+        .stat_card:hover::before {
+            left: 0;
+        }
+
         .stat_card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
         }
-        .stat_card:hover::after {
-            opacity: 1;
-            transform: scale(1);
-        }
+
         .stat_number {
             font-size: 3rem;
             font-weight: 700;
-            color: #E53E7E;
+            color: var(--primary-glow);
             line-height: 1.2;
             margin-bottom: 10px;
             font-family: 'Space Grotesk', sans-serif;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5));
         }
+
         .stat_label {
             font-size: 1.1rem;
-            color: #6c757d;
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 0;
         }
+
+        /* Methodology Tags - Updated with tech styling */
+        .methodology_tag {
+            display: inline-block;
+            padding: 10px 25px;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 30px;
+            margin: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            cursor: default;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .methodology_tag i {
+            color: var(--primary-glow);
+            margin-right: 5px;
+        }
+
+        .methodology_tag:hover {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            color: white;
+            transform: scale(1.05) translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 242, 254, 0.3);
+            border-color: transparent;
+        }
+
+        .methodology_tag:hover i {
+            color: white;
+        }
+
+        /* Data Visualization - Enhanced with tech styling */
+        .data-visual {
+            background: var(--card-bg);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 10px;
+            padding: 15px;
+            margin-top: 20px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 10px;
+            height: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .data-visual::before {
+            content: "REAL-TIME DATA";
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            font-size: 10px;
+            color: rgba(0, 242, 254, 0.3);
+            letter-spacing: 2px;
+        }
+
+        .data-bar {
+            width: 30px;
+            background: linear-gradient(180deg, var(--primary-glow), var(--secondary-glow));
+            border-radius: 5px 5px 0 0;
+            animation: grow-bar 2s ease-out;
+            box-shadow: 0 0 10px rgba(0, 242, 254, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        @keyframes grow-bar {
+            from { height: 0; }
+            to { height: var(--height); }
+        }
+
+        /* Process Steps - Updated with tech styling */
+        .process_step {
+            text-align: center;
+            padding: 30px;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            border-radius: 20px;
+            position: relative;
+            height: 100%;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .process_step::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
+        }
+
+        .process_step:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 15px 30px rgba(0, 242, 254, 0.2);
+        }
+
+        .process_step:hover::before {
+            left: 100%;
+        }
+
         .step_number {
             width: 50px;
             height: 50px;
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             border-radius: 50%;
             display: flex;
@@ -152,77 +473,63 @@
             font-size: 1.5rem;
             font-weight: 700;
             margin: 0 auto 20px;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.5);
             transition: all 0.3s ease;
         }
-        .process_step {
-            text-align: center;
-            padding: 30px;
-            background: white;
-            border-radius: 20px;
-            position: relative;
-            border: 1px solid rgba(0,0,0,0.05);
-            height: 100%;
-            transition: all 0.3s ease;
-            overflow: hidden;
-        }
-        .process_step::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, #E53E7E, #F58A42, transparent);
-            transition: left 0.5s ease;
-        }
-        .process_step:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(229,62,126,0.1);
-        }
-        .process_step:hover::before {
-            left: 100%;
-        }
+
         .process_step:hover .step_number {
             transform: scale(1.1);
-            box-shadow: 0 0 20px rgba(229,62,126,0.5);
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.8);
         }
+
+        .process_step h4 {
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .process_step p {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Benefit Items - Updated with tech styling */
         .benefit_item {
             padding: 20px;
-            border-bottom: 1px solid rgba(0,0,0,0.05);
+            border-bottom: 1px solid rgba(0, 242, 254, 0.1);
             transition: all 0.3s ease;
+            background: transparent;
         }
+
         .benefit_item:hover {
-            background: rgba(229,62,126,0.02);
+            background: rgba(0, 242, 254, 0.05);
             transform: translateX(10px);
+            border-color: var(--primary-glow);
         }
+
         .benefit_item:last-child {
             border-bottom: none;
         }
+
         .benefit_icon i {
-            color: #E53E7E !important;
+            color: var(--primary-glow) !important;
+            filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.5));
         }
-        .methodology_tag {
-            display: inline-block;
-            padding: 10px 25px;
-            background: #f8f9fa;
-            border-radius: 30px;
-            margin: 5px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            cursor: default;
+
+        .benefit_item h4 {
+            color: #fff;
         }
-        .methodology_tag:hover {
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
-            color: white;
-            transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 10px 20px rgba(229,62,126,0.3);
+
+        .benefit_item p {
+            color: rgba(255, 255, 255, 0.7);
         }
+
+        /* CTA Section - Updated with tech overlay */
         .cta_section {
-            background: linear-gradient(135deg, #E53E7E 0%, #F58A42 100%) !important;
+            background: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-orange) 100%);
+            padding: 80px 0;
             position: relative;
             overflow: hidden;
         }
+
         .cta_section::before {
             content: '';
             position: absolute;
@@ -233,59 +540,115 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
         }
+
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
-        mark {
-            color: #E53E7E;
-            background: transparent;
-        }
-        .heading_focus_text.has_underline {
-            filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(1684%) hue-rotate(315deg) brightness(94%) contrast(97%);
-        }
-        .tech-badge {
-            display: inline-block;
-            padding: 4px 12px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
-            border: 1px solid rgba(229,62,126,0.3);
-            border-radius: 20px;
-            font-size: 12px;
+
+        .cta_section .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            color: var(--brand-pink);
             font-weight: 600;
-            color: #E53E7E;
-            margin-right: 8px;
-            margin-bottom: 8px;
-            text-transform: uppercase;
         }
-        .tech-badge i {
-            margin-right: 4px;
+
+        .cta_section .btn-light:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
-        .data-visual {
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border-radius: 10px;
-            padding: 15px;
-            margin-top: 20px;
-            display: flex;
-            align-items: flex-end;
-            justify-content: center;
-            gap: 10px;
-            height: 100px;
+
+        /* Tech Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow)) !important;
+            border: none !important;
         }
-        .data-bar {
-            width: 30px;
-            background: linear-gradient(180deg, #E53E7E, #F58A42);
-            border-radius: 5px 5px 0 0;
-            animation: grow-bar 2s ease-out;
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--secondary-glow), var(--primary-glow)) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3) !important;
         }
-        @keyframes grow-bar {
-            from { height: 0; }
-            to { height: var(--height); }
+
+        /* Page Banner Enhancement */
+        .page_banner_section {
+            position: relative;
+        }
+
+        .page_banner_section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.9), rgba(0, 242, 254, 0.1));
+            pointer-events: none;
+        }
+
+        mark {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* System Status Bar */
+        .system-status {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Service Content Text Adjustments */
+        .service_content .heading_description {
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .service_image img {
+            border: 3px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Benefits Image */
+        .benefits_image img {
+            border: 3px solid rgba(0, 242, 254, 0.2);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .circuit-overlay-left {
+                width: 100%;
+                opacity: 0.3;
+            }
+            
+            .service_feature_card {
+                padding: 20px;
+            }
+            
+            .service_icon_large {
+                width: 60px;
+                height: 60px;
+            }
+            
+            .service_icon_large i {
+                font-size: 30px;
+            }
+            
+            .stat_number {
+                font-size: 2.5rem;
+            }
+            
+            .data-bar {
+                width: 20px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="page_wrapper">
-        <!-- Preloader - Start -->
+        <!-- Preloader - Start (Updated with tech theme) -->
         <div id="preloader" class="preloader">
             <div class="loader-circle">
                 <div class="loader-line-mask">
@@ -293,6 +656,10 @@
                 </div>
                 <div class="loader-logo">
                     <img src="images/logo1.png" alt="Afribiz Connect Logo">
+                    <div class="loading-text mt-2">
+                        <span class="tech-badge-sm">INITIALIZING</span>
+                        <span class="tech-badge-sm">RESEARCH.MD</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -306,7 +673,7 @@
         </div>
         <!-- Back To Top - End -->
 
-        <!-- Site Header - Start -->
+        <!-- Site Header - Start (Updated with tech button) -->
         <header class="site_header site_header_2">
             <div class="header_bottom stricky">
                 <div class="container">
@@ -314,8 +681,8 @@
                         <div class="col-lg-3 col-5">
                             <div class="site_logo">
                                 <a class="site_link" href="index.html">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
+                                    <img src="images/logo1.png" alt="Afribiz Connect – IT Solutions & Technology">
+                                    <span class="logo-badge tech-badge-sm ms-2">v2.0</span>
                                 </a>
                             </div>
                         </div>
@@ -362,7 +729,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary ripple-effect" href="contact.html">
+                                    <a class="btn btn-primary ripple-effect tech-btn" href="contact.html">
                                         <span class="btn_label" data-text="Free Consultation">Free Consultation</span>
                                         <span class="btn_icon">
                                             <i class="fa-solid fa-arrow-up-right"></i>
@@ -377,32 +744,34 @@
         </header>
         <!-- Site Header - End -->
 
-        <!-- Page Banner - Start -->
+        <!-- Page Banner - Start (Enhanced with tech elements) -->
         <section class="page_banner_section bg-dark section_decoration scanline" style="background-image: url('images/bg_image_2.webp');">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center fade-up">
                         <div class="heading_block text-white">
-                            <div class="heading_focus_text has_underline text-white d-inline-flex" style="background-image: url('images/shape_title_under_line.svg');">
-                                Our Services
+                            <div class="heading_focus_text has_underline text-white d-inline-flex tech-badge" style="background-image: url('images/shape_title_under_line.svg');">
+                                <span class="ai-pulse">⚡</span> Our Services <span class="ai-pulse">⚡</span>
                             </div>
                             <h1 class="heading_text text-white mb-0 glitch">
-                                Market <mark>Research</mark>
+                                AI-Powered Market <mark class="gradient-text">Research</mark>
                             </h1>
                             <p class="heading_description text-white-50">
-                                Data-driven insights for confident business decisions in Africa
+                                Data-driven insights for confident business decisions in Africa using advanced analytics
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Circuit overlay -->
+            <div class="circuit-overlay-left"></div>
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
         </section>
         <!-- Page Banner - End -->
 
-        <!-- Service Overview - Start -->
+        <!-- Service Overview - Start (Enhanced with tech styling) -->
         <section class="service_overview_section section_space matrix-bg">
             <div class="container">
                 <div class="row align-items-center">
@@ -418,14 +787,19 @@
                                     Intelligence for Growth
                                 </div>
                                 <h2 class="heading_text">
-                                    Data-Driven <mark class="gradient-text-pink">Market Intelligence</mark> for Africa
+                                    AI-Driven <mark class="gradient-text-pink">Market Intelligence</mark> for Africa
                                 </h2>
                                 <p class="heading_description">
-                                    In today's fast-paced business environment, making informed decisions is critical to success. Our market research services provide you with the deep insights and actionable intelligence you need to navigate African markets with confidence.
+                                    In today's fast-paced digital business environment, making informed decisions is critical to success. Our AI-powered market research services provide you with the deep insights and actionable intelligence you need to navigate African markets with confidence.
                                 </p>
                                 <p class="heading_description">
-                                    From industry analysis to consumer behavior studies, we deliver comprehensive research tailored to your specific business questions and objectives.
+                                    From predictive industry analysis to consumer behavior analytics, we deliver comprehensive research tailored to your specific business questions and objectives using cutting-edge technology.
                                 </p>
+                                <div class="mt-4">
+                                    <span class="tech-badge-sm pulse-ring">⚡ AI-POWERED</span>
+                                    <span class="tech-badge-sm">📊 500+ PROJECTS</span>
+                                    <span class="tech-badge-sm">🤖 MACHINE LEARNING</span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -434,32 +808,45 @@
         </section>
         <!-- Service Overview - End -->
 
-        <!-- Key Statistics - Start -->
+        <!-- Key Statistics - Start (Enhanced with tech styling) -->
         <section class="stats_section section_space bg-light matrix-bg">
             <div class="container">
+                <!-- System Status (Tech addition) -->
+                <div class="system-status mb-4">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                        <span class="text-white-50">Analytics Dashboard: All Systems Operational</span>
+                        <span class="tech-badge-sm ms-3">REAL-TIME DATA</span>
+                    </div>
+                </div>
+
                 <div class="row stagger-fade">
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="500">500+</div>
                             <p class="stat_label">Research Projects</p>
+                            <span class="tech-badge-sm mt-2">AI ANALYZED</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="25">25+</div>
                             <p class="stat_label">Industries Covered</p>
+                            <span class="tech-badge-sm mt-2">SECTORS</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="15">15+</div>
                             <p class="stat_label">African Countries</p>
+                            <span class="tech-badge-sm mt-2">PAN-AFRICAN</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="98">98%</div>
                             <p class="stat_label">Client Satisfaction</p>
+                            <span class="tech-badge-sm mt-2">VERIFIED</span>
                         </div>
                     </div>
                 </div>
@@ -467,18 +854,18 @@
         </section>
         <!-- Key Statistics - End -->
 
-        <!-- Our Research Services - Start -->
-        <section class="what_we_offer_section section_space">
+        <!-- Our Research Services - Start (Enhanced with tech cards) -->
+        <section class="what_we_offer_section section_space matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
                     <div class="heading_focus_text has_underline d-inline-flex fade-up" style="background-image: url('images/shape_title_under_line.svg');">
                         Our Expertise
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        Comprehensive <mark>Research</mark> Solutions
+                        Comprehensive <mark class="gradient-text">AI Research</mark> Solutions
                     </h2>
                     <p class="heading_description fade-up">
-                        Tailored research to answer your critical business questions
+                        Tailored data analytics to answer your critical business questions
                     </p>
                 </div>
 
@@ -486,19 +873,19 @@
                     <!-- Industry Analysis -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-chart-simple"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-chart-pie"></i> INDUSTRY</span>
-                                <span class="tech-badge"><i class="fa-solid fa-magnifying-glass"></i> ANALYSIS</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-chart-pie"></i> AI INDUSTRY</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-magnifying-glass"></i> ANALYTICS</span>
                             </div>
-                            <h3>Industry Analysis</h3>
-                            <p class="text-muted">Deep dive into specific industries to understand market dynamics, trends, and opportunities.</p>
+                            <h3>AI Industry Analysis</h3>
+                            <p class="text-muted">Deep dive into specific industries using machine learning to understand market dynamics, trends, and opportunities.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Market sizing & forecasting</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Competitive landscape</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Regulatory environment</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Predictive market sizing</li>
+                                <li><i class="fa-regular fa-circle-check"></i> AI competitive analysis</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Regulatory trend forecasting</li>
                             </ul>
                         </div>
                     </div>
@@ -506,19 +893,19 @@
                     <!-- Consumer Insights -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-users"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-user-group"></i> CONSUMER</span>
-                                <span class="tech-badge"><i class="fa-solid fa-brain"></i> INSIGHTS</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-user-group"></i> BEHAVIORAL AI</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-brain"></i> INSIGHTS</span>
                             </div>
-                            <h3>Consumer Insights</h3>
-                            <p class="text-muted">Understand your target audience's behavior, preferences, and purchasing patterns.</p>
+                            <h3>AI Consumer Insights</h3>
+                            <p class="text-muted">Understand your target audience's behavior, preferences, and purchasing patterns through predictive analytics.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Consumer behavior analysis</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Segmentation studies</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Brand perception tracking</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Predictive behavior analysis</li>
+                                <li><i class="fa-regular fa-circle-check"></i> AI segmentation studies</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Sentiment tracking</li>
                             </ul>
                         </div>
                     </div>
@@ -526,19 +913,19 @@
                     <!-- Competitor Analysis -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-flag"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-flag"></i> COMPETITOR</span>
-                                <span class="tech-badge"><i class="fa-solid fa-chart-line"></i> BENCHMARK</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-flag"></i> AI COMPETITOR</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-chart-line"></i> BENCHMARK</span>
                             </div>
-                            <h3>Competitor Analysis</h3>
-                            <p class="text-muted">Comprehensive analysis of your competitors' strategies, strengths, and weaknesses.</p>
+                            <h3>AI Competitor Analysis</h3>
+                            <p class="text-muted">Comprehensive analysis of your competitors' strategies, strengths, and weaknesses using data mining.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Competitor profiling</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Market positioning</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> SWOT analysis</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Automated competitor profiling</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Market positioning analytics</li>
+                                <li><i class="fa-regular fa-circle-check"></i> AI SWOT analysis</li>
                             </ul>
                         </div>
                     </div>
@@ -546,19 +933,19 @@
                     <!-- Feasibility Studies -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-clipboard-check"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-clipboard"></i> FEASIBILITY</span>
-                                <span class="tech-badge"><i class="fa-solid fa-chart-pie"></i> ANALYSIS</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-clipboard"></i> AI FEASIBILITY</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-chart-pie"></i> ANALYSIS</span>
                             </div>
-                            <h3>Feasibility Studies</h3>
-                            <p class="text-muted">Assess the viability of your business ideas, investments, or expansion plans.</p>
+                            <h3>AI Feasibility Studies</h3>
+                            <p class="text-muted">Assess the viability of your business ideas, investments, or expansion plans with predictive modeling.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Technical feasibility</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Financial projections</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Risk assessment</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Technical feasibility AI</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Predictive financial projections</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Machine learning risk assessment</li>
                             </ul>
                         </div>
                     </div>
@@ -566,19 +953,19 @@
                     <!-- Trend Forecasting -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-chart-line"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-chart-line"></i> TRENDS</span>
-                                <span class="tech-badge"><i class="fa-solid fa-eye"></i> FORECAST</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-chart-line"></i> AI TRENDS</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-eye"></i> FORECAST</span>
                             </div>
-                            <h3>Trend Forecasting</h3>
-                            <p class="text-muted">Identify emerging trends and future opportunities in African markets.</p>
+                            <h3>AI Trend Forecasting</h3>
+                            <p class="text-muted">Identify emerging trends and future opportunities in African markets using predictive analytics.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Market trend analysis</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Future scenario planning</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Opportunity identification</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Machine learning trend analysis</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Future scenario modeling</li>
+                                <li><i class="fa-regular fa-circle-check"></i> AI opportunity identification</li>
                             </ul>
                         </div>
                     </div>
@@ -586,19 +973,19 @@
                     <!-- Custom Research -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="service_feature_card">
-                            <div class="service_icon_large pulse-animation">
+                            <div class="service_icon_large pulse-ring">
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </div>
                             <div>
-                                <span class="tech-badge"><i class="fa-solid fa-gear"></i> CUSTOM</span>
-                                <span class="tech-badge"><i class="fa-solid fa-flask"></i> BESPOKE</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-gear"></i> CUSTOM AI</span>
+                                <span class="tech-badge-sm"><i class="fa-solid fa-flask"></i> BESPOKE</span>
                             </div>
-                            <h3>Custom Research</h3>
-                            <p class="text-muted">Tailored research designed to answer your specific business questions.</p>
+                            <h3>Custom AI Research</h3>
+                            <p class="text-muted">Tailored research designed to answer your specific business questions using advanced algorithms.</p>
                             <ul class="icon_list unordered_list_block mt-3">
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Bespoke methodology</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Primary & secondary research</li>
-                                <li><i class="fa-regular fa-circle-check" style="color: #E53E7E; margin-right: 8px;"></i> Actionable recommendations</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Bespoke AI methodology</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Machine learning analysis</li>
+                                <li><i class="fa-regular fa-circle-check"></i> Predictive recommendations</li>
                             </ul>
                         </div>
                     </div>
@@ -607,7 +994,7 @@
         </section>
         <!-- Our Research Services - End -->
 
-        <!-- Research Methodologies - Start -->
+        <!-- Research Methodologies - Start (Enhanced with tech styling) -->
         <section class="methodologies_section section_space bg-light matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
@@ -615,31 +1002,33 @@
                         Our Approach
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        Research <mark>Methodologies</mark>
+                        AI Research <mark class="gradient-text">Methodologies</mark>
                     </h2>
                     <p class="heading_description fade-up">
-                        Rigorous methods ensuring reliable, actionable insights
+                        Rigorous methods ensuring reliable, actionable insights powered by artificial intelligence
                     </p>
                 </div>
 
                 <div class="row mt-5 stagger-fade">
                     <div class="col-12 text-center">
-                        <span class="methodology_tag"><i class="fa-solid fa-chart-bar"></i> Quantitative Surveys</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-microphone"></i> In-Depth Interviews</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-users-between-lines"></i> Focus Groups</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-book"></i> Desk Research</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-chart-line"></i> Data Analytics</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-user-secret"></i> Mystery Shopping</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-people-group"></i> Ethnographic Studies</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-user-tie"></i> Expert Panels</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-clock"></i> Longitudinal Studies</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-diagram-project"></i> Conjoint Analysis</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-chart-gantt"></i> Brand Tracking</span>
-                        <span class="methodology_tag"><i class="fa-solid fa-face-smile"></i> Customer Satisfaction</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-robot"></i> AI Quantitative Surveys</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-microchip"></i> Neural Network Analysis</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-users-between-lines"></i> AI Focus Groups</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-book"></i> Automated Desk Research</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-chart-line"></i> Predictive Analytics</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-user-secret"></i> AI Mystery Shopping</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-people-group"></i> Digital Ethnography</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-user-tie"></i> AI Expert Panels</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-clock"></i> Machine Learning Tracking</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-diagram-project"></i> AI Conjoint Analysis</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-chart-gantt"></i> Automated Brand Tracking</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-face-smile"></i> Sentiment Analysis</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-database"></i> Big Data Mining</span>
+                        <span class="methodology_tag"><i class="fa-solid fa-cloud"></i> Cloud Analytics</span>
                     </div>
                 </div>
                 
-                <!-- Data Visualization Example -->
+                <!-- Data Visualization Example - Enhanced -->
                 <div class="row mt-5">
                     <div class="col-12">
                         <div class="data-visual">
@@ -654,54 +1043,55 @@
                             <div class="data-bar" style="height: 60px;"></div>
                             <div class="data-bar" style="height: 75px;"></div>
                         </div>
+                        <p class="text-center text-white-50 mt-2 small"><i class="fa-solid fa-chart-line me-2"></i> Real-time AI Analytics Dashboard</p>
                     </div>
                 </div>
             </div>
         </section>
         <!-- Research Methodologies - End -->
 
-        <!-- Our Process - Start -->
-        <section class="our_approach_section section_space">
+        <!-- Our Process - Start (Enhanced with tech styling) -->
+        <section class="our_approach_section section_space matrix-bg">
             <div class="container">
                 <div class="heading_block text-center">
                     <div class="heading_focus_text has_underline d-inline-flex fade-up" style="background-image: url('images/shape_title_under_line.svg');">
                         Our Process
                     </div>
                     <h2 class="heading_text mb-0 fade-up glitch">
-                        How We <mark>Deliver</mark> Insights
+                        How We <mark class="gradient-text">Deliver</mark> AI Insights
                     </h2>
                     <p class="heading_description fade-up">
-                        A systematic approach to quality research
+                        A systematic data-driven approach to quality research
                     </p>
                 </div>
 
                 <div class="row mt-5 stagger-fade">
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">1</div>
-                            <h4>Discovery</h4>
-                            <p class="text-muted mb-0">Understand your research objectives, questions, and data requirements.</p>
+                            <div class="step_number">1</div>
+                            <h4>AI Discovery</h4>
+                            <p class="text-muted mb-0">Understand your research objectives, questions, and data requirements using AI consultation.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">2</div>
-                            <h4>Design</h4>
-                            <p class="text-muted mb-0">Develop research methodology, sampling strategy, and data collection tools.</p>
+                            <div class="step_number">2</div>
+                            <h4>Algorithm Design</h4>
+                            <p class="text-muted mb-0">Develop AI research methodology, sampling strategy, and machine learning models.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">3</div>
-                            <h4>Data Collection</h4>
-                            <p class="text-muted mb-0">Gather data through appropriate methods with quality control measures.</p>
+                            <div class="step_number">3</div>
+                            <h4>Automated Collection</h4>
+                            <p class="text-muted mb-0">Gather data through automated methods with AI quality control measures.</p>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="process_step">
-                            <div class="step_number pulse-animation">4</div>
-                            <h4>Analysis & Reporting</h4>
-                            <p class="text-muted mb-0">Analyze data and deliver actionable insights with clear recommendations.</p>
+                            <div class="step_number">4</div>
+                            <h4>AI Analysis & Reporting</h4>
+                            <p class="text-muted mb-0">Analyze data with machine learning and deliver actionable insights with predictive recommendations.</p>
                         </div>
                     </div>
                 </div>
@@ -709,7 +1099,7 @@
         </section>
         <!-- Our Process - End -->
 
-        <!-- Key Benefits - Start -->
+        <!-- Key Benefits - Start (Enhanced with tech styling) -->
         <section class="benefits_section section_space bg-light matrix-bg">
             <div class="container">
                 <div class="row align-items-center">
@@ -719,50 +1109,57 @@
                                 Why Choose Us
                             </div>
                             <h2 class="heading_text">
-                                Key <mark>Benefits</mark> of Our Research Services
+                                Key <mark class="gradient-text">Benefits</mark> of Our AI Research Services
                             </h2>
                         </div>
                         
                         <div class="benefits_list mt-4">
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Local Expertise</h4>
-                                    <p class="text-muted mb-0">Deep understanding of African markets, cultures, and business environments.</p>
+                                    <h4>AI Local Expertise</h4>
+                                    <p class="text-muted mb-0">Deep understanding of African markets enhanced by machine learning algorithms.</p>
                                 </div>
                             </div>
                             
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Rigorous Methodology</h4>
-                                    <p class="text-muted mb-0">Academic-grade research methods ensuring reliable, valid results.</p>
+                                    <h4>Predictive Methodology</h4>
+                                    <p class="text-muted mb-0">AI-powered research methods ensuring reliable, predictive results.</p>
                                 </div>
                             </div>
                             
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Actionable Insights</h4>
-                                    <p class="text-muted mb-0">Not just data - clear, practical recommendations you can implement.</p>
+                                    <h4>Actionable AI Insights</h4>
+                                    <p class="text-muted mb-0">Not just data - clear, predictive recommendations you can implement.</p>
                                 </div>
                             </div>
                             
                             <div class="benefit_item d-flex">
                                 <div class="benefit_icon me-3">
-                                    <i class="fa-solid fa-check-circle fa-2x" style="color: #E53E7E;"></i>
+                                    <i class="fa-solid fa-check-circle fa-2x"></i>
                                 </div>
                                 <div>
-                                    <h4>Timely Delivery</h4>
-                                    <p class="text-muted mb-0">Efficient project management ensuring you get insights when you need them.</p>
+                                    <h4>Real-Time Delivery</h4>
+                                    <p class="text-muted mb-0">Efficient AI project management ensuring you get insights when you need them.</p>
                                 </div>
                             </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <span class="tech-badge-sm pulse-ring">🏆 10+ AWARDS</span>
+                            <span class="tech-badge-sm">🌍 15 COUNTRIES</span>
+                            <span class="tech-badge-sm">🤖 500+ AI PROJECTS</span>
+                            <span class="tech-badge-sm">⚡ 98% ACCURACY</span>
                         </div>
                     </div>
                     <div class="col-lg-6 fade-up">
@@ -775,14 +1172,18 @@
         </section>
         <!-- Key Benefits - End -->
 
-        <!-- Call to Action - Start -->
+        <!-- Call to Action - Start (Enhanced with tech elements) -->
         <section class="cta_section py-5 scanline">
             <div class="container text-center">
                 <div class="fade-up">
-                    <h2 class="text-white mb-4">Ready to Make Data-Driven Decisions?</h2>
-                    <p class="text-white mb-4 fs-5">Let's discuss your research needs and how we can help you understand African markets better.</p>
+                    <div class="tech-badge d-inline-flex mb-4" style="background: rgba(255,255,255,0.2); color: white; border-color: white;">
+                        <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: white; border-radius: 50%; display: inline-block;"></span>
+                        AI-POWERED INSIGHTS
+                    </div>
+                    <h2 class="text-white mb-4 glitch">Ready to Make Data-Driven Decisions?</h2>
+                    <p class="text-white mb-4 fs-5">Let's discuss your research needs and how our AI analytics can help you understand African markets better.</p>
                     <a href="contact.html" class="btn btn-light btn-lg px-5 py-3 ripple-effect">
-                        <span class="btn_label" data-text="Get Your Research">Get Your Research</span>
+                        <span class="btn_label" data-text="Get Your AI Research">Get Your AI Research</span>
                         <span class="btn_icon">
                             <i class="fa-solid fa-arrow-up-right"></i>
                         </span>
@@ -792,8 +1193,17 @@
         </section>
         <!-- Call to Action - End -->
 
-        <!-- Site Footer - Start -->
+        <!-- Site Footer - Start (Enhanced with tech elements) -->
         <footer class="site_footer footer_layout_2 section_decoration data-stream" style="background-image: url('images/bg_pattern_3.svg');">
+            <!-- System Status -->
+            <div class="system-status mb-4">
+                <div class="d-flex align-items-center justify-content-center">
+                    <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                    <span class="text-white-50">All Systems Operational</span>
+                    <span class="tech-badge-sm ms-3">99.9% Uptime</span>
+                </div>
+            </div>
+            
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
@@ -890,7 +1300,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="footer_widget">
                                 <h3 class="footer_info_title">Newsletter</h3>
-                                <p>Stay updated with our latest insights and success stories.</p>
+                                <p>Stay updated with our latest AI insights and success stories.</p>
                                 <form class="footer_newslatter_2" action="#" method="POST">
                                     <input type="email" name="email" placeholder="Enter your email" required>
                                     <button type="submit">Subscribe</button>
@@ -949,5 +1359,32 @@
     <script src="js/appear.min.js"></script>
     <script src="js/odometer.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Tech Effects Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.counter-number');
+        counters.forEach(counter => {
+            const count = counter.getAttribute('data-count');
+            if (count) {
+                setTimeout(() => {
+                    counter.innerHTML = count + (counter.innerHTML.includes('M') ? 'M+' : counter.innerHTML.includes('%') ? '%' : '+');
+                }, 500);
+            }
+        });
+        
+        // Add random tech "noise" to cards on hover
+        const cards = document.querySelectorAll('.service_feature_card, .process_step, .benefit_item, .stat_card, .methodology_tag');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = `translateY(-5px) rotate(${Math.random() * 0.5 - 0.25}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotate(0)';
+            });
+        });
+    });
+    </script>
 </body>
 </html>

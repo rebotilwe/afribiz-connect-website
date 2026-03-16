@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="description" content="Sectors we serve at Afribiz Connect. Industry expertise across Mining, Financial Services, Agriculture, Energy, Technology, and more in African markets.">
-    <meta name="keywords" content="business sectors, African industries, mining, financial services, agriculture, energy, technology, healthcare, infrastructure">
-    <title>Sectors We Serve - Afribiz Connect</title>
+    <meta name="keywords" content="business sectors, African industries, mining, financial services, agriculture, energy, technology, healthcare, infrastructure, tech sectors">
+    <title>Sectors We Serve - Afribiz Connect | Technology Industry Expertise</title>
     <link rel="shortcut icon" href="images/logo1.png">
 
     <!-- Framework - CSS Include -->
@@ -14,6 +14,9 @@
 
     <!-- Icon - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/fontawesome.css">
+    
+    <!-- Font Awesome for additional tech icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Animation - CSS Include -->
     <link rel="stylesheet" type="text/css" href="css/animate.min.css">
@@ -36,152 +39,363 @@
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     
     <style>
+        /* IT Company Tech Styling - Matching homepage */
+        :root {
+            --primary-glow: #00f2fe;
+            --secondary-glow: #4facfe;
+            --dark-bg: #0a0f1e;
+            --card-bg: rgba(18, 25, 45, 0.8);
+            --grid-color: rgba(0, 242, 254, 0.1);
+            --brand-pink: #E53E7E;
+            --brand-orange: #F58A42;
+        }
+
+        /* Matrix/Rain Code Background */
+        .matrix-bg {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .matrix-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, 
+                rgba(0,242,254,0.05) 0%, 
+                rgba(79,172,254,0.05) 100%);
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, var(--grid-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--grid-color) 1px, transparent 1px);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* Circuit Pattern Overlay */
+        .circuit-overlay-left {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 50%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.1"><path d="M10 10 L30 10 L30 30 L50 30 M70 20 L90 20 L90 40 M20 70 L40 70 L40 90 L60 90" stroke="%2300f2fe" fill="none" stroke-width="1"/><circle cx="30" cy="30" r="2" fill="%2300f2fe"/><circle cx="50" cy="30" r="2" fill="%2300f2fe"/><circle cx="90" cy="40" r="2" fill="%2300f2fe"/><circle cx="60" cy="90" r="2" fill="%2300f2fe"/></svg>');
+            background-repeat: repeat;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        /* Scanline Effect */
+        .scanline {
+            position: relative;
+        }
+
+        .scanline::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            animation: scan 8s linear infinite;
+            pointer-events: none;
+        }
+
+        @keyframes scan {
+            0% { top: -10%; }
+            100% { top: 110%; }
+        }
+
+        /* Data Stream Animation */
+        .data-stream {
+            position: relative;
+        }
+
+        .data-stream::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            animation: dataFlow 3s linear infinite;
+        }
+
+        @keyframes dataFlow {
+            0% { transform: translateX(-100%); }
+            100% { transform: translateX(100%); }
+        }
+
+        /* Glitch Text Effect */
+        .glitch-text {
+            position: relative;
+            animation: glitch 3s infinite;
+        }
+
+        @keyframes glitch {
+            0%, 100% { transform: translate(0); }
+            33% { transform: translate(-2px, 2px); }
+            66% { transform: translate(2px, -2px); }
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .gradient-text-pink {
+            background: linear-gradient(135deg, var(--brand-pink), var(--brand-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Tech Badges */
+        .tech-badge {
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.3);
+            border-radius: 30px;
+            padding: 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            display: inline-block;
+            margin-right: 0.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tech-badge-sm {
+            background: rgba(79, 172, 254, 0.15);
+            border: 1px solid rgba(79, 172, 254, 0.3);
+            border-radius: 20px;
+            padding: 3px 10px;
+            font-size: 10px;
+            font-weight: 600;
+            color: var(--primary-glow);
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            display: inline-block;
+        }
+
+        .tech-badge-sm i {
+            margin-right: 4px;
+        }
+
+        .tech-badge-pink {
+            background: rgba(229, 62, 126, 0.15);
+            border: 1px solid rgba(229, 62, 126, 0.3);
+            border-radius: 15px;
+            padding: 0.2rem 1rem;
+            font-size: 0.8rem;
+            margin-right: 0.5rem;
+            display: inline-block;
+            color: var(--brand-pink);
+        }
+
+        /* Pulse Animation */
+        .pulse-ring {
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(0, 242, 254, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(0, 242, 254, 0); }
+        }
+
+        /* Sector Cards - Updated with tech styling */
         .sector_card {
-            background: white;
+            background: var(--card-bg);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 20px;
             padding: 40px 30px;
             height: 100%;
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
             text-align: center;
             position: relative;
             overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
+
         .sector_card::before {
-            content: '';
+            content: "";
             position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, #E53E7E, #F58A42, #E53E7E);
-            border-radius: inherit;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
         }
+
+        .sector_card:hover::before {
+            left: 0;
+        }
+
         .sector_card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
-            border-color: rgba(229,62,126,0.3);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
         }
-        .sector_card:hover::before {
-            opacity: 1;
-            animation: border-rotate 3s linear infinite;
-        }
-        @keyframes border-rotate {
-            from { filter: hue-rotate(0deg); }
-            to { filter: hue-rotate(360deg); }
-        }
+
         .sector_icon {
             width: 100px;
             height: 100px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1) 0%, rgba(245,138,66,0.1) 100%);
+            background: linear-gradient(135deg, rgba(0, 242, 254, 0.1) 0%, rgba(79, 172, 254, 0.1) 100%);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 25px;
+            border: 1px solid rgba(0, 242, 254, 0.3);
             transition: all 0.3s ease;
         }
+
         .sector_icon i {
             font-size: 50px;
-            color: #E53E7E;
+            color: var(--primary-glow);
+            filter: drop-shadow(0 0 5px rgba(0, 242, 254, 0.5));
             transition: all 0.3s ease;
         }
+
         .sector_card:hover .sector_icon {
             transform: scale(1.1) rotate(5deg);
+            border-color: rgba(0, 242, 254, 0.8);
         }
+
         .sector_card:hover .sector_icon i {
-            color: #F58A42;
+            color: var(--secondary-glow);
         }
+
         .sector_title {
             font-size: 1.5rem;
             font-weight: 700;
             margin-bottom: 15px;
-            color: #1e1e1e;
+            color: #fff;
             font-family: 'Space Grotesk', sans-serif;
         }
+
         .sector_description {
-            color: #6c757d;
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 20px;
             line-height: 1.6;
         }
+
         .sector_tags {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
             justify-content: center;
         }
+
         .sector_tag {
             padding: 5px 15px;
-            background: #f8f9fa;
+            background: rgba(0, 242, 254, 0.1);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 30px;
             font-size: 0.85rem;
-            color: #495057;
+            color: rgba(255, 255, 255, 0.8);
             transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
+            cursor: default;
         }
+
+        .sector_tag i {
+            color: var(--primary-glow);
+            margin-right: 4px;
+        }
+
         .sector_tag:hover {
-            background: linear-gradient(135deg, #E53E7E, #F58A42);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             color: white;
             transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 5px 15px rgba(229,62,126,0.3);
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.3);
+            border-color: transparent;
         }
+
+        .sector_tag:hover i {
+            color: white;
+        }
+
+        /* Stat Cards - Updated with tech styling */
         .stat_card {
-            background: white;
+            background: var(--card-bg);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
             border-radius: 20px;
             padding: 30px;
             text-align: center;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-            height: 100%;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
+            height: 100%;
         }
-        .stat_card::after {
-            content: '';
+
+        .stat_card::before {
+            content: "";
             position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(229,62,126,0.1) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            transform: scale(0);
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 2px;
+            background: linear-gradient(90deg, 
+                transparent, 
+                var(--primary-glow), 
+                var(--secondary-glow), 
+                transparent);
+            transition: left 0.5s ease;
         }
+
+        .stat_card:hover::before {
+            left: 0;
+        }
+
         .stat_card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(229,62,126,0.15);
+            border-color: rgba(0, 242, 254, 0.4);
+            box-shadow: 0 20px 40px rgba(0, 242, 254, 0.2);
         }
-        .stat_card:hover::after {
-            opacity: 1;
-            transform: scale(1);
-        }
+
         .stat_number {
             font-size: 3rem;
             font-weight: 700;
-            color: #E53E7E;
+            color: var(--primary-glow);
             line-height: 1.2;
             margin-bottom: 10px;
             font-family: 'Space Grotesk', sans-serif;
+            filter: drop-shadow(0 0 10px rgba(0, 242, 254, 0.5));
         }
+
         .stat_label {
             font-size: 1.1rem;
-            color: #6c757d;
+            color: rgba(255, 255, 255, 0.7);
             margin-bottom: 0;
         }
+
+        /* Featured Sector - Updated with tech styling */
         .featured_sector {
-            background: linear-gradient(135deg, #E53E7E 0%, #F58A42 100%);
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
             border-radius: 20px;
             padding: 50px;
             color: white;
             position: relative;
             overflow: hidden;
         }
+
         .featured_sector::before {
             content: '';
             position: absolute;
@@ -192,10 +406,12 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
         }
+
         @keyframes rotate {
             from { transform: rotate(0deg); }
             to { transform: rotate(360deg); }
         }
+
         .featured_sector h3 {
             color: white;
             font-size: 2rem;
@@ -204,10 +420,13 @@
             position: relative;
             z-index: 2;
         }
+
         .featured_sector p {
             position: relative;
             z-index: 2;
+            color: rgba(255,255,255,0.9);
         }
+
         .featured_sector .sector_tag {
             background: rgba(255,255,255,0.2);
             color: white;
@@ -215,16 +434,36 @@
             position: relative;
             z-index: 2;
         }
+
         .featured_sector .sector_tag:hover {
             background: white;
-            color: #E53E7E;
+            color: var(--primary-glow);
             border-color: white;
         }
+
+        .featured_sector .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            color: var(--primary-glow);
+            font-weight: 600;
+            position: relative;
+            z-index: 2;
+        }
+
+        .featured_sector .btn-light:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* CTA Section - Updated with tech overlay */
         .cta_section {
-            background: linear-gradient(135deg, #E53E7E 0%, #F58A42 100%) !important;
+            background: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-orange) 100%);
+            padding: 80px 0;
             position: relative;
             overflow: hidden;
         }
+
         .cta_section::before {
             content: '';
             position: absolute;
@@ -235,31 +474,106 @@
             background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
             animation: rotate 30s linear infinite;
         }
-        mark {
-            color: #E53E7E;
-            background: transparent;
-        }
-        .heading_focus_text.has_underline {
-            filter: brightness(0) saturate(100%) invert(44%) sepia(92%) saturate(1684%) hue-rotate(315deg) brightness(94%) contrast(97%);
-        }
-        .tech-badge-sm {
-            display: inline-block;
-            padding: 3px 10px;
-            background: linear-gradient(135deg, rgba(229,62,126,0.1), rgba(245,138,66,0.1));
-            border: 1px solid rgba(229,62,126,0.3);
-            border-radius: 20px;
-            font-size: 10px;
+
+        .cta_section .btn-light {
+            background: rgba(255, 255, 255, 0.9);
+            border: none;
+            color: var(--brand-pink);
             font-weight: 600;
-            color: #E53E7E;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta_section .btn-light:hover {
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Tech Buttons */
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow)) !important;
+            border: none !important;
+        }
+
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--secondary-glow), var(--primary-glow)) !important;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 242, 254, 0.3) !important;
+        }
+
+        /* Page Banner Enhancement */
+        .page_banner_section {
+            position: relative;
+        }
+
+        .page_banner_section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(10, 15, 30, 0.9), rgba(0, 242, 254, 0.1));
+            pointer-events: none;
+        }
+
+        mark {
+            background: linear-gradient(135deg, var(--primary-glow), var(--secondary-glow));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* System Status Bar */
+        .system-status {
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Overview Section Text */
+        .overview_section .heading_text,
+        .overview_section .heading_description {
+            color: #fff;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .circuit-overlay-left {
+                width: 100%;
+                opacity: 0.3;
+            }
+            
+            .sector_card {
+                padding: 30px 20px;
+            }
+            
+            .sector_icon {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .sector_icon i {
+                font-size: 40px;
+            }
+            
+            .stat_number {
+                font-size: 2.5rem;
+            }
+            
+            .featured_sector {
+                padding: 30px;
+            }
+            
+            .featured_sector h3 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
     <div class="page_wrapper">
-        <!-- Preloader - Start -->
+        <!-- Preloader - Start (Updated with tech theme) -->
         <div id="preloader" class="preloader">
             <div class="loader-circle">
                 <div class="loader-line-mask">
@@ -267,6 +581,10 @@
                 </div>
                 <div class="loader-logo">
                     <img src="images/logo1.png" alt="Afribiz Connect Logo">
+                    <div class="loading-text mt-2">
+                        <span class="tech-badge-sm">INITIALIZING</span>
+                        <span class="tech-badge-sm">SECTORS.MD</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -280,7 +598,7 @@
         </div>
         <!-- Back To Top - End -->
 
-        <!-- Site Header - Start -->
+        <!-- Site Header - Start (Updated with tech button) -->
         <header class="site_header site_header_2">
             <div class="header_bottom stricky">
                 <div class="container">
@@ -288,8 +606,8 @@
                         <div class="col-lg-3 col-5">
                             <div class="site_logo">
                                 <a class="site_link" href="index.html">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
-                                    <img src="images/logo1.png" alt="Afribiz Connect – Urbanisation & Development Through Technology">
+                                    <img src="images/logo1.png" alt="Afribiz Connect – IT Solutions & Technology">
+                                    <span class="logo-badge tech-badge-sm ms-2">v2.0</span>
                                 </a>
                             </div>
                         </div>
@@ -336,7 +654,7 @@
                                     </button>
                                 </li>
                                 <li>
-                                    <a class="btn btn-primary ripple-effect" href="contact.html">
+                                    <a class="btn btn-primary ripple-effect tech-btn" href="contact.html">
                                         <span class="btn_label" data-text="Free Consultation">Free Consultation</span>
                                         <span class="btn_icon">
                                             <i class="fa-solid fa-arrow-up-right"></i>
@@ -351,42 +669,53 @@
         </header>
         <!-- Site Header - End -->
 
-        <!-- Page Banner - Start -->
+        <!-- Page Banner - Start (Enhanced with tech elements) -->
         <section class="page_banner_section bg-dark section_decoration scanline" style="background-image: url('images/bg_image_2.webp');">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center fade-up">
                         <div class="heading_block text-white">
-                            <div class="heading_focus_text has_underline text-white d-inline-flex" style="background-image: url('images/shape_title_under_line.svg');">
-                                Industry Focus
+                            <div class="heading_focus_text has_underline text-white d-inline-flex tech-badge" style="background-image: url('images/shape_title_under_line.svg');">
+                                <span class="ai-pulse">⚡</span> Industry Focus <span class="ai-pulse">⚡</span>
                             </div>
                             <h1 class="heading_text text-white mb-0 glitch">
-                                Sectors We <mark>Serve</mark>
+                                Technology Sectors We <mark class="gradient-text">Serve</mark>
                             </h1>
                             <p class="heading_description text-white-50">
-                                Deep industry expertise across Africa's most dynamic sectors
+                                Deep industry expertise across Africa's most dynamic technology sectors
                             </p>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Circuit overlay -->
+            <div class="circuit-overlay-left"></div>
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
         </section>
         <!-- Page Banner - End -->
 
-        <!-- Overview Section - Start -->
+        <!-- Overview Section - Start (Enhanced with tech styling) -->
         <section class="overview_section section_space matrix-bg">
             <div class="container">
+                <!-- System Status (Tech addition) -->
+                <div class="system-status mb-4">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                        <span class="text-white-50">Sector Intelligence: All Systems Operational</span>
+                        <span class="tech-badge-sm ms-3">REAL-TIME DATA</span>
+                    </div>
+                </div>
+
                 <div class="row">
                     <div class="col-lg-8 mx-auto text-center">
                         <div class="heading_block fade-up">
                             <h2 class="heading_text">
-                                Industry-Specific <mark>Expertise</mark>
+                                Industry-Specific <mark class="gradient-text">Technology Expertise</mark>
                             </h2>
                             <p class="heading_description">
-                                We combine cross-sector experience with deep domain knowledge to deliver tailored solutions for each industry's unique challenges and opportunities. Our team understands the regulatory landscape, market dynamics, and success factors across Africa's key sectors.
+                                We combine cross-sector technology experience with deep domain knowledge to deliver tailored solutions for each industry's unique digital challenges and opportunities. Our team understands the tech regulatory landscape, digital market dynamics, and success factors across Africa's key sectors.
                             </p>
                         </div>
                     </div>
@@ -397,25 +726,29 @@
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="15">15+</div>
-                            <p class="stat_label">Sectors Covered</p>
+                            <p class="stat_label">Tech Sectors Covered</p>
+                            <span class="tech-badge-sm mt-2">AI READY</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="200">200+</div>
                             <p class="stat_label">Industry Projects</p>
+                            <span class="tech-badge-sm mt-2">DIGITAL</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="25">25+</div>
                             <p class="stat_label">African Countries</p>
+                            <span class="tech-badge-sm mt-2">PAN-AFRICAN</span>
                         </div>
                     </div>
                     <div class="col-lg-3 col-md-6 mb-4">
                         <div class="stat_card">
                             <div class="stat_number counter-number" data-count="100">100+</div>
-                            <p class="stat_label">Industry Experts</p>
+                            <p class="stat_label">Tech Experts</p>
+                            <span class="tech-badge-sm mt-2">SPECIALISTS</span>
                         </div>
                     </div>
                 </div>
@@ -423,25 +756,28 @@
         </section>
         <!-- Overview Section - End -->
 
-        <!-- Sectors Grid - Start -->
+        <!-- Sectors Grid - Start (Enhanced with tech cards) -->
         <section class="sectors_grid_section section_space bg-light matrix-bg">
             <div class="container">
                 <div class="row stagger-fade">
-                    <!-- Mining & Resources -->
+                    <!-- Technology (Now first - prioritized) -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="sector_card">
-                            <span class="tech-badge-sm"><i class="fa-solid fa-chart-line"></i> KEY SECTOR</span>
-                            <div class="sector_icon pulse-animation">
-                                <i class="fa-solid fa-truck-front"></i>
+                            <span class="tech-badge-sm"><i class="fa-solid fa-microchip"></i> CORE TECH</span>
+                            <div class="sector_icon pulse-ring">
+                                <i class="fa-solid fa-microchip"></i>
                             </div>
-                            <h3 class="sector_title">Mining & Resources</h3>
-                            <p class="sector_description">Comprehensive support for mining companies, from exploration to export, across Africa's mineral-rich regions.</p>
+                            <h3 class="sector_title">Technology</h3>
+                            <p class="sector_description">Supporting tech companies with market entry, partnerships, and growth strategies in Africa's digital economy.</p>
                             <div class="sector_tags">
-                                <span class="sector_tag"><i class="fa-solid fa-coins"></i> Gold</span>
-                                <span class="sector_tag"><i class="fa-solid fa-gem"></i> Platinum</span>
-                                <span class="sector_tag"><i class="fa-solid fa-mountain"></i> Coal</span>
-                                <span class="sector_tag"><i class="fa-solid fa-gem"></i> Diamonds</span>
-                                <span class="sector_tag"><i class="fa-solid fa-bolt"></i> Copper</span>
+                                <span class="sector_tag"><i class="fa-solid fa-code"></i> Software</span>
+                                <span class="sector_tag"><i class="fa-solid fa-cloud"></i> Cloud/SaaS</span>
+                                <span class="sector_tag"><i class="fa-solid fa-tower-cell"></i> Telecom</span>
+                                <span class="sector_tag"><i class="fa-solid fa-wifi"></i> IoT</span>
+                                <span class="sector_tag"><i class="fa-solid fa-brain"></i> AI & ML</span>
+                                <span class="sector_tag"><i class="fa-solid fa-robot"></i> Automation</span>
+                                <span class="sector_tag"><i class="fa-solid fa-shield"></i> Cybersecurity</span>
+                                <span class="sector_tag"><i class="fa-solid fa-cart-shopping"></i> E-Commerce</span>
                             </div>
                         </div>
                     </div>
@@ -449,8 +785,8 @@
                     <!-- Financial Services -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="sector_card">
-                            <span class="tech-badge-sm"><i class="fa-solid fa-chart-line"></i> KEY SECTOR</span>
-                            <div class="sector_icon pulse-animation">
+                            <span class="tech-badge-sm"><i class="fa-solid fa-chart-line"></i> FINTECH</span>
+                            <div class="sector_icon">
                                 <i class="fa-solid fa-building-columns"></i>
                             </div>
                             <h3 class="sector_title">Financial Services</h3>
@@ -461,6 +797,7 @@
                                 <span class="sector_tag"><i class="fa-solid fa-mobile"></i> Fintech</span>
                                 <span class="sector_tag"><i class="fa-solid fa-chart-pie"></i> Asset Mgmt</span>
                                 <span class="sector_tag"><i class="fa-solid fa-hand-holding-heart"></i> Microfinance</span>
+                                <span class="sector_tag"><i class="fa-solid fa-blockchain"></i> Blockchain</span>
                             </div>
                         </div>
                     </div>
@@ -468,18 +805,38 @@
                     <!-- Agriculture & Agribusiness -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="sector_card">
-                            <span class="tech-badge-sm"><i class="fa-solid fa-seedling"></i> AGRI-TECH</span>
-                            <div class="sector_icon pulse-animation">
+                            <span class="tech-badge-sm"><i class="fa-solid fa-seedling"></i> AGRITECH</span>
+                            <div class="sector_icon">
                                 <i class="fa-solid fa-tractor"></i>
                             </div>
                             <h3 class="sector_title">Agriculture & Agribusiness</h3>
-                            <p class="sector_description">Supporting agricultural businesses with market entry, value chain optimization, and export strategies.</p>
+                            <p class="sector_description">Supporting agricultural businesses with digital transformation, precision farming, and agritech solutions.</p>
                             <div class="sector_tags">
                                 <span class="sector_tag"><i class="fa-solid fa-tractor"></i> Commercial</span>
                                 <span class="sector_tag"><i class="fa-solid fa-industry"></i> Agri-processing</span>
                                 <span class="sector_tag"><i class="fa-solid fa-ship"></i> Export</span>
                                 <span class="sector_tag"><i class="fa-solid fa-leaf"></i> Sustainable</span>
-                                <span class="sector_tag"><i class="fa-solid fa-wheat-awn"></i> Food Security</span>
+                                <span class="sector_tag"><i class="fa-solid fa-drone"></i> Drone Tech</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Mining & Resources -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="sector_card">
+                            <span class="tech-badge-sm"><i class="fa-solid fa-chart-line"></i> MINETECH</span>
+                            <div class="sector_icon">
+                                <i class="fa-solid fa-truck-front"></i>
+                            </div>
+                            <h3 class="sector_title">Mining & Resources</h3>
+                            <p class="sector_description">Comprehensive support for mining companies with digital transformation, automation, and smart mining solutions.</p>
+                            <div class="sector_tags">
+                                <span class="sector_tag"><i class="fa-solid fa-coins"></i> Gold</span>
+                                <span class="sector_tag"><i class="fa-solid fa-gem"></i> Platinum</span>
+                                <span class="sector_tag"><i class="fa-solid fa-mountain"></i> Coal</span>
+                                <span class="sector_tag"><i class="fa-solid fa-gem"></i> Diamonds</span>
+                                <span class="sector_tag"><i class="fa-solid fa-bolt"></i> Copper</span>
+                                <span class="sector_tag"><i class="fa-solid fa-robot"></i> Automation</span>
                             </div>
                         </div>
                     </div>
@@ -487,37 +844,18 @@
                     <!-- Energy & Power -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="sector_card">
-                            <span class="tech-badge-sm"><i class="fa-solid fa-bolt"></i> ENERGY</span>
-                            <div class="sector_icon pulse-animation">
+                            <span class="tech-badge-sm"><i class="fa-solid fa-bolt"></i> CLEANTECH</span>
+                            <div class="sector_icon">
                                 <i class="fa-solid fa-bolt"></i>
                             </div>
                             <h3 class="sector_title">Energy & Power</h3>
-                            <p class="sector_description">Navigating the complex energy sector, from traditional power to renewables, across African markets.</p>
+                            <p class="sector_description">Navigating the complex energy sector with smart grid technology and renewable energy solutions.</p>
                             <div class="sector_tags">
-                                <span class="sector_tag"><i class="fa-solid fa-sun"></i> Renewable</span>
-                                <span class="sector_tag"><i class="fa-solid fa-oil-can"></i> Oil & Gas</span>
-                                <span class="sector_tag"><i class="fa-solid fa-bolt"></i> Power Gen</span>
-                                <span class="sector_tag"><i class="fa-solid fa-tower-cell"></i> Grid</span>
-                                <span class="sector_tag"><i class="fa-solid fa-plug"></i> Energy Access</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Technology -->
-                    <div class="col-lg-4 col-md-6 mb-4">
-                        <div class="sector_card">
-                            <span class="tech-badge-sm"><i class="fa-solid fa-microchip"></i> TECH</span>
-                            <div class="sector_icon pulse-animation">
-                                <i class="fa-solid fa-microchip"></i>
-                            </div>
-                            <h3 class="sector_title">Technology</h3>
-                            <p class="sector_description">Supporting tech companies with market entry, partnerships, and growth strategies in Africa's digital economy.</p>
-                            <div class="sector_tags">
-                                <span class="sector_tag"><i class="fa-solid fa-code"></i> Software</span>
-                                <span class="sector_tag"><i class="fa-solid fa-cloud"></i> SaaS</span>
-                                <span class="sector_tag"><i class="fa-solid fa-tower-cell"></i> Telecom</span>
-                                <span class="sector_tag"><i class="fa-solid fa-wifi"></i> IoT</span>
-                                <span class="sector_tag"><i class="fa-solid fa-brain"></i> AI & ML</span>
+                                <span class="sector_tag"><i class="fa-solid fa-sun"></i> Solar</span>
+                                <span class="sector_tag"><i class="fa-solid fa-wind"></i> Wind</span>
+                                <span class="sector_tag"><i class="fa-solid fa-water"></i> Hydro</span>
+                                <span class="sector_tag"><i class="fa-solid fa-bolt"></i> Smart Grid</span>
+                                <span class="sector_tag"><i class="fa-solid fa-battery-full"></i> Storage</span>
                             </div>
                         </div>
                     </div>
@@ -525,17 +863,17 @@
                     <!-- Infrastructure -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="sector_card">
-                            <span class="tech-badge-sm"><i class="fa-solid fa-bridge"></i> INFRA</span>
-                            <div class="sector_icon pulse-animation">
+                            <span class="tech-badge-sm"><i class="fa-solid fa-bridge"></i> SMART INFRA</span>
+                            <div class="sector_icon">
                                 <i class="fa-solid fa-bridge"></i>
                             </div>
                             <h3 class="sector_title">Infrastructure</h3>
-                            <p class="sector_description">Comprehensive support for infrastructure projects including transport, utilities, and urban development.</p>
+                            <p class="sector_description">Comprehensive support for smart infrastructure projects including digital transport and urban tech.</p>
                             <div class="sector_tags">
-                                <span class="sector_tag"><i class="fa-solid fa-train"></i> Transport</span>
-                                <span class="sector_tag"><i class="fa-solid fa-helmet-safety"></i> Construction</span>
-                                <span class="sector_tag"><i class="fa-solid fa-droplet"></i> Water</span>
-                                <span class="sector_tag"><i class="fa-solid fa-city"></i> Urban Dev</span>
+                                <span class="sector_tag"><i class="fa-solid fa-train"></i> Smart Transport</span>
+                                <span class="sector_tag"><i class="fa-solid fa-helmet-safety"></i> Digital Construction</span>
+                                <span class="sector_tag"><i class="fa-solid fa-droplet"></i> Smart Water</span>
+                                <span class="sector_tag"><i class="fa-solid fa-city"></i> Smart Cities</span>
                                 <span class="sector_tag"><i class="fa-solid fa-handshake"></i> PPP</span>
                             </div>
                         </div>
@@ -544,18 +882,18 @@
                     <!-- Healthcare -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="sector_card">
-                            <span class="tech-badge-sm"><i class="fa-solid fa-hospital"></i> HEALTH</span>
-                            <div class="sector_icon pulse-animation">
+                            <span class="tech-badge-sm"><i class="fa-solid fa-hospital"></i> HEALTHTECH</span>
+                            <div class="sector_icon">
                                 <i class="fa-solid fa-hospital"></i>
                             </div>
                             <h3 class="sector_title">Healthcare</h3>
-                            <p class="sector_description">Expertise in healthcare market entry, medical equipment, pharmaceuticals, and healthcare services.</p>
+                            <p class="sector_description">Expertise in digital health, telemedicine, and healthcare technology solutions.</p>
                             <div class="sector_tags">
                                 <span class="sector_tag"><i class="fa-solid fa-pills"></i> Pharma</span>
                                 <span class="sector_tag"><i class="fa-solid fa-stethoscope"></i> Medical</span>
-                                <span class="sector_tag"><i class="fa-solid fa-notes-medical"></i> Services</span>
                                 <span class="sector_tag"><i class="fa-solid fa-laptop-medical"></i> Telemed</span>
-                                <span class="sector_tag"><i class="fa-solid fa-shield"></i> Insurance</span>
+                                <span class="sector_tag"><i class="fa-solid fa-robot"></i> MedTech</span>
+                                <span class="sector_tag"><i class="fa-solid fa-dna"></i> BioTech</span>
                             </div>
                         </div>
                     </div>
@@ -563,18 +901,18 @@
                     <!-- Manufacturing -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="sector_card">
-                            <span class="tech-badge-sm"><i class="fa-solid fa-industry"></i> MFG</span>
-                            <div class="sector_icon pulse-animation">
+                            <span class="tech-badge-sm"><i class="fa-solid fa-industry"></i> INDUSTRY 4.0</span>
+                            <div class="sector_icon">
                                 <i class="fa-solid fa-industry"></i>
                             </div>
                             <h3 class="sector_title">Manufacturing</h3>
-                            <p class="sector_description">Supporting manufacturers with market entry, supply chain optimization, and local partnership development.</p>
+                            <p class="sector_description">Supporting manufacturers with Industry 4.0, smart factories, and digital supply chain optimization.</p>
                             <div class="sector_tags">
                                 <span class="sector_tag"><i class="fa-solid fa-car"></i> Automotive</span>
                                 <span class="sector_tag"><i class="fa-solid fa-cart-shopping"></i> Consumer</span>
                                 <span class="sector_tag"><i class="fa-solid fa-gear"></i> Industrial</span>
                                 <span class="sector_tag"><i class="fa-solid fa-box"></i> Packaging</span>
-                                <span class="sector_tag"><i class="fa-solid fa-tshirt"></i> Textiles</span>
+                                <span class="sector_tag"><i class="fa-solid fa-robot"></i> Robotics</span>
                             </div>
                         </div>
                     </div>
@@ -582,18 +920,18 @@
                     <!-- Tourism & Hospitality -->
                     <div class="col-lg-4 col-md-6 mb-4">
                         <div class="sector_card">
-                            <span class="tech-badge-sm"><i class="fa-solid fa-umbrella-beach"></i> TOURISM</span>
-                            <div class="sector_icon pulse-animation">
+                            <span class="tech-badge-sm"><i class="fa-solid fa-umbrella-beach"></i> TRAVELTECH</span>
+                            <div class="sector_icon">
                                 <i class="fa-solid fa-umbrella-beach"></i>
                             </div>
                             <h3 class="sector_title">Tourism & Hospitality</h3>
-                            <p class="sector_description">Strategic guidance for hotels, lodges, tour operators, and tourism development projects.</p>
+                            <p class="sector_description">Strategic guidance for hotels, lodges, and travel tech platforms in the digital tourism economy.</p>
                             <div class="sector_tags">
                                 <span class="sector_tag"><i class="fa-solid fa-hotel"></i> Hotels</span>
                                 <span class="sector_tag"><i class="fa-solid fa-leaf"></i> Eco-tourism</span>
                                 <span class="sector_tag"><i class="fa-solid fa-binoculars"></i> Safari</span>
                                 <span class="sector_tag"><i class="fa-solid fa-mobile"></i> Travel Tech</span>
-                                <span class="sector_tag"><i class="fa-solid fa-bullhorn"></i> Marketing</span>
+                                <span class="sector_tag"><i class="fa-solid fa-bullhorn"></i> Digital Marketing</span>
                             </div>
                         </div>
                     </div>
@@ -602,26 +940,27 @@
         </section>
         <!-- Sectors Grid - End -->
 
-        <!-- Featured Sector - Start -->
+        <!-- Featured Sector - Start (Enhanced with tech styling) -->
         <section class="featured_sector_section section_space">
             <div class="container">
                 <div class="featured_sector">
                     <div class="row align-items-center">
                         <div class="col-lg-8 fade-up">
-                            <span class="tech-badge-sm" style="background: rgba(255,255,255,0.2); color: white; border-color: rgba(255,255,255,0.3);"><i class="fa-solid fa-star"></i> FEATURED OPPORTUNITY</span>
-                            <h3 class="mt-3">Renewable Energy in Africa</h3>
-                            <p class="mb-4">Africa holds 60% of the world's best solar resources, yet only 1% of installed solar PV capacity. We're helping international energy companies capitalize on this massive opportunity.</p>
+                            <span class="tech-badge-sm" style="background: rgba(255,255,255,0.2); color: white; border-color: rgba(255,255,255,0.3);"><i class="fa-solid fa-star"></i> FEATURED TECH OPPORTUNITY</span>
+                            <h3 class="mt-3">AI & CleanTech in Africa</h3>
+                            <p class="mb-4">Africa holds 60% of the world's best solar resources and is leapfrogging to AI-powered smart grid technology. We're helping international tech companies capitalize on this massive digital opportunity.</p>
                             <div class="sector_tags">
-                                <span class="sector_tag"><i class="fa-solid fa-sun"></i> Solar Power</span>
-                                <span class="sector_tag"><i class="fa-solid fa-wind"></i> Wind Energy</span>
-                                <span class="sector_tag"><i class="fa-solid fa-water"></i> Hydroelectric</span>
+                                <span class="sector_tag"><i class="fa-solid fa-sun"></i> Solar AI</span>
+                                <span class="sector_tag"><i class="fa-solid fa-wind"></i> Smart Wind</span>
+                                <span class="sector_tag"><i class="fa-solid fa-water"></i> Digital Hydro</span>
                                 <span class="sector_tag"><i class="fa-solid fa-flask"></i> Green Hydrogen</span>
-                                <span class="sector_tag"><i class="fa-solid fa-battery-full"></i> Energy Storage</span>
+                                <span class="sector_tag"><i class="fa-solid fa-battery-full"></i> AI Storage</span>
+                                <span class="sector_tag"><i class="fa-solid fa-brain"></i> Smart Grid</span>
                             </div>
                         </div>
                         <div class="col-lg-4 text-lg-end mt-4 mt-lg-0 fade-up">
                             <a href="contact.html" class="btn btn-light btn-lg px-5 py-3 ripple-effect">
-                                <span class="btn_label" data-text="Explore Opportunities">Explore Opportunities</span>
+                                <span class="btn_label" data-text="Explore Tech Opportunities">Explore Tech Opportunities</span>
                                 <span class="btn_icon">
                                     <i class="fa-solid fa-arrow-up-right"></i>
                                 </span>
@@ -633,14 +972,18 @@
         </section>
         <!-- Featured Sector - End -->
 
-        <!-- Call to Action - Start -->
+        <!-- Call to Action - Start (Enhanced with tech elements) -->
         <section class="cta_section py-5 scanline">
             <div class="container text-center">
                 <div class="fade-up">
-                    <h2 class="text-white mb-4">Ready to Explore Your Sector?</h2>
-                    <p class="text-white mb-4 fs-5">Let's discuss how our industry expertise can help you succeed in African markets.</p>
+                    <div class="tech-badge d-inline-flex mb-4" style="background: rgba(255,255,255,0.2); color: white; border-color: white;">
+                        <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: white; border-radius: 50%; display: inline-block;"></span>
+                        READY TO INNOVATE
+                    </div>
+                    <h2 class="text-white mb-4 glitch">Ready to Explore Your Tech Sector?</h2>
+                    <p class="text-white mb-4 fs-5">Let's discuss how our digital industry expertise can help you succeed in African technology markets.</p>
                     <a href="contact.html" class="btn btn-light btn-lg px-5 py-3 ripple-effect">
-                        <span class="btn_label" data-text="Talk to Our Experts">Talk to Our Experts</span>
+                        <span class="btn_label" data-text="Talk to Our Tech Experts">Talk to Our Tech Experts</span>
                         <span class="btn_icon">
                             <i class="fa-solid fa-arrow-up-right"></i>
                         </span>
@@ -650,8 +993,17 @@
         </section>
         <!-- Call to Action - End -->
 
-        <!-- Site Footer - Start -->
+        <!-- Site Footer - Start (Enhanced with tech elements) -->
         <footer class="site_footer footer_layout_2 section_decoration data-stream" style="background-image: url('images/bg_pattern_3.svg');">
+            <!-- System Status -->
+            <div class="system-status mb-4">
+                <div class="d-flex align-items-center justify-content-center">
+                    <span class="pulse-ring me-2" style="width: 10px; height: 10px; background: #00ff00; border-radius: 50%; display: inline-block;"></span>
+                    <span class="text-white-50">All Systems Operational</span>
+                    <span class="tech-badge-sm ms-3">99.9% Uptime</span>
+                </div>
+            </div>
+            
             <div class="decoration_item shape_image_1">
                 <img src="images/shape_space_2.svg" alt="Decorative Shape">
             </div>
@@ -739,7 +1091,7 @@
                                 <ul class="icon_list unordered_list_block">
                                     <li><a href="sectors.html">Sectors We Serve</a></li>
                                     <li><a href="insights.html">Insights & News</a></li>
-                                    <li><a href="#featured">Featured Sector</a></li>
+                                    <li><a href="#featured">Featured Tech Sector</a></li>
                                     <li><a href="about.html#team">Meet the Team</a></li>
                                 </ul>
                             </div>
@@ -748,7 +1100,7 @@
                         <div class="col-lg-3 col-md-6">
                             <div class="footer_widget">
                                 <h3 class="footer_info_title">Newsletter</h3>
-                                <p>Stay updated with our latest insights and success stories.</p>
+                                <p>Stay updated with our latest tech industry insights and success stories.</p>
                                 <form class="footer_newslatter_2" action="#" method="POST">
                                     <input type="email" name="email" placeholder="Enter your email" required>
                                     <button type="submit">Subscribe</button>
@@ -807,5 +1159,32 @@
     <script src="js/appear.min.js"></script>
     <script src="js/odometer.min.js"></script>
     <script src="js/main.js"></script>
+    
+    <!-- Tech Effects Script -->
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Counter animation for stats
+        const counters = document.querySelectorAll('.counter-number');
+        counters.forEach(counter => {
+            const count = counter.getAttribute('data-count');
+            if (count) {
+                setTimeout(() => {
+                    counter.innerHTML = count + (counter.innerHTML.includes('+') ? '+' : '');
+                }, 500);
+            }
+        });
+        
+        // Add random tech "noise" to cards on hover
+        const cards = document.querySelectorAll('.sector_card, .stat_card, .sector_tag');
+        cards.forEach(card => {
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = `translateY(-5px) rotate(${Math.random() * 0.5 - 0.25}deg)`;
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0) rotate(0)';
+            });
+        });
+    });
+    </script>
 </body>
 </html>
